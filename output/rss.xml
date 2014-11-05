@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>mi blog</title><link>https://github.com/hydrosIII/hydrosIII.github.io/</link><description>mi blog</description><atom:link rel="self" href="https://github.com/hydrosIII/hydrosIII.github.io/rss.xml" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Wed, 05 Nov 2014 17:08:13 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>¿Cómo se hizo este blog?</title><link>https://github.com/hydrosIII/hydrosIII.github.io/posts/como-se-hizo-este-blog.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;He tenido la idea de empezar un blog para documentar ciertas cosas, pero
+nunca me he decidido a hacer nada. Claro que ahora parecer me he
+decidido por una técnica mediamente dificil de escribir un blog.&lt;/p&gt;
+&lt;p&gt;Se me han ocurrido un montón de ideas, desde hostear mi blog en mi
+propio servidor, sobretodo para propósitos didácticos hasta abrir una
+cuenta en wordpress, lo cual ya hice, pero no creo que la utilize. Al
+final me entere de que puedes tener una página en Github. Bueno así no tengo
+cosas en todos lados. Tampoco es que tenga muchas cuentas, pero odio
+estar recordando la contraseña para todas ellas. Y tengo una cuenta en
+gihub, con casi nada de código, lo único que he subido es la plantilla
+latex que utilice para mi tesis, pero al menos así no tengo que recordar
+otra contrseña, y me gustaría aprender a usar git.&lt;/p&gt;
+&lt;p&gt;Este blog fue hecho usando nikola.&lt;/p&gt;
+&lt;p&gt;¿Qué es Nikola?&lt;/p&gt;
+&lt;p&gt;Pues, no tengo mucha idea, pero digamos que es un wordpress mas geek. Es
+decir que aún hay que editar algunas cosas a la manera antigua cuando
+las páginas aún se hacían en html. Sólo algunas ya que en realidad es muy fácil escribir un post.
+La ventaja es que crea páginas web estáticas y no necesita guardar cosas complicadas en una base de datos. Las bases de
+datos son  omnipresentes hoy día y son muy útiles para guardar todos
+los números de tarjeta de crédito de los clientes de un banco y crear un
+sistema que haga busquedas de ellos. Pero si sólo vas a crear un simple
+blog, no creo que sea tan necesaria la base de datos.&lt;/p&gt;
+&lt;p&gt;En fin. Nikola es un generador de páginas estáticas escrito en Python, un lenguaje de programación popular.&lt;/p&gt;
+&lt;p&gt;Nikola primeramente genera las páginas en cualquier computador donde
+esté instalado, y luego es posible subirlas a un hosting. La parte
+interesante es que puede ser cualquier cosa que corra un servidor web.
+No es necesario que el hosting soporte X o Y paquetes. Y claro el
+trabajo se realiza en tu computador. La clara desventaja es que si no
+se tiene un computador con Nikola es dificil escribir, pero como ahora
+tengo una computadora portatil de uso habitual, creo que esto no es
+tanto problema.&lt;/p&gt;
+&lt;p&gt;¿Como instalarlo?&lt;/p&gt;
+&lt;p&gt;Se necesita tener python instalado el cual está en las distribuciones
+linux. Sin embargo se puede instalar en cualquier sistema operativo.
+Para instalarlo se necesita el instalador de paquetes python pip.
+Primero se instala pip, y pip instala Nikola.&lt;/p&gt;
+&lt;p&gt;Los siguientes comandos se necesitan hacer como root&lt;/p&gt;
+&lt;p&gt;Para logearse como root hay que escribir:&lt;/p&gt;
+&lt;p&gt;su&lt;/p&gt;
+&lt;p&gt;En Debian:&lt;/p&gt;
+&lt;p&gt;apt-get install python-pip&lt;/p&gt;
+&lt;p&gt;En Arch linux&lt;/p&gt;
+&lt;p&gt;pacman -S python-pip&lt;/p&gt;
+&lt;p&gt;En arch linux (la cual uso) también se encuentran en AUR, como hay dos
+paquetes en AUR, uno con python 3 y otro con python 2 esto me confundió
+y termine siguiendo la ruta de pip, que me parecio mas simple, aunque no
+me gusta que pip instale cosas en mi sistema, además de que no conozco este programa bien,
+pero de que instala cosas fácil, las instala.&lt;/p&gt;
+&lt;p&gt;Nikola se instala así:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install Nikola
+&lt;/pre&gt;
+&lt;p&gt;Hay instrucciones que indican que hay que hacer un entorno virtual de
+python, pero al final lo dejé por que lo quería es publicar, ya veré que
+pasa con la suciedad del sistema después.&lt;/p&gt;
+&lt;p&gt;Las intrucciones de instalación se pueden encontrar en la página web de
+Nikola: &lt;a class="reference external" href="http://getnikola.com/handbook.html#installing-nikola"&gt;http://getnikola.com/handbook.html#installing-nikola&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Algo que no detalla en la página, es que una vez hecho esto se debe
+salir del usuario root y trabajar como usuario normal para iniciar la
+página web. Si no los permisos de los archivos se hacen un desastre.&lt;/p&gt;
+&lt;p&gt;asi que podemos escribir:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+exit
+&lt;/pre&gt;
+&lt;p&gt;luego se puede proseguir con la guia de configuración:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+nikola init mysite
+&lt;/pre&gt;
+&lt;p&gt;donde mysite es el nombre de la página, se creará una carpeta con este
+nombre conteniendo la página web, en el directorio desde donde se corra
+el anterior comando. Yo me pase buscando algunos minutos para saber donde estaba
+la página. Por ejemplo puedes cambiar mysite por "mi-primer-blog", o
+algo que sea fácil de recordar. Nikola hace algunas preguntas, y la
+verdad es complicado contestarlas, sobretodo si no se tiene idea de
+donde se va a poner la página. Lo único que recuerdo que seleccioné
+los comentarios google groups. Lo demás lo hice un poco al azar. Creo
+que se puede cambiar después:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd mysite
+&lt;/pre&gt;
+&lt;p&gt;Posteriormente podemos iniciar el primer post, con:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+nikola new_post
+&lt;/pre&gt;
+&lt;p&gt;y luego podemos encontrar el post en el directorio de post dentro del
+directorio de Nikola, este lo podemos editar en cualquier editor de
+texto, para este post yo estoy usando nano. Se puede usar alguna
+sintaxis de markdown, pero por ahora no sé lo que es eso. Asi que esto
+es puro texto.&lt;/p&gt;
+&lt;p&gt;Una vex que terminamos de escribir el post, damos la orden:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+nikola build
+&lt;/pre&gt;
+&lt;p&gt;y para ver nuestra pagina:&lt;/p&gt;
+&lt;blockquote&gt;
+nikola serve&lt;/blockquote&gt;
+&lt;p&gt;Ahora puedo apuntar mi navegador a 127.0.0.1:8000, y aparecerá la
+nueva página. No parece tan díficil, al menos logré escribir esto y no
+se ve tan mal. El tema por default de Nikola también me gusta, lo que me
+ahorra tener que saber como cambiarlo.&lt;/p&gt;
+&lt;p&gt;Si se quiere que las páginas se actualizen solas en lugar de reconstruir
+el sitio entero, se puede instalar (de nuevo como root):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install livereload
+pip install requests
+&lt;/pre&gt;
+&lt;p&gt;y usar:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+nikola auto
+&lt;/pre&gt;
+&lt;p&gt;en el directorio de la página.&lt;/p&gt;
+&lt;div class="section" id="ojo"&gt;
+&lt;h2&gt;OJO&lt;/h2&gt;
+&lt;p&gt;Si nikola da errores, se puede instalar desde git para tener lo último,
+para mi fue necesario ya que daba un error al construir la página.
+Obviamente esto no es necesario si todo funciona bien.&lt;/p&gt;
+&lt;p&gt;Para instalarlo desde git primero se debe desinstalar nikola desde pip&lt;/p&gt;
+&lt;p&gt;Nos logueamos como root:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+su
+&lt;/pre&gt;
+&lt;p&gt;Luego desinstalamos nikola:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip uninstall nikola
+&lt;/pre&gt;
+&lt;p&gt;y salimos de root:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+exit
+&lt;/pre&gt;
+&lt;p&gt;Luego clonamos el repo con git. Hay que instalar git antes desde luego:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git clone git://github.com/getnikola/nikola.git
+&lt;/pre&gt;
+&lt;p&gt;y de nuevo como root, instalamos nikola:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd nikola
+pip install -r requirements-full.txt
+pip install .
+&lt;/pre&gt;
+&lt;p&gt;La línea de requerimientos no es necesaria si ya habíamos instalado con
+pip, ya que estos ya se encuentran instalados.&lt;/p&gt;
+&lt;p&gt;Todo este entrar y salir de root es para que los permisos de archivos
+queden bien.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>nikola</category><category>python</category><guid>https://github.com/hydrosIII/hydrosIII.github.io/posts/como-se-hizo-este-blog.html</guid><pubDate>Wed, 05 Nov 2014 04:16:30 GMT</pubDate></item></channel></rss>
