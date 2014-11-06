@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1415233376.7804596
+_modified_time = 1415233681.651923
 _enable_loop = True
 _template_filename = '/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/annotation_helper.tmpl'
 _template_uri = 'annotation_helper.tmpl'
@@ -46,6 +46,6 @@ def render_code(context):
 
 """
 __M_BEGIN_METADATA
-{"uri": "annotation_helper.tmpl", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/annotation_helper.tmpl", "line_map": {"20": 3, "21": 16, "15": 0, "41": 5, "27": 1, "37": 5, "47": 41, "31": 1}, "source_encoding": "ascii"}
+{"line_map": {"20": 3, "21": 16, "15": 0, "41": 5, "27": 1, "37": 5, "47": 41, "31": 1}, "uri": "annotation_helper.tmpl", "source_encoding": "ascii", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/annotation_helper.tmpl"}
 __M_END_METADATA
 """

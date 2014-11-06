@@ -4,12 +4,12 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1415233376.876353
+_modified_time = 1415233681.7485583
 _enable_loop = True
 _template_filename = '/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/post_helper.tmpl'
 _template_uri = 'post_helper.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['html_tags', 'open_graph_metadata', 'meta_translations', 'twitter_card_information', 'html_pager', 'mathjax_script']
+_exports = ['html_tags', 'twitter_card_information', 'open_graph_metadata', 'meta_translations', 'html_pager', 'mathjax_script']
 
 
 def render_body(context,**pageargs):
@@ -49,16 +49,47 @@ def render_html_tags(context,post):
         context.caller_stack._pop_frame()
 
 
+def render_twitter_card_information(context,post):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        twitter_card = context.get('twitter_card', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if twitter_card and twitter_card['use_twitter_cards']:
+            __M_writer('    <meta name="twitter:card" content="')
+            __M_writer(filters.html_escape(str(twitter_card.get('card', 'summary'))))
+            __M_writer('">\n')
+            if 'site:id' in twitter_card:
+                __M_writer('    <meta name="twitter:site:id" content="')
+                __M_writer(str(twitter_card['site:id']))
+                __M_writer('">\n')
+            elif 'site' in twitter_card:
+                __M_writer('    <meta name="twitter:site" content="')
+                __M_writer(str(twitter_card['site']))
+                __M_writer('">\n')
+            if 'creator:id' in twitter_card:
+                __M_writer('    <meta name="twitter:creator:id" content="')
+                __M_writer(str(twitter_card['creator:id']))
+                __M_writer('">\n')
+            elif 'creator' in twitter_card:
+                __M_writer('    <meta name="twitter:creator" content="')
+                __M_writer(str(twitter_card['creator']))
+                __M_writer('">\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_open_graph_metadata(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
-        url_replacer = context.get('url_replacer', UNDEFINED)
-        abs_link = context.get('abs_link', UNDEFINED)
-        striphtml = context.get('striphtml', UNDEFINED)
-        use_open_graph = context.get('use_open_graph', UNDEFINED)
         permalink = context.get('permalink', UNDEFINED)
         lang = context.get('lang', UNDEFINED)
+        use_open_graph = context.get('use_open_graph', UNDEFINED)
         blog_title = context.get('blog_title', UNDEFINED)
+        url_replacer = context.get('url_replacer', UNDEFINED)
+        striphtml = context.get('striphtml', UNDEFINED)
+        abs_link = context.get('abs_link', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if use_open_graph:
@@ -99,8 +130,8 @@ def render_open_graph_metadata(context,post):
 def render_meta_translations(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
-        len = context.get('len', UNDEFINED)
         lang = context.get('lang', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         translations = context.get('translations', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
@@ -112,37 +143,6 @@ def render_meta_translations(context,post):
                     __M_writer('" href="')
                     __M_writer(str(post.permalink(langname)))
                     __M_writer('">\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_twitter_card_information(context,post):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        twitter_card = context.get('twitter_card', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if twitter_card and twitter_card['use_twitter_cards']:
-            __M_writer('    <meta name="twitter:card" content="')
-            __M_writer(filters.html_escape(str(twitter_card.get('card', 'summary'))))
-            __M_writer('">\n')
-            if 'site:id' in twitter_card:
-                __M_writer('    <meta name="twitter:site:id" content="')
-                __M_writer(str(twitter_card['site:id']))
-                __M_writer('">\n')
-            elif 'site' in twitter_card:
-                __M_writer('    <meta name="twitter:site" content="')
-                __M_writer(str(twitter_card['site']))
-                __M_writer('">\n')
-            if 'creator:id' in twitter_card:
-                __M_writer('    <meta name="twitter:creator:id" content="')
-                __M_writer(str(twitter_card['creator:id']))
-                __M_writer('">\n')
-            elif 'creator' in twitter_card:
-                __M_writer('    <meta name="twitter:creator" content="')
-                __M_writer(str(twitter_card['creator']))
-                __M_writer('">\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -192,6 +192,6 @@ def render_mathjax_script(context,post):
 
 """
 __M_BEGIN_METADATA
-{"uri": "post_helper.tmpl", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/post_helper.tmpl", "line_map": {"15": 0, "20": 2, "21": 11, "22": 21, "23": 38, "24": 67, "25": 83, "26": 91, "32": 13, "37": 13, "38": 14, "39": 15, "40": 16, "41": 17, "42": 17, "43": 17, "44": 17, "45": 17, "46": 19, "52": 40, "63": 40, "64": 41, "65": 42, "66": 42, "67": 42, "68": 43, "69": 43, "70": 44, "71": 44, "72": 45, "73": 46, "74": 46, "75": 46, "76": 47, "77": 48, "78": 48, "79": 48, "80": 50, "81": 51, "82": 51, "83": 51, "84": 53, "85": 58, "86": 59, "87": 59, "88": 59, "89": 61, "90": 62, "91": 63, "92": 63, "93": 63, "99": 3, "106": 3, "107": 4, "108": 5, "109": 6, "110": 7, "111": 7, "112": 7, "113": 7, "114": 7, "120": 69, "125": 69, "126": 70, "127": 71, "128": 71, "129": 71, "130": 72, "131": 73, "132": 73, "133": 73, "134": 74, "135": 75, "136": 75, "137": 75, "138": 77, "139": 78, "140": 78, "141": 78, "142": 79, "143": 80, "144": 80, "145": 80, "151": 23, "156": 23, "157": 24, "158": 25, "159": 26, "160": 27, "161": 28, "162": 28, "163": 28, "164": 28, "165": 28, "166": 28, "167": 31, "168": 32, "169": 33, "170": 33, "171": 33, "172": 33, "173": 33, "174": 33, "175": 36, "181": 85, "185": 85, "186": 86, "187": 87, "193": 187}, "source_encoding": "utf-8"}
+{"line_map": {"15": 0, "20": 2, "21": 11, "22": 21, "23": 38, "24": 67, "25": 83, "26": 91, "32": 13, "37": 13, "38": 14, "39": 15, "40": 16, "41": 17, "42": 17, "43": 17, "44": 17, "45": 17, "46": 19, "52": 69, "57": 69, "58": 70, "59": 71, "60": 71, "61": 71, "62": 72, "63": 73, "64": 73, "65": 73, "66": 74, "67": 75, "68": 75, "69": 75, "70": 77, "71": 78, "72": 78, "73": 78, "74": 79, "75": 80, "76": 80, "77": 80, "83": 40, "94": 40, "95": 41, "96": 42, "97": 42, "98": 42, "99": 43, "100": 43, "101": 44, "102": 44, "103": 45, "104": 46, "105": 46, "106": 46, "107": 47, "108": 48, "109": 48, "110": 48, "111": 50, "112": 51, "113": 51, "114": 51, "115": 53, "116": 58, "117": 59, "118": 59, "119": 59, "120": 61, "121": 62, "122": 63, "123": 63, "124": 63, "130": 3, "137": 3, "138": 4, "139": 5, "140": 6, "141": 7, "142": 7, "143": 7, "144": 7, "145": 7, "151": 23, "156": 23, "157": 24, "158": 25, "159": 26, "160": 27, "161": 28, "162": 28, "163": 28, "164": 28, "165": 28, "166": 28, "167": 31, "168": 32, "169": 33, "170": 33, "171": 33, "172": 33, "173": 33, "174": 33, "175": 36, "181": 85, "185": 85, "186": 86, "187": 87, "193": 187}, "uri": "post_helper.tmpl", "source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/post_helper.tmpl"}
 __M_END_METADATA
 """
