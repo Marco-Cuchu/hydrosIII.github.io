@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+ <sitemap>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/categories/nikola.xml</loc>
+  <lastmod>2014-11-05</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/categories/python.xml</loc>
+  <lastmod>2014-11-05</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/galleries/rss.xml</loc>
+  <lastmod>2014-11-05</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/rss.xml</loc>
+  <lastmod>2014-11-05</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/sitemap.xml</loc>
+  <lastmod>2014-11-05</lastmod>
+ </sitemap>
+</sitemapindex>
