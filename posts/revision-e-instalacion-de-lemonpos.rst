@@ -1,7 +1,7 @@
 .. title: Revisión e instalación de LemonPos
 .. slug: revision-e-instalacion-de-lemonpos
 .. date: 2014-11-07 01:30:04 UTC-06:00
-.. tags: 
+.. tags: lemonpos  
 .. link: 
 .. description: 
 .. type: text

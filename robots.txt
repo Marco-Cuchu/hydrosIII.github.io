@@ -1,2 +1,2 @@
-Sitemap: https://github.com/hydrosIII/hydrosIII.github.io/sitemapindex.xml
+Sitemap: http://hydrosiii.github.io/sitemapindex.xml
 
