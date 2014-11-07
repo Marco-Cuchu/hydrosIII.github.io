@@ -11,16 +11,16 @@ Estoy usando lemonpos para algunas tiendas. Me parece que es un programa
 muy bien hecho, y que al contrario de varios puntos de venta con 
 software libre, este es muy simple y muy fácil de usar. Sin 
 funcionalidad extra que estorbe. Una de las cosas que más me gusta de 
-lemon es su diseña de base de datos, que es en realidad muy simple, lo 
+lemon es su diseño de base de datos, que es en realidad muy simple, lo 
 que permite hacer operaciones fáciles como importar productos. Además de 
 scripts sencillos en sql para obtener algunos reportes. 
 
 Desde hace tiempo había tenido varios problemas. En primer lugar al contrario de lo recomendando 
 no estoy usando kubuntu para probar lemonpos, en lugar de eso estoy 
 usando Crunchbag linux. Una distribución ligera derivada de Debian 
-Wheezy para correr lemonpos. Esto es obviamente por que me parece que 
+Wheezy para correr lemonpos. Esto es obviamente por que me parece que es
 inútil gastar recursos para correr el escritorio KDE sólo para correr un 
-punto de venta. Las maquinas donde corre lemonpos ya tienen algunos 
+punto de venta. Las maquinas donde corro lemonpos ya tienen algunos 
 años. Y claro una de las cosas que esperas de una máquina de un punto de 
 venta es que haga solamente eso. ¿Han visto las terminales de punto de 
 venta de los super?. Ni siquiera tienen pantalla, esto claro es un 
@@ -59,7 +59,7 @@ el ticket, ya que cuando hay mucha gente comprando en la tienda, es
 dificil de manejar si el sistema tarda algunos segundos. Los atajos del 
 teclado son otra cosa muy útil.
  
-Ya lo mencione pero el esquema de base de datos base de datos que 
+Ya lo mencione pero el esquema de base de datos que 
 implementa es una de las mejores cosas de lemon. Usa Mysql, un gestor de 
 base de datos que sale sobrado para la tarea de correr una tienda, ya 
 que éste se utiliza para manejar gran cantidad de información.
@@ -135,6 +135,9 @@ sistema que no sea un debian o ubuntu instalar esta, no es fácil.
 se mantiene una versión "estable" en los repositorios de ubuntu y me 
 parece que son versiones algo mas antiguas, quizá sirvan mejor.
 
+4. Version Rc 9.4.8, la probé de forma muy breve y me parece que 
+también existe el error de la busqueda de productos.
+
 ¿Es acaso una versión mejor que la otra?
 ______________________________________________
 
@@ -147,9 +150,9 @@ tanto es obsoleto, por lo que ya no sirve esta funcionalidad. También en
 versiones mas recientes se añaden subcategorías.
 A mi parecer estas últimas versiones presentes en git solamente, complica demasiado lemon. Así que si te funciona la version 
 vieja, no la cambies!!!.
-A partir de la versión 9.3 el código de lemonpos se empieza a ensuciar, seguro debido
-a que los desarrolladores no tenían tiempo de seguir con el proyecto y 
-tenían varias ideas que no se llegaron a implementar.
+A partir de la versión 9.3 el código de lemonpos se empieza a ensuciar, 
+seguro debido a que los desarrolladores no tenían tiempo de seguir con 
+el proyecto y tenían varias ideas que no se llegaron a implementar.
 
 A continuación detallaré la instalación de lemonpos en Crunchbag linux 
 usando la versión 30-abr-2013 que fue la que al final me funcionó, si 
@@ -164,9 +167,11 @@ Instalación de lemonpos.
 EL objetivo es lograr tener un punto de venta estable y ligero. 
 Lamentablemente por ahora este tutorial sólo aplica para arquitecturas 
 32 bit, osea computadoras viejas, las que deberías usar en un punto de 
-venta. :). Es posible compilar un paquete para computadores de 64 bit, eso ya lo he probado,
-pero no he logrado encontrar una versión del código estable en github, espero escribir sobre esto también.
-
+venta. :). Ya que la version 30-abr sólo existe en formato binario, he 
+buscado la fuente de este y no ha quedado muy claro cual es. Existe 
+también la posibilidad de compilar un paquete para computadores de 64 
+bit, eso ya lo he probado, pero no he logrado encontrar una versión del 
+código estable en github, espero adelantar sobre esto más adelante..
 
 1.Bajas el paquete .deb de aquí.
 
@@ -260,7 +265,7 @@ encuentra el proyecto es de abandono, sin embargo sigue siendo un
 programa muy bajado en sourceforge y francamente es un programa bueno y 
 bien diseñado, por lo que vale la pena su instalación y configuración, 
 ademas es software mexicano. La caída de la wiki y otros recursos esta 
-haciendo mas dificil el acercamiento a este programa. Es una lástima, 
+haciendo más dificil el acercamiento a este programa. Es una lástima, 
 por lo menos yo espero seguirlo usando los siguientes años.
 
 Espero escribir otro post, sobre como configurar lemonpos, importar 
