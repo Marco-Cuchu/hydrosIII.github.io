@@ -6,7 +6,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://github.com/hydrosIII/hydrosIII.github.io/2014/index.html</loc>
-  <lastmod>2014-11-05</lastmod>
+  <lastmod>2014-11-06</lastmod>
  </url>
  <url>
   <loc>https://github.com/hydrosIII/hydrosIII.github.io/archive.html</loc>
@@ -30,14 +30,30 @@
  </url>
  <url>
   <loc>https://github.com/hydrosIII/hydrosIII.github.io/index.html</loc>
-  <lastmod>2014-11-05</lastmod>
+  <lastmod>2014-11-07</lastmod>
  </url>
  <url>
   <loc>https://github.com/hydrosIII/hydrosIII.github.io/listings/index.html</loc>
   <lastmod>2014-11-05</lastmod>
  </url>
  <url>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/posts/arreglando-problemas-con-lemonpos.html</loc>
+  <lastmod>2014-11-07</lastmod>
+ </url>
+ <url>
   <loc>https://github.com/hydrosIII/hydrosIII.github.io/posts/como-se-hizo-este-blog.html</loc>
-  <lastmod>2014-11-05</lastmod>
+  <lastmod>2014-11-07</lastmod>
+ </url>
+ <url>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/posts/revision-e-instalacion-de-lemonpos.html</loc>
+  <lastmod>2014-11-07</lastmod>
+ </url>
+ <url>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/posts/usando-lemon-pos.html</loc>
+  <lastmod>2014-11-07</lastmod>
+ </url>
+ <url>
+  <loc>https://github.com/hydrosIII/hydrosIII.github.io/posts/usando-lemonpos.html</loc>
+  <lastmod>2014-11-07</lastmod>
  </url>
 </urlset>
