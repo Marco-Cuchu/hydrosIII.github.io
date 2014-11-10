@@ -21,7 +21,7 @@ BLOG_AUTHOR = "hydrosIII"  # (translatable)
 BLOG_TITLE = "mi blog"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://hydrosiii.github.io/"
+SITE_URL = "https://hydrosiii.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://hydrosiii.github.io/"
