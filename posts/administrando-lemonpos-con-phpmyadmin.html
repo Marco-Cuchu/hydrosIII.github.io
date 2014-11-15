@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrando lemonpos con phpmyadmin. | mi blog</title>
+
+    
+            <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+    
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html">
+
+
+
+
+    
+        <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+
+    
+
+
+    
+
+    <meta name="author" content="hydrosIII">
+        <link rel="prev" href="arch-linux-en-pc-duino.html" title="Arch linux en PC Duino." type="text/html">
+    
+    <meta property="og:site_name" content="mi blog">
+    <meta property="og:title" content="Administrando lemonpos con phpmyadmin.">
+    <meta property="og:url" content="https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html">
+    <meta property="og:description" content="Lemonpos es un buen programa para poner una terminal de punto de venta y
+está hecho con software libre. Sin embargo el administrador squeeze,
+aunque es útil muchas veces no tiene tantas opciones. Una ">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2014-11-13T23:52:35-06:00">
+           <meta property="article:tag" content="lemonpos">
+
+    
+
+    
+
+
+
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://hydrosiii.github.io/">
+
+                <span id="blog-title">mi blog</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                
+                <li>
+<a href="../archive.html">Archivo</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../rss.xml">feed RSS</a>
+
+                
+            </li>
+</ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                    
+    <li>
+    <a href="administrando-lemonpos-con-phpmyadmin.rst" id="sourcelink">Código</a>
+    </li>
+
+                
+            </ul>
+        </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav>
+
+<!-- End of Menubar -->
+
+<div class="container" id="content">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+    <header>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Administrando lemonpos con phpmyadmin.</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-11-13T23:52:35-06:00" itemprop="datePublished" title="2014-11-13 23:52">2014-11-13 23:52</time></a></p>
+                <p class="commentline">
+        
+    <a href="administrando-lemonpos-con-phpmyadmin.html#disqus_thread" data-disqus-identifier="cache/posts/administrando-lemonpos-con-phpmyadmin.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="administrando-lemonpos-con-phpmyadmin.rst" id="sourcelink">Código</a></p>
+
+        </div>
+        
+
+    </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Lemonpos es un buen programa para poner una terminal de punto de venta y
+está hecho con software libre. Sin embargo el administrador squeeze,
+aunque es útil muchas veces no tiene tantas opciones. Una opción para
+superar esta limitación es usar un administrador de base de datos y que
+mejor que phpmyadmin, un administrador de base de datos ligero y muy
+fácil de usar.</p>
+<p>Nota: Puedes encontrar el post de instalación de lemonpos <a class="reference external" href="revision-e-instalacion-de-lemonpos.html">aquí</a>.</p>
+<p>Nota: Los siguientes comandos se tienen que hacer como root.</p>
+<p>Para empezar este tutorial está enfocado a Debian  y derivados ya que en
+otras distros, phpmyadmin requiere un poco de configuración extra. Lo
+primero es instalar apache2 y phpmyadmin. Se pueden instalar otros
+servidores web, pero apache resulta perfecto para el caso ya que
+funciona "out of the box"</p>
+<pre class="literal-block">
+apt-get install apache2 phpmyadmin
+</pre>
+<p>Ahora se configurara todo y tendremos apache funcionando en el puerto 80
+de nuestra maquina, en un navegador comprobamos que esto sea cierto,
+vamos a la dirección:</p>
+<pre class="literal-block">
+http://127.0.0.1
+</pre>
+<p>o:</p>
+<pre class="literal-block">
+http://localhost
+</pre>
+<p>ahora debe aparecer algo así como:</p>
+<pre class="literal-block">
+It works !
+</pre>
+<p>Si no aparece hay que revisar si hubo algún error en a instalación de
+apache.</p>
+<p>Una vez configurado, sólo hay que apuntar a apache a phpmyadmin. Yo lo
+hago de manera burda pero eficiente:</p>
+<pre class="literal-block">
+rm -r /var/www
+ln -s /usr/share/phpmyadmin /var/www
+</pre>
+<p>y listo. Si nos vamos al navegador otra vez y apuntamos a 127.0.0.1, nos
+encontraremos con phpmyadmin. El usuario para entrar es root y la
+contraseña, la contraseña de administrador de la base de datos, osea la
+que preguntó debian a la hora de instalar mysql.
+Una vez dentro de phpmyadmin podemos ver la base de datos de lemonpos.
+Esta se llama lemondb.</p>
+<div class="section" id="para-que-sirve-esto">
+<h2>¿Para qué sirve esto?</h2>
+<p>Sirve para realizar consultas y operaciones en la base de datos de
+lemonpos. Por ejemplo: una utilización simple pero eficiente es el
+importar listas de productos desde hojas de cálculo, creadas por ejemplo
+en libreoffice o en Ms Excel, en lugar de meter producto por producto.</p>
+<p>Además ofrece tanto bajar como subir respaldos de bases de datos.
+Si se tienen conocimientos más avanzados de sql, se pueden generar
+algunos reportes, de manera que pueden exportarse y leerse en
+libreoffice. Por ejemplo de productos agotados.</p>
+<p>Espero escribir sobre esto pronto.</p>
+<p>Estos son todos mis posts sobre lemonpos:</p>
+
+<!-- Begin post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 -->
+<div id="post_list_2a38d6f067514e49881c426bc2d4e1d1" class="post-list">
+    <ul class="post-list">
+            <li class="post-list-item">
+	        2014-11-13 23:52
+		 
+		<a href="#">Administrando lemonpos con phpmyadmin.</a>
+	    </li>
+            <li class="post-list-item">
+	        2014-11-07 01:30
+		 
+		<a href="revision-e-instalacion-de-lemonpos.html">Revisión e instalación de LemonPos</a>
+	    </li>
+    </ul>
+</div>
+<!-- End post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 -->
+
+</div>
+</div>
+    </div>
+    <aside class="postpromonav">
+    <nav>
+    
+        <ul itemprop="keywords" class="tags">
+           <li><a class="tag p-category" href="../categories/lemonpos.html" rel="tag">lemonpos</a></li>
+        </ul>
+
+    
+        <ul class="pager">
+            <li class="previous">
+                <a href="arch-linux-en-pc-duino.html" rel="prev" title="Arch linux en PC Duino.">Post anterior</a>
+            </li>
+        </ul>
+
+    </nav>
+    </aside>
+        <section class="comments">
+        <h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="hydrosiii",
+            disqus_url="https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html",
+        disqus_title="Administrando lemonpos con phpmyadmin.",
+        disqus_identifier="cache/posts/administrando-lemonpos-con-phpmyadmin.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+    
+
+</article>
+
+        
+       <script>var disqus_shortname="hydrosiii";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+
+
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2014         <a href="mailto:galprasmarco@gmail.com">hydrosIII</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+    </div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script>
+        <script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+    <!-- fancy dates -->
+    <script>
+    moment.locale("es");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script>
+    <!-- end fancy dates -->
+    
+
+
+</body>
+</html>

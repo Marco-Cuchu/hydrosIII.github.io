@@ -86,6 +86,100 @@
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="p-name entry-title"><a href="posts/administrando-lemonpos-con-phpmyadmin.html" class="u-url">Administrando lemonpos con phpmyadmin.</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="posts/administrando-lemonpos-con-phpmyadmin.html" rel="bookmark"><time class="published dt-published" datetime="2014-11-13T23:52:35-06:00" itemprop="datePublished" title="2014-11-13 23:52">2014-11-13 23:52</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/administrando-lemonpos-con-phpmyadmin.html#disqus_thread" data-disqus-identifier="cache/posts/administrando-lemonpos-con-phpmyadmin.html">Comments</a>
+
+
+        </p>
+</div>
+    </header>
+    <div class="e-content entry-content">
+    <div>
+<p>Lemonpos es un buen programa para poner una terminal de punto de venta y
+está hecho con software libre. Sin embargo el administrador squeeze,
+aunque es útil muchas veces no tiene tantas opciones. Una opción para
+superar esta limitación es usar un administrador de base de datos y que
+mejor que phpmyadmin, un administrador de base de datos ligero y muy
+fácil de usar.</p>
+<p>Nota: Puedes encontrar el post de instalación de lemonpos <a class="reference external" href="posts/revision-e-instalacion-de-lemonpos.html">aquí</a>.</p>
+<p>Nota: Los siguientes comandos se tienen que hacer como root.</p>
+<p>Para empezar este tutorial está enfocado a Debian  y derivados ya que en
+otras distros, phpmyadmin requiere un poco de configuración extra. Lo
+primero es instalar apache2 y phpmyadmin. Se pueden instalar otros
+servidores web, pero apache resulta perfecto para el caso ya que
+funciona "out of the box"</p>
+<pre class="literal-block">
+apt-get install apache2 phpmyadmin
+</pre>
+<p>Ahora se configurara todo y tendremos apache funcionando en el puerto 80
+de nuestra maquina, en un navegador comprobamos que esto sea cierto,
+vamos a la dirección:</p>
+<pre class="literal-block">
+http://127.0.0.1
+</pre>
+<p>o:</p>
+<pre class="literal-block">
+http://localhost
+</pre>
+<p>ahora debe aparecer algo así como:</p>
+<pre class="literal-block">
+It works !
+</pre>
+<p>Si no aparece hay que revisar si hubo algún error en a instalación de
+apache.</p>
+<p>Una vez configurado, sólo hay que apuntar a apache a phpmyadmin. Yo lo
+hago de manera burda pero eficiente:</p>
+<pre class="literal-block">
+rm -r /var/www
+ln -s /usr/share/phpmyadmin /var/www
+</pre>
+<p>y listo. Si nos vamos al navegador otra vez y apuntamos a 127.0.0.1, nos
+encontraremos con phpmyadmin. El usuario para entrar es root y la
+contraseña, la contraseña de administrador de la base de datos, osea la
+que preguntó debian a la hora de instalar mysql.
+Una vez dentro de phpmyadmin podemos ver la base de datos de lemonpos.
+Esta se llama lemondb.</p>
+<div class="section" id="para-que-sirve-esto">
+<h2>¿Para qué sirve esto?</h2>
+<p>Sirve para realizar consultas y operaciones en la base de datos de
+lemonpos. Por ejemplo: una utilización simple pero eficiente es el
+importar listas de productos desde hojas de cálculo, creadas por ejemplo
+en libreoffice o en Ms Excel, en lugar de meter producto por producto.</p>
+<p>Además ofrece tanto bajar como subir respaldos de bases de datos.
+Si se tienen conocimientos más avanzados de sql, se pueden generar
+algunos reportes, de manera que pueden exportarse y leerse en
+libreoffice. Por ejemplo de productos agotados.</p>
+<p>Espero escribir sobre esto pronto.</p>
+<p>Estos son todos mis posts sobre lemonpos:</p>
+
+<!-- Begin post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 -->
+<div id="post_list_2a38d6f067514e49881c426bc2d4e1d1" class="post-list">
+    <ul class="post-list">
+            <li class="post-list-item">
+	        2014-11-13 23:52
+		 
+		<a href="posts/administrando-lemonpos-con-phpmyadmin.html">Administrando lemonpos con phpmyadmin.</a>
+	    </li>
+            <li class="post-list-item">
+	        2014-11-07 01:30
+		 
+		<a href="posts/revision-e-instalacion-de-lemonpos.html">Revisión e instalación de LemonPos</a>
+	    </li>
+    </ul>
+</div>
+<!-- End post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 -->
+
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="p-name entry-title"><a href="posts/arch-linux-en-pc-duino.html" class="u-url">Arch linux en PC Duino.</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>

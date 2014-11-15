@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>mi blog</title><link>https://hydrosiii.github.io/</link><description>mi blog</description><atom:link href="https://hydrosiii.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Mon, 10 Nov 2014 17:30:04 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Arch linux en PC Duino.</title><link>https://hydrosiii.github.io/posts/arch-linux-en-pc-duino.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Tiene tiempo que compré una Pcduino para experimentar. Es una
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mi blog</title><link>https://hydrosiii.github.io/</link><description>mi blog</description><atom:link type="application/rss+xml" rel="self" href="https://hydrosiii.github.io/rss.xml"></atom:link><language>es</language><lastBuildDate>Fri, 14 Nov 2014 18:19:57 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Administrando lemonpos con phpmyadmin.</title><link>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Lemonpos es un buen programa para poner una terminal de punto de venta y
+está hecho con software libre. Sin embargo el administrador squeeze,
+aunque es útil muchas veces no tiene tantas opciones. Una opción para
+superar esta limitación es usar un administrador de base de datos y que
+mejor que phpmyadmin, un administrador de base de datos ligero y muy
+fácil de usar.&lt;/p&gt;
+&lt;p&gt;Nota: Puedes encontrar el post de instalación de lemonpos &lt;a class="reference external" href="https://hydrosiii.github.io/posts/revision-e-instalacion-de-lemonpos.html"&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nota: Los siguientes comandos se tienen que hacer como root.&lt;/p&gt;
+&lt;p&gt;Para empezar este tutorial está enfocado a Debian  y derivados ya que en
+otras distros, phpmyadmin requiere un poco de configuración extra. Lo
+primero es instalar apache2 y phpmyadmin. Se pueden instalar otros
+servidores web, pero apache resulta perfecto para el caso ya que
+funciona "out of the box"&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install apache2 phpmyadmin
+&lt;/pre&gt;
+&lt;p&gt;Ahora se configurara todo y tendremos apache funcionando en el puerto 80
+de nuestra maquina, en un navegador comprobamos que esto sea cierto,
+vamos a la dirección:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://127.0.0.1
+&lt;/pre&gt;
+&lt;p&gt;o:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+http://localhost
+&lt;/pre&gt;
+&lt;p&gt;ahora debe aparecer algo así como:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+It works !
+&lt;/pre&gt;
+&lt;p&gt;Si no aparece hay que revisar si hubo algún error en a instalación de
+apache.&lt;/p&gt;
+&lt;p&gt;Una vez configurado, sólo hay que apuntar a apache a phpmyadmin. Yo lo
+hago de manera burda pero eficiente:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+rm -r /var/www
+ln -s /usr/share/phpmyadmin /var/www
+&lt;/pre&gt;
+&lt;p&gt;y listo. Si nos vamos al navegador otra vez y apuntamos a 127.0.0.1, nos
+encontraremos con phpmyadmin. El usuario para entrar es root y la
+contraseña, la contraseña de administrador de la base de datos, osea la
+que preguntó debian a la hora de instalar mysql.
+Una vez dentro de phpmyadmin podemos ver la base de datos de lemonpos.
+Esta se llama lemondb.&lt;/p&gt;
+&lt;div class="section" id="para-que-sirve-esto"&gt;
+&lt;h2&gt;¿Para qué sirve esto?&lt;/h2&gt;
+&lt;p&gt;Sirve para realizar consultas y operaciones en la base de datos de
+lemonpos. Por ejemplo: una utilización simple pero eficiente es el
+importar listas de productos desde hojas de cálculo, creadas por ejemplo
+en libreoffice o en Ms Excel, en lugar de meter producto por producto.&lt;/p&gt;
+&lt;p&gt;Además ofrece tanto bajar como subir respaldos de bases de datos.
+Si se tienen conocimientos más avanzados de sql, se pueden generar
+algunos reportes, de manera que pueden exportarse y leerse en
+libreoffice. Por ejemplo de productos agotados.&lt;/p&gt;
+&lt;p&gt;Espero escribir sobre esto pronto.&lt;/p&gt;
+&lt;p&gt;Estos son todos mis posts sobre lemonpos:&lt;/p&gt;
+
+&lt;!-- Begin post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 --&gt;
+&lt;div id="post_list_2a38d6f067514e49881c426bc2d4e1d1" class="post-list"&gt;
+    &lt;ul class="post-list"&gt;
+            &lt;li class="post-list-item"&gt;
+	        2014-11-13 23:52
+		 
+		&lt;a href="https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html"&gt;Administrando lemonpos con phpmyadmin.&lt;/a&gt;
+	    &lt;/li&gt;
+            &lt;li class="post-list-item"&gt;
+	        2014-11-07 01:30
+		 
+		&lt;a href="https://hydrosiii.github.io/posts/revision-e-instalacion-de-lemonpos.html"&gt;Revisión e instalación de LemonPos&lt;/a&gt;
+	    &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- End post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 --&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><category>lemonpos</category><guid>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</guid><pubDate>Fri, 14 Nov 2014 05:52:35 GMT</pubDate></item><item><title>Arch linux en PC Duino.</title><link>https://hydrosiii.github.io/posts/arch-linux-en-pc-duino.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Tiene tiempo que compré una Pcduino para experimentar. Es una
 microcomputadora similar a la Raspberrypi pero con un poco más de
 capacidad de computo.&lt;/p&gt;
 &lt;p&gt;El objetivo era usarla como computadora de punto de venta para lograr

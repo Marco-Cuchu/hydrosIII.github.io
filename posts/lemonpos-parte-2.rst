@@ -23,3 +23,4 @@ Probela de los productos
 
 No usar la version 0.9.5
 
+cambir el logo de lemonpos.
