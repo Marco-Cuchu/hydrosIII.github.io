@@ -1,4 +1,4 @@
-.. title: Volviendo a Arch linux estable.
+.. title: Volviendo a Arch linux "estable".
 .. slug: volviendo-a-arch-linux-estable
 .. date: 2014-11-19 02:22:07 UTC-06:00
 .. tags: Arch linux
@@ -11,7 +11,8 @@ al usuario de tal manera que se le puede llamar meta-distro. Sin embargo
 es una distribución rolling release, lo que significa que siempre tiene 
 todo el software actualizado, por lo recibe todas las versiones nuevas 
 de los paquetes, los cuales desde luego cambian. Es por eso que no es 
-un sistema operativo estable.
+un sistema operativo estable. Esta es una guía para volverlos mas usable, aunque muchas de las cosas que aquí se dicen, aplican para
+cualquier sistema Gnu/linux, y muchas veces por extensión a cualquier SO.
 
 
 ¿Que es estabilidad?
@@ -64,7 +65,7 @@ anterior), siempre se pueda trabajar en él de manera amena y sin quebraderos de
 
 
 ¿Es Arch linux para mí?
-
+--------------------------
 Antes de todo lo mejor es decidir si a pesar de todo lo anteriomente dicho no es mejor optar por una distribución estable. Ya que Arch linux pide un poco mas de 
 conocimiento por parte del usuario para mantener el sistema. Hay muchas distribuciones mucho más fáciles de usar. Arch linux y en general las distro rolling release 
 requieren de bastante ancho de banda por lo que si en tu país o región este tipo de conexiones no está disponible, o simplemente no se tiene internet, Arch linux no es 
@@ -72,44 +73,46 @@ una opción. Para estas condiciones la mejor distro es Debian o alguna otra, ya 
 Así que en realidad Arch linux es dependiente del internet.
 
 
-1. Escoge el hardware.
+Escoge el hardware.
+--------------------
 
 Este es un punto para cualquier distribución linux, una idea equivocada es que linux corre en cualquier cosa. Esto es cierto, o casi. La cuestión es que no siempre 
 corre BIEN en cualquier hardware sino que como siempre: hay hardware mas compatible con linux y hay otro que da muchos problemas. Pongamos el ejemplo de Mac, mucha 
-gente opina que Mac corre muy bien, pero esto es en gran medida debido a que las computadoras apple manejan una lista reducida de hardware en todos sus dispositivos. Otro 
-punto muy importante es que tanto Windows como OS X, vienen preinstalados por defecto en las computadoras, lo que hace que el proveedor de hardware se encargue de 
+gente opina que Mac corre muy bien, pero esto es en gran medida debido a que las computadoras apple manejan una lista reducida de hardware en todos sus dispositivos. De 
+hecho OS X por su licencia no puede ser corrido legalmente fuera de hardware apple. Otro punto muy importante es que tanto Windows como OS X, vienen preinstalados por defecto en las computadoras, lo que hace que el proveedor de hardware se encargue de 
 checar la compatilidad con el hardware y proveer de los drivers para el sistema operativo.
+
 ¿O alguién ha intentado instalar OS X en la vieja computadora/tostador de hace 10 años?
 
 Esto en linux, no pasa ya que no viene preinstalado, si bien el kernel tiene soporte para la mayoría de los dispositivos comunes, siempre se 
 encotrara algún dispositivo raro en el cual no funcione.
 
-Rapidamente y haciendo uso de mi memoria agregaré una lista de hardware recomendado para que no sufras cuando instales Gnu/linux.
+Rapidamente y haciendo uso de mi memoria agregaré una lista de hardware recomendado para que no sufras cuando instales Gnu/linux:
 
 1. Si es posible compra una computadora con linux preinstalado.
-2. Compra una thinkpad. La mayoría de estas computadoras son certificadas por IBM para que funcionen con linux, existe además una wiki (thinkwiki) en donde se dan los 
-detalles de cada modelo en particular. Desgraciadamente son muy caras aunque vale la pena el gasto. Los desarrolladores de Linux usan este tipo de computadoras.
-3. Lo mejor es no apresurarse en comprar la última palabra en hardware ya que por lo general los drivers del kernel se retrasan un poco, esto pasa menos en ARch linx ya 
-que va con lo último y es una razón por la que es una buena opción utilizarlo en computadoras nuevas. Si se quiere tener lo último en hardware hay que revisar muy bien 
-los drivers.
+
+2. Compra una thinkpad. La mayoría de estas computadoras son certificadas por IBM para que funcionen con linux, existe además una wiki (thinkwiki) en donde se dan los detalles de cada modelo en particular. Desgraciadamente son muy caras aunque vale la pena el gasto. Los desarrolladores de Linux usan este tipo de computadoras.
+
+3. Lo mejor es no apresurarse en comprar la última palabra en hardware ya que por lo general los drivers del kernel se retrasan un poco, esto pasa menos en Arch linux 
+ya que va con lo último y es una razón por la que es una buena opción utilizarlo en computadoras nuevas. Si se quiere tener lo último en hardware hay que revisar muy bien los drivers.
 
 
 Tarjetas de video:
++++++++++++++++++++++++
 
-Lo mejor para linux son las tarjetas Intel integradas en los chips, desgraciadamente no son muy poderosas, por lo que si se requiere trabajar con diseño gráfico o jugar 
-lo mejor es optar por otro GPU.
+1. Lo mejor para linux son las tarjetas Intel integradas en los chips, desgraciadamente no son muy poderosas, por lo que si se requiere trabajar con diseño gráfico o jugar lo mejor es optar por otro GPU.
 
-La mejor opción es usar Nvidia, ya que los drivers privativos para linux tienen muy buen rendimiento. Los drivers libres para linux no funcionan muy bien.
+2. La mejor opción es usar Nvidia, ya que los drivers privativos para linux tienen muy buen rendimiento. Los drivers libres para linux no funcionan muy bien.
 
-Otra opción es usar AMD, si se usa AMD lo mejor es usar los drivers libres, ya que estos están bastante avanzados mucho más que los drivers libres de Nvidia. En Arch 
-linux lo mejor es EVITAR a toda costa los drivers privativos AMD a menos que se sepa lo que se está haciendo, ya que  hay cambiar partes importantes del sistema para 
-hacer que estos funcionen. Como estas "partes importantes" (servidor X) cambian seguido, lo más probable es que en algún momento algo se rompa, y nos quedemos sólo con la terminal.
+3. Otra opción es usar AMD, si se usa AMD lo mejor es usar los drivers libres, ya que estos están bastante avanzados mucho más que los drivers libres de Nvidia. En Arch linux lo mejor es EVITAR a toda costa los drivers privativos AMD a menos que se sepa lo que se está haciendo, ya que  hay cambiar partes importantes del sistema para hacer que estos funcionen. Como estas "partes importantes" (servidor X) cambian seguido, lo más probable es que en algún momento algo se rompa, y nos quedemos sólo con la terminal.
 
 Wifi:
+++++++++
 
 Lo mejor es usar tarjetas compatibles con Gnu/linux. Recomiendo las que tienen el chip de atheros y no recomiendo las broadcom.
 
 Impresoras.
+++++++++++++
 
 Mucho depende de la impresora que se compre. Siempre se tiene que checar antes de comprar si existen drivers opensource provistos por el fabricante de las impresoras 
 incluidos en la distribución. De no existir estos y depender de drivers binarios proporcionados por el fabricante la cosa se complica.
@@ -119,6 +122,7 @@ Luego varia, yo he tenido buenas experiencias con las impresoras Epson y malas c
 
 
 Otras cosas.
++++++++++++++++
 
 Siempre revisar mediante reseñas de internet u otras cosas si el hardware es compatible. La wiki de Arch a veces trae entradas sobre determinado hardware.
 
@@ -129,11 +133,12 @@ Haz al menos dos particiones, una para home y otra para /, ya que esto evitara p
 llene el disco.
 
 Una vez instalado Arch linux
---------------------------------
+----------------------------------
 
 
 Entorno de escritorio
------------------------
++++++++++++++++++++++++++
+
 Cómo Arch linux da el poder al usuario depende de ti escoger como se verá. Hay que escoger entorno de 
 escritorio. Lo mejor, si se tiene la suficiente capacidad en la computadora es optar por uno que esté completo como Gnome o KDE. XFCE no es mala opción.
 Los entornos de escritorio ligeros tienen una funcionalidad mas limitada y van a requerir que el usuario configure mas cosas,
@@ -141,25 +146,25 @@ pero por otra parte como son mas pequeños tienen menos puntos de falla. Aquí h
 
 Los entornos ligeros son:
 
-XFCE
-MATE
+* XFCE
+* MATE
 
 Los entornos "pesados" son:
 
-GNOME
-KDE
-CINNAMON
+* GNOME
+* KDE
+* CINNAMON
 
 Hay también "entornos" ultraligeros como:
 
-fluxbox 
-openbox 
+* fluxbox 
+* openbox 
 
 y muchos más.
 
 
 La base del sistema
-----------------------
+++++++++++++++++++++++
 
 Lo mejor es partir de una base estable del sistema. Para esto existen los paquetes linux-lts, un kernel que es mantenido aproximadamente por 6 meses, al cual sólo se 
 le hacen actualizaciones de seguridad, por lo que tienen menos riesgo de tener "regresiones". Esto sirve cuando se trabaja con drivers binarios como los de Nvidia.
@@ -175,7 +180,7 @@ Usa los menos drivers privativos posibles y evita compilar módulos del kernel d
 están en las repos oficiales así como los drivers virtualbox, pero no están los módulos para ZFS, por lo que este último requiere mas configuración y cuidado.
 
 Programas importantes
-----------------------
+++++++++++++++++++++++++
 
 Si para los programas importantes (yo diría que son aquellos de uso diario y que no pueden fallar) no te gusta que las versiones cambien cada semana ya que esto puede 
 retrasar tu trabajo por ejemplo por que unos iconos cambien de lugar, o por que cambien ciertas cosas entre versiones, utiliza los programas estables. Una de las 
@@ -193,7 +198,7 @@ embargo no acarrea muchos problemas si se trata de aplicaciones gráficas indepe
 
 
 Piensa antes de actualizar y busca el momento adecuado
-------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Las actualizaciones pueden romper cosas, si estás en medio de un trabajo importante no actualizes todavía, espera hasta que hayas terminado ese trabajo y después 
 actualiza. Mientras no instales programas nuevos un sistema Arch linux puede durar meses sin actualizar aunque no es recomendable. Lo mejor es actualizar al menos una 
@@ -205,7 +210,7 @@ linux o usa pacmatic un programa que lo hace por ti.
 
 
 Aprende a hacer downgrade.
--------------------------------
++++++++++++++++++++++++++++++++
 
 Si un nuevo paquete rompió algo es muy fácil regresar. Eso se logra mediante la Arch linux Rollback Machine, un repositorio que posee un historial de los paquetes de 
 Arch linux. Se puede hacer de manera manual, bajando el paquete e instalándolo con pacman o usar el script donwgrade disponible en la AUR. Este script se instala asi::
@@ -219,8 +224,20 @@ y se usa de la siguiente manera::
 Donwgrade despliegará las versiones a las cuales se puede hacer downgrade ya sea por que existen en el cache de paquetes o por que lo baja de la Rollback Machine.
 
 
+Usa wine lo menos posible
++++++++++++++++++++++++++++++
+Wine es un buen programa, lo que pasa es que muchas veces la gente espera que haga milagros. Par ser un programa escrito con ingeniería reversa y que corre nativamente 
+en linux a veces me sorprenden sus resultados. Procura usar solamente software libre para cualquier tarea y si está incluido en los repos oficiales es mejor. Casi 
+siempre hay programas equivalentes en linux a los que hay en windows. Lo mejor es acostumbrarse a su funcionalidad que hacer correr un programa nativo de windows en 
+linux. Si de cualquier manera es necesario, estas son las recomendaciones:
+
+* Usa Playonlinux en lugar de wine puro. Este facilita la instalación de algunos programas, y fija la versión del programa a una versión en parituclar de wine. Además te permite crear contenedores de programa, lo cual facilita restaurar un programa. Arch linux por su naturaleza rolling release cambia la versión de wine muy seguido, por lo que muchas veces debido a regresiones tu programa puede romperse. Play on linux lo evitará en parte.
+
+* Checa la compatibilidad del programa con wine, antes de instalarlo para evitar dolores de cabeza. Checa la base de datos de aplicaciones de wine. Si el prograa tiene menos de oro, lo mas probable es que haya que lidiar con problemas. Muchas veces los programas viejos (por ejemplo para windows xp) corren a veces mejor que en las nuevas versiones de windows. Los programas que no hacen uso intensido de gráficos también tienden a correr mejor.
+
+
 No entres en pánico si no hay entorno gráfico
-----------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 Si por ejemplo se te cae el entorno gráfico y sólo ves letras, no entres en pánico. Lo mejor es tener una serie de herramientas, algo así como un kit de emergencia, 
 para salir de esta situación. Instala wifi-menu para hacer conexiones wifi sin entorno gráfico y links como navegador para buscar ayuda en la wiki de arch linux. 
@@ -229,32 +246,32 @@ Aprende a usar la terminal de manera básica. También y esto me ha pasado en va
 por lo que a veces hay que limpiar el cache de pacman.
 
 Usa Btrfs
-------------
++++++++++++++
 
 Si usas este sistema de archivos el cual en Arch linux ya es usable ya que está en sus versiones recientes puedes hacer snapshots del sistema por si algo llegara a 
 fallar. Aunque esto requiere algo de conocimientos.
 
 
 Ten a la mano un disco de instalación de Arch linux para tareas de rescate
-----------------------------------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Ahora vamos pasando a las medidas de emergencia. Lo mejor es siempre tener un USB o Cd booteable con Arch linux por si algo pasa y es necesario entrar a reparar el 
 sistema, lo mejor es saber como se hace esto. Se puede leer el artículo sobre chroot o algo sobre rescatando sistemas en la wiki de Arch.
-Otras distros como gflxr proveen de herramientas ya preinstaladas. No voy a entrar en detalle ya que sería muy largo.
+Otras distros como grml proveen de herramientas ya preinstaladas. No voy a entrar en detalle ya que sería muy largo.
 
 Herramientas útiles para chequeos de sistema:
 
-smartctl: para checar los discos duros
-testdisk: para recuperar archivos de discos duros dañados.
-dd: de nuevo mas recuperación de archivos y clonación de dispositivos.
-luks: Abrir particiones encriptadas.
-grub: El sistema de arranque.
+* smartctl: para checar los discos duros
+* testdisk: para recuperar archivos de discos duros dañados.
+* dd: de nuevo mas recuperación de archivos y clonación de dispositivos.
+* luks: Abrir particiones encriptadas.
+* grub: El sistema de arranque.
 
 Haz chequeos periódicos del sistema, por ejemplo usa gsmartctl para checar el estado de tus discos duros cada 6 meses, o habilita un servicio que lo haga por ti. Haz 
 chequeos de espacio en disco, o corrupción de archivos.
 
 
 Haz backups
----------------
++++++++++++++++
 
 Haz un backup de tus archivos importantes en otro disco, o si lo prefieres en la nube. Esto aplica para cualquier sistema. Como medida para arch linux guarda la lista 
 de paquetes instalados en un archivo de texto. Este lo puedes usar para reconstruir el sistema si algo falla.

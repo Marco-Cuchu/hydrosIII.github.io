@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>mi blog</title><link>https://hydrosiii.github.io/</link><description>mi blog</description><atom:link type="application/rss+xml" href="https://hydrosiii.github.io/rss.xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 22 Nov 2014 15:22:19 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Volviendo a Arch linux estable.</title><link>https://hydrosiii.github.io/posts/volviendo-a-arch-linux-estable.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Arch linux es una gran distribución linux, es muy flexible y adaptable
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mi blog</title><link>https://hydrosiii.github.io/</link><description>mi blog</description><atom:link type="application/rss+xml" rel="self" href="https://hydrosiii.github.io/rss.xml"></atom:link><language>es</language><lastBuildDate>Sat, 22 Nov 2014 15:58:41 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Volviendo a Arch linux "estable".</title><link>https://hydrosiii.github.io/posts/volviendo-a-arch-linux-estable.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Arch linux es una gran distribución linux, es muy flexible y adaptable
 al usuario de tal manera que se le puede llamar meta-distro. Sin embargo
 es una distribución rolling release, lo que significa que siempre tiene
 todo el software actualizado, por lo recibe todas las versiones nuevas
 de los paquetes, los cuales desde luego cambian. Es por eso que no es
-un sistema operativo estable.&lt;/p&gt;
+un sistema operativo estable. Esta es una guía para volverlos mas usable, aunque muchas de las cosas que aquí se dicen, aplican para
+cualquier sistema Gnu/linux, y muchas veces por extensión a cualquier SO.&lt;/p&gt;
 &lt;div class="section" id="que-es-estabilidad"&gt;
 &lt;h2&gt;¿Que es estabilidad?&lt;/h2&gt;
 &lt;p&gt;Antes de entrar en discusión, hay que definir sobre que se discute, para
@@ -42,52 +43,56 @@ revisados, o a veces rompen funcionalidades de versiones anteriores.&lt;/p&gt;
 a programar o editar música, es decir todo, excluyendo quizá el montar servidores con Arch Linux, cosa que a mi parecer no es recomendable.&lt;/p&gt;
 &lt;p&gt;Es por eso que haré un resumen de los puntos con mi experiencia de Arch linux para ver como se logra un sistema útil, que aunque no sea estable (en el sentido
 anterior), siempre se pueda trabajar en él de manera amena y sin quebraderos de cabeza.&lt;/p&gt;
-&lt;p&gt;¿Es Arch linux para mí?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="es-arch-linux-para-mi"&gt;
+&lt;h2&gt;¿Es Arch linux para mí?&lt;/h2&gt;
 &lt;p&gt;Antes de todo lo mejor es decidir si a pesar de todo lo anteriomente dicho no es mejor optar por una distribución estable. Ya que Arch linux pide un poco mas de
 conocimiento por parte del usuario para mantener el sistema. Hay muchas distribuciones mucho más fáciles de usar. Arch linux y en general las distro rolling release
 requieren de bastante ancho de banda por lo que si en tu país o región este tipo de conexiones no está disponible, o simplemente no se tiene internet, Arch linux no es
 una opción. Para estas condiciones la mejor distro es Debian o alguna otra, ya que cuenta con CD's y DVD de actualización desde donde instalar y actualizar el software.
 Así que en realidad Arch linux es dependiente del internet.&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Escoge el hardware.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="escoge-el-hardware"&gt;
+&lt;h2&gt;Escoge el hardware.&lt;/h2&gt;
 &lt;p&gt;Este es un punto para cualquier distribución linux, una idea equivocada es que linux corre en cualquier cosa. Esto es cierto, o casi. La cuestión es que no siempre
 corre BIEN en cualquier hardware sino que como siempre: hay hardware mas compatible con linux y hay otro que da muchos problemas. Pongamos el ejemplo de Mac, mucha
-gente opina que Mac corre muy bien, pero esto es en gran medida debido a que las computadoras apple manejan una lista reducida de hardware en todos sus dispositivos. Otro
-punto muy importante es que tanto Windows como OS X, vienen preinstalados por defecto en las computadoras, lo que hace que el proveedor de hardware se encargue de
-checar la compatilidad con el hardware y proveer de los drivers para el sistema operativo.
-¿O alguién ha intentado instalar OS X en la vieja computadora/tostador de hace 10 años?&lt;/p&gt;
+gente opina que Mac corre muy bien, pero esto es en gran medida debido a que las computadoras apple manejan una lista reducida de hardware en todos sus dispositivos. De
+hecho OS X por su licencia no puede ser corrido legalmente fuera de hardware apple. Otro punto muy importante es que tanto Windows como OS X, vienen preinstalados por defecto en las computadoras, lo que hace que el proveedor de hardware se encargue de
+checar la compatilidad con el hardware y proveer de los drivers para el sistema operativo.&lt;/p&gt;
+&lt;p&gt;¿O alguién ha intentado instalar OS X en la vieja computadora/tostador de hace 10 años?&lt;/p&gt;
 &lt;p&gt;Esto en linux, no pasa ya que no viene preinstalado, si bien el kernel tiene soporte para la mayoría de los dispositivos comunes, siempre se
 encotrara algún dispositivo raro en el cual no funcione.&lt;/p&gt;
-&lt;p&gt;Rapidamente y haciendo uso de mi memoria agregaré una lista de hardware recomendado para que no sufras cuando instales Gnu/linux.&lt;/p&gt;
+&lt;p&gt;Rapidamente y haciendo uso de mi memoria agregaré una lista de hardware recomendado para que no sufras cuando instales Gnu/linux:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Si es posible compra una computadora con linux preinstalado.&lt;/li&gt;
+&lt;li&gt;Compra una thinkpad. La mayoría de estas computadoras son certificadas por IBM para que funcionen con linux, existe además una wiki (thinkwiki) en donde se dan los detalles de cada modelo en particular. Desgraciadamente son muy caras aunque vale la pena el gasto. Los desarrolladores de Linux usan este tipo de computadoras.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 82)&lt;/p&gt;
-Enumerated list ends without a blank line; unexpected unindent.&lt;/div&gt;
-&lt;p&gt;2. Compra una thinkpad. La mayoría de estas computadoras son certificadas por IBM para que funcionen con linux, existe además una wiki (thinkwiki) en donde se dan los
-detalles de cada modelo en particular. Desgraciadamente son muy caras aunque vale la pena el gasto. Los desarrolladores de Linux usan este tipo de computadoras.
-3. Lo mejor es no apresurarse en comprar la última palabra en hardware ya que por lo general los drivers del kernel se retrasan un poco, esto pasa menos en ARch linx ya
-que va con lo último y es una razón por la que es una buena opción utilizarlo en computadoras nuevas. Si se quiere tener lo último en hardware hay que revisar muy bien
-los drivers.&lt;/p&gt;
-&lt;p&gt;Tarjetas de video:&lt;/p&gt;
-&lt;p&gt;Lo mejor para linux son las tarjetas Intel integradas en los chips, desgraciadamente no son muy poderosas, por lo que si se requiere trabajar con diseño gráfico o jugar
-lo mejor es optar por otro GPU.&lt;/p&gt;
-&lt;p&gt;La mejor opción es usar Nvidia, ya que los drivers privativos para linux tienen muy buen rendimiento. Los drivers libres para linux no funcionan muy bien.&lt;/p&gt;
-&lt;p&gt;Otra opción es usar AMD, si se usa AMD lo mejor es usar los drivers libres, ya que estos están bastante avanzados mucho más que los drivers libres de Nvidia. En Arch
-linux lo mejor es EVITAR a toda costa los drivers privativos AMD a menos que se sepa lo que se está haciendo, ya que  hay cambiar partes importantes del sistema para
-hacer que estos funcionen. Como estas "partes importantes" (servidor X) cambian seguido, lo más probable es que en algún momento algo se rompa, y nos quedemos sólo con la terminal.&lt;/p&gt;
-&lt;p&gt;Wifi:&lt;/p&gt;
+&lt;p&gt;3. Lo mejor es no apresurarse en comprar la última palabra en hardware ya que por lo general los drivers del kernel se retrasan un poco, esto pasa menos en Arch linux
+ya que va con lo último y es una razón por la que es una buena opción utilizarlo en computadoras nuevas. Si se quiere tener lo último en hardware hay que revisar muy bien los drivers.&lt;/p&gt;
+&lt;div class="section" id="tarjetas-de-video"&gt;
+&lt;h3&gt;Tarjetas de video:&lt;/h3&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Lo mejor para linux son las tarjetas Intel integradas en los chips, desgraciadamente no son muy poderosas, por lo que si se requiere trabajar con diseño gráfico o jugar lo mejor es optar por otro GPU.&lt;/li&gt;
+&lt;li&gt;La mejor opción es usar Nvidia, ya que los drivers privativos para linux tienen muy buen rendimiento. Los drivers libres para linux no funcionan muy bien.&lt;/li&gt;
+&lt;li&gt;Otra opción es usar AMD, si se usa AMD lo mejor es usar los drivers libres, ya que estos están bastante avanzados mucho más que los drivers libres de Nvidia. En Arch linux lo mejor es EVITAR a toda costa los drivers privativos AMD a menos que se sepa lo que se está haciendo, ya que  hay cambiar partes importantes del sistema para hacer que estos funcionen. Como estas "partes importantes" (servidor X) cambian seguido, lo más probable es que en algún momento algo se rompa, y nos quedemos sólo con la terminal.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wifi"&gt;
+&lt;h3&gt;Wifi:&lt;/h3&gt;
 &lt;p&gt;Lo mejor es usar tarjetas compatibles con Gnu/linux. Recomiendo las que tienen el chip de atheros y no recomiendo las broadcom.&lt;/p&gt;
-&lt;p&gt;Impresoras.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="impresoras"&gt;
+&lt;h3&gt;Impresoras.&lt;/h3&gt;
 &lt;p&gt;Mucho depende de la impresora que se compre. Siempre se tiene que checar antes de comprar si existen drivers opensource provistos por el fabricante de las impresoras
 incluidos en la distribución. De no existir estos y depender de drivers binarios proporcionados por el fabricante la cosa se complica.
 Si la impresora sólo tiene drivers opensource conseguidos mediante ingenería reversa lo mejor es evitarla.
 La instalacion de las impresoras con drivers opensource generalmente es sólo conectar e imprimir. Me parece que la mejor marca en este sentido es HP y la peor Canon.
 Luego varia, yo he tenido buenas experiencias con las impresoras Epson y malas con las Brother. Pero el punto es que siempre hay que revisar antes de comprar.&lt;/p&gt;
-&lt;p&gt;Otras cosas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="otras-cosas"&gt;
+&lt;h3&gt;Otras cosas.&lt;/h3&gt;
 &lt;p&gt;Siempre revisar mediante reseñas de internet u otras cosas si el hardware es compatible. La wiki de Arch a veces trae entradas sobre determinado hardware.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="instalacion-de-arch-linux"&gt;
 &lt;h2&gt;Instalación de Arch linux&lt;/h2&gt;
@@ -96,27 +101,32 @@ llene el disco.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="una-vez-instalado-arch-linux"&gt;
 &lt;h2&gt;Una vez instalado Arch linux&lt;/h2&gt;
-&lt;/div&gt;
 &lt;div class="section" id="entorno-de-escritorio"&gt;
-&lt;h2&gt;Entorno de escritorio&lt;/h2&gt;
+&lt;h3&gt;Entorno de escritorio&lt;/h3&gt;
 &lt;p&gt;Cómo Arch linux da el poder al usuario depende de ti escoger como se verá. Hay que escoger entorno de
 escritorio. Lo mejor, si se tiene la suficiente capacidad en la computadora es optar por uno que esté completo como Gnome o KDE. XFCE no es mala opción.
 Los entornos de escritorio ligeros tienen una funcionalidad mas limitada y van a requerir que el usuario configure mas cosas,
 pero por otra parte como son mas pequeños tienen menos puntos de falla. Aquí hay que escoger igualmente de acuerdo al hardware y gustos.&lt;/p&gt;
 &lt;p&gt;Los entornos ligeros son:&lt;/p&gt;
-&lt;p&gt;XFCE
-MATE&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;XFCE&lt;/li&gt;
+&lt;li&gt;MATE&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Los entornos "pesados" son:&lt;/p&gt;
-&lt;p&gt;GNOME
-KDE
-CINNAMON&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;GNOME&lt;/li&gt;
+&lt;li&gt;KDE&lt;/li&gt;
+&lt;li&gt;CINNAMON&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Hay también "entornos" ultraligeros como:&lt;/p&gt;
-&lt;p&gt;fluxbox
-openbox&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;fluxbox&lt;/li&gt;
+&lt;li&gt;openbox&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;y muchos más.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="la-base-del-sistema"&gt;
-&lt;h2&gt;La base del sistema&lt;/h2&gt;
+&lt;h3&gt;La base del sistema&lt;/h3&gt;
 &lt;p&gt;Lo mejor es partir de una base estable del sistema. Para esto existen los paquetes linux-lts, un kernel que es mantenido aproximadamente por 6 meses, al cual sólo se
 le hacen actualizaciones de seguridad, por lo que tienen menos riesgo de tener "regresiones". Esto sirve cuando se trabaja con drivers binarios como los de Nvidia.
 Asimismo hay que asegurarse de que los drivers binarios se provean desde repos oficiales en la medida de lo posible.&lt;/p&gt;
@@ -128,7 +138,7 @@ de Escritorio.&lt;/p&gt;
 están en las repos oficiales así como los drivers virtualbox, pero no están los módulos para ZFS, por lo que este último requiere mas configuración y cuidado.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="programas-importantes"&gt;
-&lt;h2&gt;Programas importantes&lt;/h2&gt;
+&lt;h3&gt;Programas importantes&lt;/h3&gt;
 &lt;p&gt;Si para los programas importantes (yo diría que son aquellos de uso diario y que no pueden fallar) no te gusta que las versiones cambien cada semana ya que esto puede
 retrasar tu trabajo por ejemplo por que unos iconos cambien de lugar, o por que cambien ciertas cosas entre versiones, utiliza los programas estables. Una de las
 ventajas de Arch linux es que es relativamente fácil instalar distintas versiones de los programas.&lt;/p&gt;
@@ -141,7 +151,7 @@ mas avanzado, pero la wiki de arch linux en el apartado dedicado a makepkg lo ex
 embargo no acarrea muchos problemas si se trata de aplicaciones gráficas independientes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="piensa-antes-de-actualizar-y-busca-el-momento-adecuado"&gt;
-&lt;h2&gt;Piensa antes de actualizar y busca el momento adecuado&lt;/h2&gt;
+&lt;h3&gt;Piensa antes de actualizar y busca el momento adecuado&lt;/h3&gt;
 &lt;p&gt;Las actualizaciones pueden romper cosas, si estás en medio de un trabajo importante no actualizes todavía, espera hasta que hayas terminado ese trabajo y después
 actualiza. Mientras no instales programas nuevos un sistema Arch linux puede durar meses sin actualizar aunque no es recomendable. Lo mejor es actualizar al menos una
 vez a la semana.&lt;/p&gt;
@@ -149,7 +159,7 @@ vez a la semana.&lt;/p&gt;
 linux o usa pacmatic un programa que lo hace por ti.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="aprende-a-hacer-downgrade"&gt;
-&lt;h2&gt;Aprende a hacer downgrade.&lt;/h2&gt;
+&lt;h3&gt;Aprende a hacer downgrade.&lt;/h3&gt;
 &lt;p&gt;Si un nuevo paquete rompió algo es muy fácil regresar. Eso se logra mediante la Arch linux Rollback Machine, un repositorio que posee un historial de los paquetes de
 Arch linux. Se puede hacer de manera manual, bajando el paquete e instalándolo con pacman o usar el script donwgrade disponible en la AUR. Este script se instala asi:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -161,8 +171,19 @@ downgrade firefox
 &lt;/pre&gt;
 &lt;p&gt;Donwgrade despliegará las versiones a las cuales se puede hacer downgrade ya sea por que existen en el cache de paquetes o por que lo baja de la Rollback Machine.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="usa-wine-lo-menos-posible"&gt;
+&lt;h3&gt;Usa wine lo menos posible&lt;/h3&gt;
+&lt;p&gt;Wine es un buen programa, lo que pasa es que muchas veces la gente espera que haga milagros. Par ser un programa escrito con ingeniería reversa y que corre nativamente
+en linux a veces me sorprenden sus resultados. Procura usar solamente software libre para cualquier tarea y si está incluido en los repos oficiales es mejor. Casi
+siempre hay programas equivalentes en linux a los que hay en windows. Lo mejor es acostumbrarse a su funcionalidad que hacer correr un programa nativo de windows en
+linux. Si de cualquier manera es necesario, estas son las recomendaciones:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Usa Playonlinux en lugar de wine puro. Este facilita la instalación de algunos programas, y fija la versión del programa a una versión en parituclar de wine. Además te permite crear contenedores de programa, lo cual facilita restaurar un programa. Arch linux por su naturaleza rolling release cambia la versión de wine muy seguido, por lo que muchas veces debido a regresiones tu programa puede romperse. Play on linux lo evitará en parte.&lt;/li&gt;
+&lt;li&gt;Checa la compatibilidad del programa con wine, antes de instalarlo para evitar dolores de cabeza. Checa la base de datos de aplicaciones de wine. Si el prograa tiene menos de oro, lo mas probable es que haya que lidiar con problemas. Muchas veces los programas viejos (por ejemplo para windows xp) corren a veces mejor que en las nuevas versiones de windows. Los programas que no hacen uso intensido de gráficos también tienden a correr mejor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 &lt;div class="section" id="no-entres-en-panico-si-no-hay-entorno-grafico"&gt;
-&lt;h2&gt;No entres en pánico si no hay entorno gráfico&lt;/h2&gt;
+&lt;h3&gt;No entres en pánico si no hay entorno gráfico&lt;/h3&gt;
 &lt;p&gt;Si por ejemplo se te cae el entorno gráfico y sólo ves letras, no entres en pánico. Lo mejor es tener una serie de herramientas, algo así como un kit de emergencia,
 para salir de esta situación. Instala wifi-menu para hacer conexiones wifi sin entorno gráfico y links como navegador para buscar ayuda en la wiki de arch linux.
 Aprende a usar pacman y downgrade. Checa el archivo /var/log/pacman.log e identifica el paquete ofensor. Haz un downgrade. No reinstales y no entres en pánico.
@@ -170,28 +191,31 @@ Aprende a usar la terminal de manera básica. También y esto me ha pasado en va
 por lo que a veces hay que limpiar el cache de pacman.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="usa-btrfs"&gt;
-&lt;h2&gt;Usa Btrfs&lt;/h2&gt;
+&lt;h3&gt;Usa Btrfs&lt;/h3&gt;
 &lt;p&gt;Si usas este sistema de archivos el cual en Arch linux ya es usable ya que está en sus versiones recientes puedes hacer snapshots del sistema por si algo llegara a
 fallar. Aunque esto requiere algo de conocimientos.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ten-a-la-mano-un-disco-de-instalacion-de-arch-linux-para-tareas-de-rescate"&gt;
-&lt;h2&gt;Ten a la mano un disco de instalación de Arch linux para tareas de rescate&lt;/h2&gt;
+&lt;h3&gt;Ten a la mano un disco de instalación de Arch linux para tareas de rescate&lt;/h3&gt;
 &lt;p&gt;Ahora vamos pasando a las medidas de emergencia. Lo mejor es siempre tener un USB o Cd booteable con Arch linux por si algo pasa y es necesario entrar a reparar el
 sistema, lo mejor es saber como se hace esto. Se puede leer el artículo sobre chroot o algo sobre rescatando sistemas en la wiki de Arch.
-Otras distros como gflxr proveen de herramientas ya preinstaladas. No voy a entrar en detalle ya que sería muy largo.&lt;/p&gt;
+Otras distros como grml proveen de herramientas ya preinstaladas. No voy a entrar en detalle ya que sería muy largo.&lt;/p&gt;
 &lt;p&gt;Herramientas útiles para chequeos de sistema:&lt;/p&gt;
-&lt;p&gt;smartctl: para checar los discos duros
-testdisk: para recuperar archivos de discos duros dañados.
-dd: de nuevo mas recuperación de archivos y clonación de dispositivos.
-luks: Abrir particiones encriptadas.
-grub: El sistema de arranque.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;smartctl: para checar los discos duros&lt;/li&gt;
+&lt;li&gt;testdisk: para recuperar archivos de discos duros dañados.&lt;/li&gt;
+&lt;li&gt;dd: de nuevo mas recuperación de archivos y clonación de dispositivos.&lt;/li&gt;
+&lt;li&gt;luks: Abrir particiones encriptadas.&lt;/li&gt;
+&lt;li&gt;grub: El sistema de arranque.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Haz chequeos periódicos del sistema, por ejemplo usa gsmartctl para checar el estado de tus discos duros cada 6 meses, o habilita un servicio que lo haga por ti. Haz
 chequeos de espacio en disco, o corrupción de archivos.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="haz-backups"&gt;
-&lt;h2&gt;Haz backups&lt;/h2&gt;
+&lt;h3&gt;Haz backups&lt;/h3&gt;
 &lt;p&gt;Haz un backup de tus archivos importantes en otro disco, o si lo prefieres en la nube. Esto aplica para cualquier sistema. Como medida para arch linux guarda la lista
 de paquetes instalados en un archivo de texto. Este lo puedes usar para reconstruir el sistema si algo falla.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>Arch linux</category><guid>https://hydrosiii.github.io/posts/volviendo-a-arch-linux-estable.html</guid><pubDate>Wed, 19 Nov 2014 08:22:07 GMT</pubDate></item><item><title>Administrando lemonpos con phpmyadmin.</title><link>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Lemonpos es un buen programa para poner una terminal de punto de venta y
 está hecho con software libre. Sin embargo el administrador squeeze,
 aunque es útil muchas veces no tiene tantas opciones. Una opción para
@@ -648,10 +672,10 @@ desde lejos, es decir desde otra máquina, además de producir algunos reportes.
 errores de la última versión que se consigue en sourceforge están
 corregidos. Además de los que están en este artículo.&lt;/p&gt;
 &lt;p&gt;Los cambios importantes con los siguientes:&lt;/p&gt;
-&lt;p&gt;1.Las traducciones al español funcionan bien, he adicionado traducciones
-que faltaban.
-2. Quite la funcionalidad de facturas CBB ya que estas no se usan más en
-México.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Las traducciones al español funcionan bien, he adicionado traducciones que faltaban.&lt;/li&gt;
+&lt;li&gt;Quite la funcionalidad de facturas CBB ya que estas no se usan más en México.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;En realidad nada nuevo, pero corregí algunos detalles.&lt;/p&gt;
 &lt;p&gt;Pasen por mi página en github para descargar el nuevo código fuente.
 Usen la rama estable.&lt;/p&gt;

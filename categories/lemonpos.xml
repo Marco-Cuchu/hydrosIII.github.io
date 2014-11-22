@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>mi blog (lemonpos)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link type="application/rss+xml" href="https://hydrosiii.github.io/categories/lemonpos.xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 22 Nov 2014 15:22:19 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Administrando lemonpos con phpmyadmin.</title><link>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Lemonpos es un buen programa para poner una terminal de punto de venta y
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>mi blog (lemonpos)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link type="application/rss+xml" href="https://hydrosiii.github.io/categories/lemonpos.xml" rel="self"></atom:link><language>es</language><lastBuildDate>Sat, 22 Nov 2014 15:47:48 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Administrando lemonpos con phpmyadmin.</title><link>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Lemonpos es un buen programa para poner una terminal de punto de venta y
 está hecho con software libre. Sin embargo el administrador squeeze,
 aunque es útil muchas veces no tiene tantas opciones. Una opción para
 superar esta limitación es usar un administrador de base de datos y que
@@ -307,10 +307,10 @@ desde lejos, es decir desde otra máquina, además de producir algunos reportes.
 errores de la última versión que se consigue en sourceforge están
 corregidos. Además de los que están en este artículo.&lt;/p&gt;
 &lt;p&gt;Los cambios importantes con los siguientes:&lt;/p&gt;
-&lt;p&gt;1.Las traducciones al español funcionan bien, he adicionado traducciones
-que faltaban.
-2. Quite la funcionalidad de facturas CBB ya que estas no se usan más en
-México.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Las traducciones al español funcionan bien, he adicionado traducciones que faltaban.&lt;/li&gt;
+&lt;li&gt;Quite la funcionalidad de facturas CBB ya que estas no se usan más en México.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;En realidad nada nuevo, pero corregí algunos detalles.&lt;/p&gt;
 &lt;p&gt;Pasen por mi página en github para descargar el nuevo código fuente.
 Usen la rama estable.&lt;/p&gt;
