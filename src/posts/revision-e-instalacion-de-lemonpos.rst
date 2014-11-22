@@ -274,3 +274,22 @@ asi de como conectarse remotamente con lemon, para actualziar el inventario
 desde lejos, es decir desde otra máquina, además de producir algunos reportes.
 
 
+Actualizacion importante:
+-----------------------------
+
+Actualmente está lista una versión estable para lemonpos, en donde los
+errores de la última versión que se consigue en sourceforge están
+corregidos. Además de los que están en este artículo.
+
+Los cambios importantes con los siguientes:
+
+1.Las traducciones al español funcionan bien, he adicionado traducciones
+que faltaban.
+2. Quite la funcionalidad de facturas CBB ya que estas no se usan más en
+México.
+
+En realidad nada nuevo, pero corregí algunos detalles.
+
+Pasen por mi página en github para descargar el nuevo código fuente.
+Usen la rama estable.
+

@@ -1,0 +1,262 @@
+.. title: Volviendo a Arch linux estable.
+.. slug: volviendo-a-arch-linux-estable
+.. date: 2014-11-19 02:22:07 UTC-06:00
+.. tags: Arch linux
+.. link: 
+.. description: 
+.. type: text
+
+Arch linux es una gran distribución linux, es muy flexible y adaptable 
+al usuario de tal manera que se le puede llamar meta-distro. Sin embargo 
+es una distribución rolling release, lo que significa que siempre tiene 
+todo el software actualizado, por lo recibe todas las versiones nuevas 
+de los paquetes, los cuales desde luego cambian. Es por eso que no es 
+un sistema operativo estable.
+
+
+¿Que es estabilidad?
+----------------------
+
+Antes de entrar en discusión, hay que definir sobre que se discute, para 
+empezar la RAE define estable como::
+
+	Estable:	
+	 adj. Que se mantiene sin peligro de cambiar, caer o 
+	desaparecer. 
+
+
+siendo esta una definición muy básica a mi parecer, pero que me sirve para empezar una reflexión sobre la estabilidad. Es así que cuando se habla  de software se dice 
+que un programa no es estable cuando este falla, la palabra, creo, está mal utilizado en este caso. En mi opinión si un programa
+falla seguido, lo hace de manera estable, es decir sin cambios, siempre falla de la misma manera, por lo que es un programa estable, o al menos falla establemente. Esto 
+hace que sea un programa estable pero poco funcional o lleno de bugs.
+
+Pienso que la definición de estable se debe enfocar sobretodo en la cualidad del no-cambio, por que una cosa es la estabilidad y otra la funcionalidad. Sin embargo en 
+la informática se  define a un software como estable cuando funciona bien. Pero repito que esta mal utilizado. Un ejemplo de estabilidad podría ser un sistema como 
+windows Xp, que más bien sería definido como inmutable: bueno, siii funciona, no funciona bien, pero no se mueve, las aplicaciones siguen funcionando desde hace 10 
+años, ¿No?.
+
+Pues si, es por esto que en modelos de software privativos como es MS windows se privilegia tanto la estabilidad de las cosas, ya que el software se vende en este tipo 
+de sistemas, por lo que recompilar software para hacerlo compatible con nuevas versiones no es rentable. Claro esto hace que no existan nuevas cosas en el Sistema 
+operativo y en las aplicaciones en sí, y que tengan poca seguridad estos sistemas.
+
+En los sistemas Gnu/linux también se ofrece estabilidad, sobretodo para los entornos corporativos, por ejemplo cada uno de los releases de Red Hat linux 
+tiene más de 10 años de soporte. Debian ofrece soporte por cerca de 4 años (con su versión LTS), mientras que Ubuntu ofrece soporte por 5 años. Estas son distros 
+enfocadas en la estabilidad, diciendo simplemente que las cosas no cambien. Este es el modelo que prima en entornos coroporativos, ya que obviamente no se va a cambiar 
+el sistema operativo ni sus partes en una empresa cada semana. Otra distribución estable es SLES.
+
+En estas distribuciones rara vez cambian las partes de las que estan hechas, quedándose en las mismas versiones de los programas, esto con el fin de facilitar las 
+cosas a los administradores de sistemas. Sin embargo parchan cosas como agujeros de seguridad teniendo cuidado de no tocar mucho el sistema. 
+
+
+Arch linux no es estable
+-------------------------------
+
+Bueno al grano, todo esta palabrería es para argumentar el siguiente punto: Arch linux no es estable. Simplemente eso, Arch linux cambia diario, recibe actualizaciones 
+muy seguido y sus versiones de paquetes se mantienen en la última. Eso no significa que falle o que no sea funcional. Arch linux no usa software beta, usa las últimas 
+versiones de cada paquete que en teoría deberían de funcionar bien. La cuestión es que como son paquetes nuevos muchas veces tienen algunos bugs que no han sido 
+revisados, o a veces rompen funcionalidades de versiones anteriores.
+
+La cuestion es ¿Cómo lograr que este constante cambio no interfiera con las tareas diarias de un usuario?. Con tareas diarías me refiero desde leer noticias en internet 
+a programar o editar música, es decir todo, excluyendo quizá el montar servidores con Arch Linux, cosa que a mi parecer no es recomendable.
+
+Es por eso que haré un resumen de los puntos con mi experiencia de Arch linux para ver como se logra un sistema útil, que aunque no sea estable (en el sentido 
+anterior), siempre se pueda trabajar en él de manera amena y sin quebraderos de cabeza.
+
+
+¿Es Arch linux para mí?
+
+Antes de todo lo mejor es decidir si a pesar de todo lo anteriomente dicho no es mejor optar por una distribución estable. Ya que Arch linux pide un poco mas de 
+conocimiento por parte del usuario para mantener el sistema. Hay muchas distribuciones mucho más fáciles de usar. Arch linux y en general las distro rolling release 
+requieren de bastante ancho de banda por lo que si en tu país o región este tipo de conexiones no está disponible, o simplemente no se tiene internet, Arch linux no es 
+una opción. Para estas condiciones la mejor distro es Debian o alguna otra, ya que cuenta con CD's y DVD de actualización desde donde instalar y actualizar el software. 
+Así que en realidad Arch linux es dependiente del internet.
+
+
+1. Escoge el hardware.
+
+Este es un punto para cualquier distribución linux, una idea equivocada es que linux corre en cualquier cosa. Esto es cierto, o casi. La cuestión es que no siempre 
+corre BIEN en cualquier hardware sino que como siempre: hay hardware mas compatible con linux y hay otro que da muchos problemas. Pongamos el ejemplo de Mac, mucha 
+gente opina que Mac corre muy bien, pero esto es en gran medida debido a que las computadoras apple manejan una lista reducida de hardware en todos sus dispositivos. Otro 
+punto muy importante es que tanto Windows como OS X, vienen preinstalados por defecto en las computadoras, lo que hace que el proveedor de hardware se encargue de 
+checar la compatilidad con el hardware y proveer de los drivers para el sistema operativo.
+¿O alguién ha intentado instalar OS X en la vieja computadora/tostador de hace 10 años?
+
+Esto en linux, no pasa ya que no viene preinstalado, si bien el kernel tiene soporte para la mayoría de los dispositivos comunes, siempre se 
+encotrara algún dispositivo raro en el cual no funcione.
+
+Rapidamente y haciendo uso de mi memoria agregaré una lista de hardware recomendado para que no sufras cuando instales Gnu/linux.
+
+1. Si es posible compra una computadora con linux preinstalado.
+2. Compra una thinkpad. La mayoría de estas computadoras son certificadas por IBM para que funcionen con linux, existe además una wiki (thinkwiki) en donde se dan los 
+detalles de cada modelo en particular. Desgraciadamente son muy caras aunque vale la pena el gasto. Los desarrolladores de Linux usan este tipo de computadoras.
+3. Lo mejor es no apresurarse en comprar la última palabra en hardware ya que por lo general los drivers del kernel se retrasan un poco, esto pasa menos en ARch linx ya 
+que va con lo último y es una razón por la que es una buena opción utilizarlo en computadoras nuevas. Si se quiere tener lo último en hardware hay que revisar muy bien 
+los drivers.
+
+
+Tarjetas de video:
+
+Lo mejor para linux son las tarjetas Intel integradas en los chips, desgraciadamente no son muy poderosas, por lo que si se requiere trabajar con diseño gráfico o jugar 
+lo mejor es optar por otro GPU.
+
+La mejor opción es usar Nvidia, ya que los drivers privativos para linux tienen muy buen rendimiento. Los drivers libres para linux no funcionan muy bien.
+
+Otra opción es usar AMD, si se usa AMD lo mejor es usar los drivers libres, ya que estos están bastante avanzados mucho más que los drivers libres de Nvidia. En Arch 
+linux lo mejor es EVITAR a toda costa los drivers privativos AMD a menos que se sepa lo que se está haciendo, ya que  hay cambiar partes importantes del sistema para 
+hacer que estos funcionen. Como estas "partes importantes" (servidor X) cambian seguido, lo más probable es que en algún momento algo se rompa, y nos quedemos sólo con la terminal.
+
+Wifi:
+
+Lo mejor es usar tarjetas compatibles con Gnu/linux. Recomiendo las que tienen el chip de atheros y no recomiendo las broadcom.
+
+Impresoras.
+
+Mucho depende de la impresora que se compre. Siempre se tiene que checar antes de comprar si existen drivers opensource provistos por el fabricante de las impresoras 
+incluidos en la distribución. De no existir estos y depender de drivers binarios proporcionados por el fabricante la cosa se complica.
+Si la impresora sólo tiene drivers opensource conseguidos mediante ingenería reversa lo mejor es evitarla. 
+La instalacion de las impresoras con drivers opensource generalmente es sólo conectar e imprimir. Me parece que la mejor marca en este sentido es HP y la peor Canon. 
+Luego varia, yo he tenido buenas experiencias con las impresoras Epson y malas con las Brother. Pero el punto es que siempre hay que revisar antes de comprar.
+
+
+Otras cosas.
+
+Siempre revisar mediante reseñas de internet u otras cosas si el hardware es compatible. La wiki de Arch a veces trae entradas sobre determinado hardware.
+
+Instalación de Arch linux
+----------------------------
+
+Haz al menos dos particiones, una para home y otra para /, ya que esto evitara problemas en el futuro, reduciendo el riesgo de perdida de datos, o problemas por que se 
+llene el disco.
+
+Una vez instalado Arch linux
+--------------------------------
+
+
+Entorno de escritorio
+-----------------------
+Cómo Arch linux da el poder al usuario depende de ti escoger como se verá. Hay que escoger entorno de 
+escritorio. Lo mejor, si se tiene la suficiente capacidad en la computadora es optar por uno que esté completo como Gnome o KDE. XFCE no es mala opción.
+Los entornos de escritorio ligeros tienen una funcionalidad mas limitada y van a requerir que el usuario configure mas cosas,
+pero por otra parte como son mas pequeños tienen menos puntos de falla. Aquí hay que escoger igualmente de acuerdo al hardware y gustos.
+
+Los entornos ligeros son:
+
+XFCE
+MATE
+
+Los entornos "pesados" son:
+
+GNOME
+KDE
+CINNAMON
+
+Hay también "entornos" ultraligeros como:
+
+fluxbox 
+openbox 
+
+y muchos más.
+
+
+La base del sistema
+----------------------
+
+Lo mejor es partir de una base estable del sistema. Para esto existen los paquetes linux-lts, un kernel que es mantenido aproximadamente por 6 meses, al cual sólo se 
+le hacen actualizaciones de seguridad, por lo que tienen menos riesgo de tener "regresiones". Esto sirve cuando se trabaja con drivers binarios como los de Nvidia.
+Asimismo hay que asegurarse de que los drivers binarios se provean desde repos oficiales en la medida de lo posible.
+
+Si el kernel-lts no funciona para ti, puedes quedarte estable en una determinada versión del kernel, añadiendo al archivo pacman.conf el paquete linux para ser 
+ignorado.
+
+Adicionalmente Arch linux tiene repos no oficiales para linux-ck y linux-pf dos importantes derivaciones del kernel linux, hechas para que corra mejor en computadoras 
+de Escritorio.
+
+Usa los menos drivers privativos posibles y evita compilar módulos del kernel de terceros no provistos por los repositorios oficiales. Por ejemplo los módulos Nvidia 
+están en las repos oficiales así como los drivers virtualbox, pero no están los módulos para ZFS, por lo que este último requiere mas configuración y cuidado.
+
+Programas importantes
+----------------------
+
+Si para los programas importantes (yo diría que son aquellos de uso diario y que no pueden fallar) no te gusta que las versiones cambien cada semana ya que esto puede 
+retrasar tu trabajo por ejemplo por que unos iconos cambien de lugar, o por que cambien ciertas cosas entre versiones, utiliza los programas estables. Una de las 
+ventajas de Arch linux es que es relativamente fácil instalar distintas versiones de los programas.
+
+Para esto está la AUR, yo por ejemplo utilizo la version de Firefox-ESR ya que no me gusta que el navegador cambie seguido y rompa compatibilidad con plugins u otras cosas.
+También por ejemplo existe openoffice que se quedará si lo instalas en esa versión en lugar de libreoffice que es actualizado seguido. En genera todo el software de AUR no se 
+actualiza automaticamente, por lo que puede convertirse en un gran aliado para hacer un poco mas estable y funcional el sistema. 
+
+Se puede también recompilar los programas oficiales con un PKGBUILD propio, cambiandoles por ejemplo el nombre para evitar que sean actualizados, aunque esto es un poco 
+mas avanzado, pero la wiki de arch linux en el apartado dedicado a makepkg lo explica bien.
+
+Por último también se puede prohibir la actualización de ciertos paquetes en el archivo pacman.conf. Esto no es aconsejable si se trata de paquetes importantes sin 
+embargo no acarrea muchos problemas si se trata de aplicaciones gráficas independientes. 
+
+
+Piensa antes de actualizar y busca el momento adecuado
+------------------------------------------------------------
+
+Las actualizaciones pueden romper cosas, si estás en medio de un trabajo importante no actualizes todavía, espera hasta que hayas terminado ese trabajo y después 
+actualiza. Mientras no instales programas nuevos un sistema Arch linux puede durar meses sin actualizar aunque no es recomendable. Lo mejor es actualizar al menos una 
+vez a la semana.
+
+Si sabes de que pata cojea tu computadora retrasa el paquete, o no actualizes hasta hacer pruebas. Lee las noticias de actualización en la página principal de Arch 
+linux o usa pacmatic un programa que lo hace por ti.
+
+
+
+Aprende a hacer downgrade.
+-------------------------------
+
+Si un nuevo paquete rompió algo es muy fácil regresar. Eso se logra mediante la Arch linux Rollback Machine, un repositorio que posee un historial de los paquetes de 
+Arch linux. Se puede hacer de manera manual, bajando el paquete e instalándolo con pacman o usar el script donwgrade disponible en la AUR. Este script se instala asi::
+
+	yaourt -S downgrade
+
+y se usa de la siguiente manera::
+
+	downgrade firefox
+
+Donwgrade despliegará las versiones a las cuales se puede hacer downgrade ya sea por que existen en el cache de paquetes o por que lo baja de la Rollback Machine.
+
+
+No entres en pánico si no hay entorno gráfico
+----------------------------------------------------
+
+Si por ejemplo se te cae el entorno gráfico y sólo ves letras, no entres en pánico. Lo mejor es tener una serie de herramientas, algo así como un kit de emergencia, 
+para salir de esta situación. Instala wifi-menu para hacer conexiones wifi sin entorno gráfico y links como navegador para buscar ayuda en la wiki de arch linux. 
+Aprende a usar pacman y downgrade. Checa el archivo /var/log/pacman.log e identifica el paquete ofensor. Haz un downgrade. No reinstales y no entres en pánico. 
+Aprende a usar la terminal de manera básica. También y esto me ha pasado en varias distros, si el disco duro esta lleno el servidor gráfico no arrancara,
+por lo que a veces hay que limpiar el cache de pacman.
+
+Usa Btrfs
+------------
+
+Si usas este sistema de archivos el cual en Arch linux ya es usable ya que está en sus versiones recientes puedes hacer snapshots del sistema por si algo llegara a 
+fallar. Aunque esto requiere algo de conocimientos.
+
+
+Ten a la mano un disco de instalación de Arch linux para tareas de rescate
+----------------------------------------------------------------------------
+Ahora vamos pasando a las medidas de emergencia. Lo mejor es siempre tener un USB o Cd booteable con Arch linux por si algo pasa y es necesario entrar a reparar el 
+sistema, lo mejor es saber como se hace esto. Se puede leer el artículo sobre chroot o algo sobre rescatando sistemas en la wiki de Arch.
+Otras distros como gflxr proveen de herramientas ya preinstaladas. No voy a entrar en detalle ya que sería muy largo.
+
+Herramientas útiles para chequeos de sistema:
+
+smartctl: para checar los discos duros
+testdisk: para recuperar archivos de discos duros dañados.
+dd: de nuevo mas recuperación de archivos y clonación de dispositivos.
+luks: Abrir particiones encriptadas.
+grub: El sistema de arranque.
+
+Haz chequeos periódicos del sistema, por ejemplo usa gsmartctl para checar el estado de tus discos duros cada 6 meses, o habilita un servicio que lo haga por ti. Haz 
+chequeos de espacio en disco, o corrupción de archivos.
+
+
+Haz backups
+---------------
+
+Haz un backup de tus archivos importantes en otro disco, o si lo prefieres en la nube. Esto aplica para cualquier sistema. Como medida para arch linux guarda la lista 
+de paquetes instalados en un archivo de texto. Este lo puedes usar para reconstruir el sistema si algo falla.
+
+
