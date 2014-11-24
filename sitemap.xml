@@ -6,11 +6,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://hydrosiii.github.io/2014/index.html</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/archive.html</loc>
-  <lastmod>2014-11-10</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/arch-linux.html</loc>
@@ -18,7 +18,7 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/index.html</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/lemonpos.html</loc>
@@ -34,11 +34,11 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/python.html</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/galleries/index.html</loc>
-  <lastmod>2014-11-10</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/index.html</loc>
@@ -46,15 +46,15 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/listings/index.html</loc>
-  <lastmod>2014-11-10</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/arch-linux-en-pc-duino.html</loc>
-  <lastmod>2014-11-13</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/arreglando-problemas-con-lemonpos.html</loc>
@@ -62,7 +62,7 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/como-se-hizo-este-blog.html</loc>
-  <lastmod>2014-11-10</lastmod>
+  <lastmod>2014-11-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/revision-e-instalacion-de-lemonpos.html</loc>

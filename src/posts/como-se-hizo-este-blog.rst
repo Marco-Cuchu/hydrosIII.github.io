@@ -1,7 +1,7 @@
 .. title: ¿Cómo se hizo este blog?
 .. slug: como-se-hizo-este-blog
 .. date: 2014-11-04 22:16:30 UTC-06:00
-.. tags: nikola, python 
+.. tags: python 
 .. link: 
 .. description: 
 .. type: text

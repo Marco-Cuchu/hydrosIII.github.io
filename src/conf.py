@@ -114,6 +114,7 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archivo"),
         ("/categories/index.html", "Tags"),
         ("/rss.xml", "feed RSS"),
+        ("https://github.com/hydrosIII", "Mi github")
     ),
 }
 

@@ -195,7 +195,7 @@ Luego instalamos las dependencias::
 
 	apt-get install kde-runtime libc6 libkdecore5 libgcc1 
 	libqt4-dbus libqt4-network libqt4-sql-mysql libqt4-xml libqt4-svg 
-	libqt4-core4 libqt4-gui4 libstdc++6 mysql-client libkdeui5 
+	libqt4-core libqt4-gui libstdc++6 mysql-client libkdeui5 
 	libkio5
 
 Esto instalará las dependecias de lemonpos básicas, que serán un montón pues es KDE, sin embargo estas no se utilizarán cuando lemon esté corriendo
@@ -291,3 +291,4 @@ En realidad nada nuevo, pero corregí algunos detalles.
 Pasen por mi página en github para descargar el nuevo código fuente.
 Usen la rama estable.
 
+Edición: Corrige errores de dedo en las dependencias.

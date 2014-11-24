@@ -1,7 +1,7 @@
 .. title: Arch linux en PC Duino.
 .. slug: arch-linux-en-pc-duino
 .. date: 2014-11-10 16:35:53 UTC-06:00
-.. tags: Pcduino
+.. tags: Arch linux
 .. link: 
 .. description: 
 .. type: text
