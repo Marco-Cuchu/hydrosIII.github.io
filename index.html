@@ -89,6 +89,45 @@
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="p-name entry-title"><a href="posts/pensamientos-sobre-systemd.html" class="u-url">Pensamientos sobre systemd</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="posts/pensamientos-sobre-systemd.html" rel="bookmark"><time class="published dt-published" datetime="2014-12-20T04:14:56-06:00" itemprop="datePublished" title="2014-12-20 04:14">2014-12-20 04:14</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/pensamientos-sobre-systemd.html#disqus_thread" data-disqus-identifier="cache/posts/pensamientos-sobre-systemd.html">Comments</a>
+
+
+        </p>
+</div>
+    </header>
+    <div class="e-content entry-content">
+    <div>
+<p>Administro algunos servidores, nada grande, sin embargo leo bastante sobre lo que pasa en el mundo Gnu/linux y me tomó por sorpresa todo lo que se está dando
+gracias a systemd. Tengo que admitir que systemd en Arch linux me ha corrido sin problemas, y sus tiempos de booteo son muy pequeños. Sin embargo después de haber
+manejado un sistema como Debian en servidores empiezo a entender el por que de esta polémica.</p>
+<p>Systemd funciona bien en el escritorio y aunque no  tengo tanta experiencia en la administración de servidores si puedo entender que es demasiado complicado para ser
+una de las partes principales del sistema, el pid 1, con la información que tengo disponible me coloco en la postura antisystemd.</p>
+<p>En general systemd debería de ser una opción más, pero de ninguna manera una imposición. Yo encuentro confuso el que este intentando usurpar funciones como las de cron
+¿Que tiene de malo cron? ¿Acaso funciona mal?. También encuentro confuso lo de los logs binarios, he usado esta función dos veces en mi vida a lo mucho, pero mi
+computadura de escritorio se prende y apaga todos los dias, solo corre procesos de escritorio y no la mantengo prendida meses ni dependo de ella para funciones
+cruciales. Mi experiencia con systemd se limita a mi Arch linux.</p>
+<p>Una reflexión, con system V en Debian, nunca me falló nada, de hecho sólo me preocupo de este sistema a la hora del arranque, que en un servidor bien puede ser una vez
+cada año, sin embargo SystemD esta ahí todo el tiempo, con su omnipresencia impuesta. Me parece triste que Gnu/linux y un proyecto comunitario como Debian hayan llegado
+al extremo de una cuasi guerra civil por este programa. Tampoco me parece correcto la imposición de systemd sobre la mayoria de las distros linux.</p>
+<p>Tengo un poco de miedo al futuro ya que aposté por Debian para todos mis servidores, no se si hice bien, por ahora seguirán corriendo tranquilos, pero cuando llegue la
+hora de cambiar a Jessie sentiré nervios, espero por el bien de todos que haya Jessie-lts como ya lo hay con squeeze, para tener mucho tiempo.
+Una vez en Jessie quizá les ponga systemd, pero si de alguna manera puedo evitarlo no lo haré. Quizá una vez que use systemd en servidores me de cuenta de sus bondades.
+Lo único que esperaría es que tenga la opción de elegir. No me queda claro, pero al día de hoy aún existe un paquete de systemV en Jessie, no se
+si se quedará ahí y se pueda evitar systemD. Quizá el proyecto Devuan sea la respuesta, quiza otra distro.</p>
+<p>Hasta ahora tengo puesta la vista en Alpine linux que usa Openrc, paquetes binarios (no como Gentoo) y que opta por un diseño minimalista y seguro, este será mi escape
+en caso de emergencia, por lo mientras estoy tranquilo y disfruto la vida, que venga lo que tenga que venir. No se donde se está metiendo Gnu/linux
+cuando sus principales distros empresariales, Red Hat y Suse están usando Systemd. Espero que no empieze la catastrofe. El tiempo lo dirá.</p>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="p-name entry-title"><a href="posts/volviendo-a-arch-linux-estable.html" class="u-url">Volviendo a Arch linux "estable".</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
@@ -761,7 +800,7 @@ su
 <pre class="literal-block">
 apt-get install kde-runtime libc6 libkdecore5 libgcc1
 libqt4-dbus libqt4-network libqt4-sql-mysql libqt4-xml libqt4-svg
-libqt4-core4 libqt4-gui4 libstdc++6 mysql-client libkdeui5
+libqt4-core libqt4-gui libstdc++6 mysql-client libkdeui5
 libkio5
 </pre>
 <p>Esto instalará las dependecias de lemonpos básicas, que serán un montón pues es KDE, sin embargo estas no se utilizarán cuando lemon esté corriendo
@@ -844,6 +883,7 @@ corregidos. Además de los que están en este artículo.</p>
 <p>En realidad nada nuevo, pero corregí algunos detalles.</p>
 <p>Pasen por mi página en github para descargar el nuevo código fuente.
 Usen la rama estable.</p>
+<p>Edición: Corrige errores de dedo en las dependencias.</p>
 </div>
 </div>
     </div>

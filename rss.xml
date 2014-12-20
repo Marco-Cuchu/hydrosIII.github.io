@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>mi blog</title><link>https://hydrosiii.github.io/</link><description>mi blog</description><atom:link type="application/rss+xml" rel="self" href="https://hydrosiii.github.io/rss.xml"></atom:link><language>es</language><lastBuildDate>Sat, 22 Nov 2014 16:30:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Volviendo a Arch linux "estable".</title><link>https://hydrosiii.github.io/posts/volviendo-a-arch-linux-estable.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Arch linux es una gran distribución linux, es muy flexible y adaptable
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>mi blog</title><link>https://hydrosiii.github.io/</link><description>mi blog</description><atom:link href="https://hydrosiii.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sat, 20 Dec 2014 04:36:12 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pensamientos sobre systemd</title><link>https://hydrosiii.github.io/posts/pensamientos-sobre-systemd.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Administro algunos servidores, nada grande, sin embargo leo bastante sobre lo que pasa en el mundo Gnu/linux y me tomó por sorpresa todo lo que se está dando
+gracias a systemd. Tengo que admitir que systemd en Arch linux me ha corrido sin problemas, y sus tiempos de booteo son muy pequeños. Sin embargo después de haber
+manejado un sistema como Debian en servidores empiezo a entender el por que de esta polémica.&lt;/p&gt;
+&lt;p&gt;Systemd funciona bien en el escritorio y aunque no  tengo tanta experiencia en la administración de servidores si puedo entender que es demasiado complicado para ser
+una de las partes principales del sistema, el pid 1, con la información que tengo disponible me coloco en la postura antisystemd.&lt;/p&gt;
+&lt;p&gt;En general systemd debería de ser una opción más, pero de ninguna manera una imposición. Yo encuentro confuso el que este intentando usurpar funciones como las de cron
+¿Que tiene de malo cron? ¿Acaso funciona mal?. También encuentro confuso lo de los logs binarios, he usado esta función dos veces en mi vida a lo mucho, pero mi
+computadura de escritorio se prende y apaga todos los dias, solo corre procesos de escritorio y no la mantengo prendida meses ni dependo de ella para funciones
+cruciales. Mi experiencia con systemd se limita a mi Arch linux.&lt;/p&gt;
+&lt;p&gt;Una reflexión, con system V en Debian, nunca me falló nada, de hecho sólo me preocupo de este sistema a la hora del arranque, que en un servidor bien puede ser una vez
+cada año, sin embargo SystemD esta ahí todo el tiempo, con su omnipresencia impuesta. Me parece triste que Gnu/linux y un proyecto comunitario como Debian hayan llegado
+al extremo de una cuasi guerra civil por este programa. Tampoco me parece correcto la imposición de systemd sobre la mayoria de las distros linux.&lt;/p&gt;
+&lt;p&gt;Tengo un poco de miedo al futuro ya que aposté por Debian para todos mis servidores, no se si hice bien, por ahora seguirán corriendo tranquilos, pero cuando llegue la
+hora de cambiar a Jessie sentiré nervios, espero por el bien de todos que haya Jessie-lts como ya lo hay con squeeze, para tener mucho tiempo.
+Una vez en Jessie quizá les ponga systemd, pero si de alguna manera puedo evitarlo no lo haré. Quizá una vez que use systemd en servidores me de cuenta de sus bondades.
+Lo único que esperaría es que tenga la opción de elegir. No me queda claro, pero al día de hoy aún existe un paquete de systemV en Jessie, no se
+si se quedará ahí y se pueda evitar systemD. Quizá el proyecto Devuan sea la respuesta, quiza otra distro.&lt;/p&gt;
+&lt;p&gt;Hasta ahora tengo puesta la vista en Alpine linux que usa Openrc, paquetes binarios (no como Gentoo) y que opta por un diseño minimalista y seguro, este será mi escape
+en caso de emergencia, por lo mientras estoy tranquilo y disfruto la vida, que venga lo que tenga que venir. No se donde se está metiendo Gnu/linux
+cuando sus principales distros empresariales, Red Hat y Suse están usando Systemd. Espero que no empieze la catastrofe. El tiempo lo dirá.&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><guid>https://hydrosiii.github.io/posts/pensamientos-sobre-systemd.html</guid><pubDate>Sat, 20 Dec 2014 10:14:56 GMT</pubDate></item><item><title>Volviendo a Arch linux "estable".</title><link>https://hydrosiii.github.io/posts/volviendo-a-arch-linux-estable.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Arch linux es una gran distribución linux, es muy flexible y adaptable
 al usuario de tal manera que se le puede llamar meta-distro. Sin embargo
 es una distribución rolling release, lo que significa que siempre tiene
 todo el software actualizado, por lo recibe todas las versiones nuevas
@@ -596,7 +615,7 @@ su
 &lt;pre class="literal-block"&gt;
 apt-get install kde-runtime libc6 libkdecore5 libgcc1
 libqt4-dbus libqt4-network libqt4-sql-mysql libqt4-xml libqt4-svg
-libqt4-core4 libqt4-gui4 libstdc++6 mysql-client libkdeui5
+libqt4-core libqt4-gui libstdc++6 mysql-client libkdeui5
 libkio5
 &lt;/pre&gt;
 &lt;p&gt;Esto instalará las dependecias de lemonpos básicas, que serán un montón pues es KDE, sin embargo estas no se utilizarán cuando lemon esté corriendo
@@ -679,6 +698,7 @@ corregidos. Además de los que están en este artículo.&lt;/p&gt;
 &lt;p&gt;En realidad nada nuevo, pero corregí algunos detalles.&lt;/p&gt;
 &lt;p&gt;Pasen por mi página en github para descargar el nuevo código fuente.
 Usen la rama estable.&lt;/p&gt;
+&lt;p&gt;Edición: Corrige errores de dedo en las dependencias.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>lemonpos</category><guid>https://hydrosiii.github.io/posts/revision-e-instalacion-de-lemonpos.html</guid><pubDate>Fri, 07 Nov 2014 07:30:04 GMT</pubDate></item><item><title>¿Cómo se hizo este blog?</title><link>https://hydrosiii.github.io/posts/como-se-hizo-este-blog.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;He tenido la idea de empezar un blog para documentar ciertas cosas, pero
 nunca me he decidido a hacer nada. Claro que ahora parecer me he
 decidido por una técnica mediamente dificil de escribir un blog.&lt;/p&gt;

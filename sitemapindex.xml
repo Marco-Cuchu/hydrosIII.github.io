@@ -6,11 +6,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/arch-linux.xml</loc>
-  <lastmod>2014-11-22</lastmod>
+  <lastmod>2014-12-20</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/lemonpos.xml</loc>
-  <lastmod>2014-11-22</lastmod>
+  <lastmod>2014-12-20</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hydrosiii.github.io/categories/linux.xml</loc>
+  <lastmod>2014-12-20</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/nikola.xml</loc>
@@ -22,7 +26,7 @@
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/python.xml</loc>
-  <lastmod>2014-11-22</lastmod>
+  <lastmod>2014-12-20</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/galleries/rss.xml</loc>
@@ -30,10 +34,10 @@
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/rss.xml</loc>
-  <lastmod>2014-11-22</lastmod>
+  <lastmod>2014-12-20</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/sitemap.xml</loc>
-  <lastmod>2014-11-22</lastmod>
+  <lastmod>2014-12-20</lastmod>
  </sitemap>
 </sitemapindex>
