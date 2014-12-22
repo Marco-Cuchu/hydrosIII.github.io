@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "hydrosIII"  # (translatable)
-BLOG_TITLE = "mi blog"  # (translatable)
+BLOG_TITLE = "hydrosIII"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "https://hydrosiii.github.io/"
