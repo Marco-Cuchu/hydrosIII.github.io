@@ -31,6 +31,8 @@ de vista.
 Otra razón es por que no me gusta ni ubuntu ni las distribuciones 
 derivadas.
 
+.. TEASER_END
+
 ¿Por que escogí lemonpos?
 ----------------------------
 

@@ -13,9 +13,11 @@ superar esta limitación es usar un administrador de base de datos y que
 mejor que phpmyadmin, un administrador de base de datos ligero y muy 
 fácil de usar.
 
+.. TEASER_END
 
 Nota: Puedes encontrar el post de instalación de lemonpos :doc:`aquí 
 <revision-e-instalacion-de-lemonpos>`.
+
 
 Nota: Los siguientes comandos se tienen que hacer como root.
 

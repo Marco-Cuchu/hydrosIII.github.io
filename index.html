@@ -89,6 +89,92 @@
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="p-name entry-title"><a href="posts/instalar-un-servidor-murmur-en-debian-mumble-server.html" class="u-url">Instalar un servidor murmur en Debian (mumble-server)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="posts/instalar-un-servidor-murmur-en-debian-mumble-server.html" rel="bookmark"><time class="published dt-published" datetime="2015-01-25T01:18:48-06:00" itemprop="datePublished" title="2015-01-25 01:18">2015-01-25 01:18</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/instalar-un-servidor-murmur-en-debian-mumble-server.html#disqus_thread" data-disqus-identifier="cache/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html">Comments</a>
+
+
+        </p>
+</div>
+    </header>
+    <div class="p-summary entry-summary">
+    <div>
+<p>Este es un minitutorial sobre como instalar un servidor murmur en
+Debian.
+Para quien no lo sepa, murmur es el servidor de mumble, un programa que
+puede sustituir a skype, para hablar con gente de lejos. Mumble fue
+pensado originalmente para los videojuegos y esta diseñado par trabajar
+con anchos de banda pobres, por lo que lo hace muy eficiente en cuanto a
+la transmisión de audio, mucho mejor que skype.</p>
+<p>Pero la principal ventaja que yo le veo, es la seguridad que obtenemos
+al correr todo esto en un servidor propio, y saltarnos la vigilancia de
+compañias como google o skype. Se puede instalar en una vieja maquina
+con Debian, cualquier cacharro de los 90 funciona para correr este
+servidor. Igualmente una raspberry pi, o inclusive existe una version
+para los routers con Openwrt. Los routers de marca linksys.</p>
+<p>Para instalarlo en una red casera, hay que configurar un servicio de DNS
+dinámico y estar seguros que nuestro proveedor de internet sale
+directamente a la red, y tenemos control sobre nuestra ip pública. Lo
+cual puede complicar un poco, pero no imposibilitar la configuración de
+mumble-server.</p>
+<p>Sin embargo, compré un pequeño VPS para este tipo de cosas. La
+configuración en internet facilita mucho las cosas, y se puede abirir un
+servidor para platicar con tus amigos sin tener que gastar en teléfono.
+O con los miembros de tu familia. Además cuenta con clientes para
+Android y Iphone, lo cual lo hace ideal para llamadas a traves de 3g,
+que además superan cualquier intento de escucha por parte de la compañia
+teléfonica ya que toda la información va cifrada.</p>
+<p>Bueno, después de toda esta larga charla. Les muestro como correr
+murmur, que en Debian esta empaquetado como mumble-server.</p>
+<p>Nos logueamos como root en nuestro servidor y escribimos:</p>
+<pre class="literal-block">
+apt-get install mumble-server --no-install-recommends
+</pre>
+<p>Es bueno instalarlo sin las recomendaciones, ya que jala muchas
+dependencias innecesarias si tenemos un servidor web, además de que usa
+avahi. Posteriormente a la instalación hay que asegurarse de tener avahi
+desactivado si se está instalando en un servidor abierto al internet, ya que este crea una vulnerabilidad de
+seguridad. También hay que asegurarse de tener el puerto 64738 abierto a
+las conexiones entrantes.</p>
+<p>Después, de instalarlo, es recomendable mover algo las configuraciones
+en</p>
+<pre class="literal-block">
+/etc/default/mumble-server
+</pre>
+<p>en donde modificamos el número de procesos que puede abrir mumble-server
+a un límite razonable, de acuerdo al uso que se le vaya a dar y los
+recursos del sistema:</p>
+<pre class="literal-block">
+MURMUR_LIMIT_NOFILE=20
+</pre>
+<p>Por último movemos otro archivo de configuración localizado en:</p>
+<pre class="literal-block">
+/etc/mumble-server.ini
+</pre>
+<p>Yo recomendaría la siguiente línea:</p>
+<pre class="literal-block">
+certrequired=True
+</pre>
+<p>por seguridad, pero igualmente hay varias configuraciones, explicadas
+con comentarios en el archivo. Ahora si sólo hay que reiniciar el
+mumble-server para que acepte las nuevas configuraciones:</p>
+<pre class="literal-block">
+service mumble-server restart
+</pre>
+<p>Y ya nos podemos loguear desde mumble en nuestra pc a nuestro nuevo
+servidor murmur.</p>
+<p>Es posible además instalar el paquete mumble-django para agregar una
+interfaz web de configuración al servidor. Disfruten su nuevo servidor
+murmur.</p>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="p-name entry-title"><a href="posts/pensamientos-sobre-systemd.html" class="u-url">Pensamientos sobre systemd</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
@@ -101,7 +187,7 @@
         </p>
 </div>
     </header>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>Administro algunos servidores, nada grande, sin embargo leo bastante sobre lo que pasa en el mundo Gnu/linux y me tomó por sorpresa todo lo que se está dando
 gracias a systemd. Tengo que admitir que systemd en Arch linux me ha corrido sin problemas, y sus tiempos de booteo son muy pequeños. Sin embargo después de haber
@@ -140,7 +226,7 @@ cuando sus principales distros empresariales, Red Hat y Suse están usando Syste
         </p>
 </div>
     </header>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>Arch linux es una gran distribución linux, es muy flexible y adaptable
 al usuario de tal manera que se le puede llamar meta-distro. Sin embargo
@@ -149,217 +235,7 @@ todo el software actualizado, por lo recibe todas las versiones nuevas
 de los paquetes, los cuales desde luego cambian. Es por eso que no es
 un sistema operativo estable. Esta es una guía para volverlos mas usable, aunque muchas de las cosas que aquí se dicen, aplican para
 cualquier sistema Gnu/linux, y muchas veces por extensión a cualquier SO.</p>
-<div class="section" id="que-es-estabilidad">
-<h2>¿Que es estabilidad?</h2>
-<p>Antes de entrar en discusión, hay que definir sobre que se discute, para
-empezar la RAE define estable como:</p>
-<pre class="literal-block">
-Estable:
- adj. Que se mantiene sin peligro de cambiar, caer o
-desaparecer.
-</pre>
-<p>siendo esta una definición muy básica a mi parecer, pero que me sirve para empezar una reflexión sobre la estabilidad. Es así que cuando se habla  de software se dice
-que un programa no es estable cuando este falla, la palabra, creo, está mal utilizado en este caso. En mi opinión si un programa
-falla seguido, lo hace de manera estable, es decir sin cambios, siempre falla de la misma manera, por lo que es un programa estable, o al menos falla establemente. Esto
-hace que sea un programa estable pero poco funcional o lleno de bugs.</p>
-<p>Pienso que la definición de estable se debe enfocar sobretodo en la cualidad del no-cambio, por que una cosa es la estabilidad y otra la funcionalidad. Sin embargo en
-la informática se  define a un software como estable cuando funciona bien. Pero repito que esta mal utilizado. Un ejemplo de estabilidad podría ser un sistema como
-windows Xp, que más bien sería definido como inmutable: bueno, siii funciona, no funciona bien, pero no se mueve, las aplicaciones siguen funcionando desde hace 10
-años, ¿No?.</p>
-<p>Pues si, es por esto que en modelos de software privativos como es MS windows se privilegia tanto la estabilidad de las cosas, ya que el software se vende en este tipo
-de sistemas, por lo que recompilar software para hacerlo compatible con nuevas versiones no es rentable. Claro esto hace que no existan nuevas cosas en el Sistema
-operativo y en las aplicaciones en sí, y que tengan poca seguridad estos sistemas.</p>
-<p>En los sistemas Gnu/linux también se ofrece estabilidad, sobretodo para los entornos corporativos, por ejemplo cada uno de los releases de Red Hat linux
-tiene más de 10 años de soporte. Debian ofrece soporte por cerca de 4 años (con su versión LTS), mientras que Ubuntu ofrece soporte por 5 años. Estas son distros
-enfocadas en la estabilidad, diciendo simplemente que las cosas no cambien. Este es el modelo que prima en entornos coroporativos, ya que obviamente no se va a cambiar
-el sistema operativo ni sus partes en una empresa cada semana. Otra distribución estable es SLES.</p>
-<p>En estas distribuciones rara vez cambian las partes de las que estan hechas, quedándose en las mismas versiones de los programas, esto con el fin de facilitar las
-cosas a los administradores de sistemas. Sin embargo parchan cosas como agujeros de seguridad teniendo cuidado de no tocar mucho el sistema.</p>
-</div>
-<div class="section" id="arch-linux-no-es-estable">
-<h2>Arch linux no es estable</h2>
-<p>Bueno al grano, todo esta palabrería es para argumentar el siguiente punto: Arch linux no es estable. Simplemente eso, Arch linux cambia diario, recibe actualizaciones
-muy seguido y sus versiones de paquetes se mantienen en la última. Eso no significa que falle o que no sea funcional. Arch linux no usa software beta, usa las últimas
-versiones de cada paquete que en teoría deberían de funcionar bien. La cuestión es que como son paquetes nuevos muchas veces tienen algunos bugs que no han sido
-revisados, o a veces rompen funcionalidades de versiones anteriores.</p>
-<p>La cuestion es ¿Cómo lograr que este constante cambio no interfiera con las tareas diarias de un usuario?. Con tareas diarías me refiero desde leer noticias en internet
-a programar o editar música, es decir todo, excluyendo quizá el montar servidores con Arch Linux, cosa que a mi parecer no es recomendable.</p>
-<p>Es por eso que haré un resumen de los puntos con mi experiencia de Arch linux para ver como se logra un sistema útil, que aunque no sea estable (en el sentido
-anterior), siempre se pueda trabajar en él de manera amena y sin quebraderos de cabeza.</p>
-</div>
-<div class="section" id="es-arch-linux-para-mi">
-<h2>¿Es Arch linux para mí?</h2>
-<p>Antes de todo lo mejor es decidir si a pesar de todo lo anteriomente dicho no es mejor optar por una distribución estable. Ya que Arch linux pide un poco mas de
-conocimiento por parte del usuario para mantener el sistema. Hay muchas distribuciones mucho más fáciles de usar. Arch linux y en general las distro rolling release
-requieren de bastante ancho de banda por lo que si en tu país o región este tipo de conexiones no está disponible, o simplemente no se tiene internet, Arch linux no es
-una opción. Para estas condiciones la mejor distro es Debian o alguna otra, ya que cuenta con CD's y DVD de actualización desde donde instalar y actualizar el software.
-Así que en realidad Arch linux es dependiente del internet.</p>
-</div>
-<div class="section" id="escoge-el-hardware">
-<h2>Escoge el hardware.</h2>
-<p>Este es un punto para cualquier distribución linux, una idea equivocada es que linux corre en cualquier cosa. Esto es cierto, o casi. La cuestión es que no siempre
-corre BIEN en cualquier hardware sino que como siempre: hay hardware mas compatible con linux y hay otro que da muchos problemas. Pongamos el ejemplo de Mac, mucha
-gente opina que Mac corre muy bien, pero esto es en gran medida debido a que las computadoras apple manejan una lista reducida de hardware en todos sus dispositivos. De
-hecho OS X por su licencia no puede ser corrido legalmente fuera de hardware apple. Otro punto muy importante es que tanto Windows como OS X, vienen preinstalados por defecto en las computadoras, lo que hace que el proveedor de hardware se encargue de
-checar la compatilidad con el hardware y proveer de los drivers para el sistema operativo.</p>
-<p>¿O alguién ha intentado instalar OS X en la vieja computadora/tostador de hace 10 años?</p>
-<p>Esto en linux, no pasa ya que no viene preinstalado, si bien el kernel tiene soporte para la mayoría de los dispositivos comunes, siempre se
-encotrara algún dispositivo raro en el cual no funcione.</p>
-<p>Rapidamente y haciendo uso de mi memoria agregaré una lista de hardware recomendado para que no sufras cuando instales Gnu/linux:</p>
-<ol class="arabic simple">
-<li>Si es posible compra una computadora con linux preinstalado.</li>
-<li>Compra una thinkpad. La mayoría de estas computadoras son certificadas por IBM para que funcionen con linux, existe además una wiki (thinkwiki) en donde se dan los detalles de cada modelo en particular. Desgraciadamente son muy caras aunque vale la pena el gasto. Los desarrolladores de Linux usan este tipo de computadoras.</li>
-</ol>
-<p>3. Lo mejor es no apresurarse en comprar la última palabra en hardware ya que por lo general los drivers del kernel se retrasan un poco, esto pasa menos en Arch linux
-ya que va con lo último y es una razón por la que es una buena opción utilizarlo en computadoras nuevas. Si se quiere tener lo último en hardware hay que revisar muy bien los drivers.</p>
-<div class="section" id="tarjetas-de-video">
-<h3>Tarjetas de video:</h3>
-<ol class="arabic simple">
-<li>Lo mejor para linux son las tarjetas Intel integradas en los chips, desgraciadamente no son muy poderosas, por lo que si se requiere trabajar con diseño gráfico o jugar lo mejor es optar por otro GPU.</li>
-<li>La mejor opción es usar Nvidia, ya que los drivers privativos para linux tienen muy buen rendimiento. Los drivers libres para linux no funcionan muy bien.</li>
-<li>Otra opción es usar AMD, si se usa AMD lo mejor es usar los drivers libres, ya que estos están bastante avanzados mucho más que los drivers libres de Nvidia. En Arch linux lo mejor es EVITAR a toda costa los drivers privativos AMD a menos que se sepa lo que se está haciendo, ya que  hay cambiar partes importantes del sistema para hacer que estos funcionen. Como estas "partes importantes" (servidor X) cambian seguido, lo más probable es que en algún momento algo se rompa, y nos quedemos sólo con la terminal.</li>
-</ol>
-</div>
-<div class="section" id="wifi">
-<h3>Wifi:</h3>
-<p>Lo mejor es usar tarjetas compatibles con Gnu/linux. Recomiendo las que tienen el chip de atheros y no recomiendo las broadcom.</p>
-</div>
-<div class="section" id="impresoras">
-<h3>Impresoras.</h3>
-<p>Mucho depende de la impresora que se compre. Siempre se tiene que checar antes de comprar si existen drivers opensource provistos por el fabricante de las impresoras
-incluidos en la distribución. De no existir estos y depender de drivers binarios proporcionados por el fabricante la cosa se complica.
-Si la impresora sólo tiene drivers opensource conseguidos mediante ingenería reversa lo mejor es evitarla.
-La instalacion de las impresoras con drivers opensource generalmente es sólo conectar e imprimir. Me parece que la mejor marca en este sentido es HP y la peor Canon.
-Luego varia, yo he tenido buenas experiencias con las impresoras Epson y malas con las Brother. Pero el punto es que siempre hay que revisar antes de comprar.</p>
-</div>
-<div class="section" id="otras-cosas">
-<h3>Otras cosas.</h3>
-<p>Siempre revisar mediante reseñas de internet u otras cosas si el hardware es compatible. La wiki de Arch a veces trae entradas sobre determinado hardware.</p>
-</div>
-</div>
-<div class="section" id="instalacion-de-arch-linux">
-<h2>Instalación de Arch linux</h2>
-<p>Haz al menos dos particiones, una para home y otra para /, ya que esto evitara problemas en el futuro, reduciendo el riesgo de perdida de datos, o problemas por que se
-llene el disco.</p>
-</div>
-<div class="section" id="una-vez-instalado-arch-linux">
-<h2>Una vez instalado Arch linux</h2>
-<div class="section" id="entorno-de-escritorio">
-<h3>Entorno de escritorio</h3>
-<p>Cómo Arch linux da el poder al usuario depende de ti escoger como se verá. Hay que escoger entorno de
-escritorio. Lo mejor, si se tiene la suficiente capacidad en la computadora es optar por uno que esté completo como Gnome o KDE. XFCE no es mala opción.
-Los entornos de escritorio ligeros tienen una funcionalidad mas limitada y van a requerir que el usuario configure mas cosas,
-pero por otra parte como son mas pequeños tienen menos puntos de falla. Aquí hay que escoger igualmente de acuerdo al hardware y gustos.</p>
-<p>Los entornos ligeros son:</p>
-<ul class="simple">
-<li>XFCE</li>
-<li>MATE</li>
-</ul>
-<p>Los entornos "pesados" son:</p>
-<ul class="simple">
-<li>GNOME</li>
-<li>KDE</li>
-<li>CINNAMON</li>
-</ul>
-<p>Hay también "entornos" ultraligeros como:</p>
-<ul class="simple">
-<li>fluxbox</li>
-<li>openbox</li>
-</ul>
-<p>y muchos más.</p>
-</div>
-<div class="section" id="la-base-del-sistema">
-<h3>La base del sistema</h3>
-<p>Lo mejor es partir de una base estable del sistema. Para esto existen los paquetes linux-lts, un kernel que es mantenido aproximadamente por 6 meses, al cual sólo se
-le hacen actualizaciones de seguridad, por lo que tienen menos riesgo de tener "regresiones". Esto sirve cuando se trabaja con drivers binarios como los de Nvidia.
-Asimismo hay que asegurarse de que los drivers binarios se provean desde repos oficiales en la medida de lo posible.</p>
-<p>Si el kernel-lts no funciona para ti, puedes quedarte estable en una determinada versión del kernel, añadiendo al archivo pacman.conf el paquete linux para ser
-ignorado.</p>
-<p>Adicionalmente Arch linux tiene repos no oficiales para linux-ck y linux-pf dos importantes derivaciones del kernel linux, hechas para que corra mejor en computadoras
-de Escritorio.</p>
-<p>Usa los menos drivers privativos posibles y evita compilar módulos del kernel de terceros no provistos por los repositorios oficiales. Por ejemplo los módulos Nvidia
-están en las repos oficiales así como los drivers virtualbox, pero no están los módulos para ZFS, por lo que este último requiere mas configuración y cuidado.</p>
-</div>
-<div class="section" id="programas-importantes">
-<h3>Programas importantes</h3>
-<p>Si para los programas importantes (yo diría que son aquellos de uso diario y que no pueden fallar) no te gusta que las versiones cambien cada semana ya que esto puede
-retrasar tu trabajo por ejemplo por que unos iconos cambien de lugar, o por que cambien ciertas cosas entre versiones, utiliza los programas estables. Una de las
-ventajas de Arch linux es que es relativamente fácil instalar distintas versiones de los programas.</p>
-<p>Para esto está la AUR, yo por ejemplo utilizo la version de Firefox-ESR ya que no me gusta que el navegador cambie seguido y rompa compatibilidad con plugins u otras cosas.
-También por ejemplo existe openoffice que se quedará si lo instalas en esa versión en lugar de libreoffice que es actualizado seguido. En genera todo el software de AUR no se
-actualiza automaticamente, por lo que puede convertirse en un gran aliado para hacer un poco mas estable y funcional el sistema.</p>
-<p>Se puede también recompilar los programas oficiales con un PKGBUILD propio, cambiandoles por ejemplo el nombre para evitar que sean actualizados, aunque esto es un poco
-mas avanzado, pero la wiki de arch linux en el apartado dedicado a makepkg lo explica bien.</p>
-<p>Por último también se puede prohibir la actualización de ciertos paquetes en el archivo pacman.conf. Esto no es aconsejable si se trata de paquetes importantes sin
-embargo no acarrea muchos problemas si se trata de aplicaciones gráficas independientes.</p>
-</div>
-<div class="section" id="piensa-antes-de-actualizar-y-busca-el-momento-adecuado">
-<h3>Piensa antes de actualizar y busca el momento adecuado</h3>
-<p>Las actualizaciones pueden romper cosas, si estás en medio de un trabajo importante no actualizes todavía, espera hasta que hayas terminado ese trabajo y después
-actualiza. Mientras no instales programas nuevos un sistema Arch linux puede durar meses sin actualizar aunque no es recomendable. Lo mejor es actualizar al menos una
-vez a la semana.</p>
-<p>Si sabes de que pata cojea tu computadora retrasa el paquete, o no actualizes hasta hacer pruebas. Lee las noticias de actualización en la página principal de Arch
-linux o usa pacmatic un programa que lo hace por ti.</p>
-</div>
-<div class="section" id="aprende-a-hacer-downgrade">
-<h3>Aprende a hacer downgrade.</h3>
-<p>Si un nuevo paquete rompió algo es muy fácil regresar. Eso se logra mediante la Arch linux Rollback Machine, un repositorio que posee un historial de los paquetes de
-Arch linux. Se puede hacer de manera manual, bajando el paquete e instalándolo con pacman o usar el script donwgrade disponible en la AUR. Este script se instala asi:</p>
-<pre class="literal-block">
-yaourt -S downgrade
-</pre>
-<p>y se usa de la siguiente manera:</p>
-<pre class="literal-block">
-downgrade firefox
-</pre>
-<p>Donwgrade despliegará las versiones a las cuales se puede hacer downgrade ya sea por que existen en el cache de paquetes o por que lo baja de la Rollback Machine.</p>
-</div>
-<div class="section" id="usa-wine-lo-menos-posible">
-<h3>Usa wine lo menos posible</h3>
-<p>Wine es un buen programa, lo que pasa es que muchas veces la gente espera que haga milagros. Par ser un programa escrito con ingeniería reversa y que corre nativamente
-en linux a veces me sorprenden sus resultados. Procura usar solamente software libre para cualquier tarea y si está incluido en los repos oficiales es mejor. Casi
-siempre hay programas equivalentes en linux a los que hay en windows. Lo mejor es acostumbrarse a su funcionalidad que hacer correr un programa nativo de windows en
-linux. Si de cualquier manera es necesario, estas son las recomendaciones:</p>
-<ul class="simple">
-<li>Usa Playonlinux en lugar de wine puro. Este facilita la instalación de algunos programas, y fija la versión del programa a una versión en parituclar de wine. Además te permite crear contenedores de programa, lo cual facilita restaurar un programa. Arch linux por su naturaleza rolling release cambia la versión de wine muy seguido, por lo que muchas veces debido a regresiones tu programa puede romperse. Play on linux lo evitará en parte.</li>
-<li>Checa la compatibilidad del programa con wine, antes de instalarlo para evitar dolores de cabeza. Checa la base de datos de aplicaciones de wine. Si el prograa tiene menos de oro, lo mas probable es que haya que lidiar con problemas. Muchas veces los programas viejos (por ejemplo para windows xp) corren a veces mejor que en las nuevas versiones de windows. Los programas que no hacen uso intensido de gráficos también tienden a correr mejor.</li>
-</ul>
-</div>
-<div class="section" id="no-entres-en-panico-si-no-hay-entorno-grafico">
-<h3>No entres en pánico si no hay entorno gráfico</h3>
-<p>Si por ejemplo se te cae el entorno gráfico y sólo ves letras, no entres en pánico. Lo mejor es tener una serie de herramientas, algo así como un kit de emergencia,
-para salir de esta situación. Instala wifi-menu para hacer conexiones wifi sin entorno gráfico y links como navegador para buscar ayuda en la wiki de arch linux.
-Aprende a usar pacman y downgrade. Checa el archivo /var/log/pacman.log e identifica el paquete ofensor. Haz un downgrade. No reinstales y no entres en pánico.
-Aprende a usar la terminal de manera básica. También y esto me ha pasado en varias distros, si el disco duro esta lleno el servidor gráfico no arrancara,
-por lo que a veces hay que limpiar el cache de pacman.</p>
-</div>
-<div class="section" id="usa-btrfs">
-<h3>Usa Btrfs</h3>
-<p>Si usas este sistema de archivos el cual en Arch linux ya es usable ya que está en sus versiones recientes puedes hacer snapshots del sistema por si algo llegara a
-fallar. Aunque esto requiere algo de conocimientos.</p>
-</div>
-<div class="section" id="ten-a-la-mano-un-disco-de-instalacion-de-arch-linux-para-tareas-de-rescate">
-<h3>Ten a la mano un disco de instalación de Arch linux para tareas de rescate</h3>
-<p>Ahora vamos pasando a las medidas de emergencia. Lo mejor es siempre tener un USB o Cd booteable con Arch linux por si algo pasa y es necesario entrar a reparar el
-sistema, lo mejor es saber como se hace esto. Se puede leer el artículo sobre chroot o algo sobre rescatando sistemas en la wiki de Arch.
-Otras distros como grml proveen de herramientas ya preinstaladas. No voy a entrar en detalle ya que sería muy largo.</p>
-<p>Herramientas útiles para chequeos de sistema:</p>
-<ul class="simple">
-<li>smartctl: para checar los discos duros</li>
-<li>testdisk: para recuperar archivos de discos duros dañados.</li>
-<li>dd: de nuevo mas recuperación de archivos y clonación de dispositivos.</li>
-<li>luks: Abrir particiones encriptadas.</li>
-<li>grub: El sistema de arranque.</li>
-</ul>
-<p>Haz chequeos periódicos del sistema, por ejemplo usa gsmartctl para checar el estado de tus discos duros cada 6 meses, o habilita un servicio que lo haga por ti. Haz
-chequeos de espacio en disco, o corrupción de archivos.</p>
-</div>
-<div class="section" id="haz-backups">
-<h3>Haz backups</h3>
-<p>Haz un backup de tus archivos importantes en otro disco, o si lo prefieres en la nube. Esto aplica para cualquier sistema. Como medida para arch linux guarda la lista
-de paquetes instalados en un archivo de texto. Este lo puedes usar para reconstruir el sistema si algo falla.</p>
-</div>
-</div>
+<p class="more"><a href="posts/volviendo-a-arch-linux-estable.html">Leer más…</a></p>
 </div>
     </div>
     </article>
@@ -377,7 +253,7 @@ de paquetes instalados en un archivo de texto. Este lo puedes usar para reconstr
         </p>
 </div>
     </header>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>Lemonpos es un buen programa para poner una terminal de punto de venta y
 está hecho con software libre. Sin embargo el administrador squeeze,
@@ -385,75 +261,7 @@ aunque es útil muchas veces no tiene tantas opciones. Una opción para
 superar esta limitación es usar un administrador de base de datos y que
 mejor que phpmyadmin, un administrador de base de datos ligero y muy
 fácil de usar.</p>
-<p>Nota: Puedes encontrar el post de instalación de lemonpos <a class="reference external" href="posts/revision-e-instalacion-de-lemonpos.html">aquí</a>.</p>
-<p>Nota: Los siguientes comandos se tienen que hacer como root.</p>
-<p>Para empezar este tutorial está enfocado a Debian  y derivados ya que en
-otras distros, phpmyadmin requiere un poco de configuración extra. Lo
-primero es instalar apache2 y phpmyadmin. Se pueden instalar otros
-servidores web, pero apache resulta perfecto para el caso ya que
-funciona "out of the box"</p>
-<pre class="literal-block">
-apt-get install apache2 phpmyadmin
-</pre>
-<p>Ahora se configurara todo y tendremos apache funcionando en el puerto 80
-de nuestra maquina, en un navegador comprobamos que esto sea cierto,
-vamos a la dirección:</p>
-<pre class="literal-block">
-http://127.0.0.1
-</pre>
-<p>o:</p>
-<pre class="literal-block">
-http://localhost
-</pre>
-<p>ahora debe aparecer algo así como:</p>
-<pre class="literal-block">
-It works !
-</pre>
-<p>Si no aparece hay que revisar si hubo algún error en a instalación de
-apache.</p>
-<p>Una vez configurado, sólo hay que apuntar a apache a phpmyadmin. Yo lo
-hago de manera burda pero eficiente:</p>
-<pre class="literal-block">
-rm -r /var/www
-ln -s /usr/share/phpmyadmin /var/www
-</pre>
-<p>y listo. Si nos vamos al navegador otra vez y apuntamos a 127.0.0.1, nos
-encontraremos con phpmyadmin. El usuario para entrar es root y la
-contraseña, la contraseña de administrador de la base de datos, osea la
-que preguntó debian a la hora de instalar mysql.
-Una vez dentro de phpmyadmin podemos ver la base de datos de lemonpos.
-Esta se llama lemondb.</p>
-<div class="section" id="para-que-sirve-esto">
-<h2>¿Para qué sirve esto?</h2>
-<p>Sirve para realizar consultas y operaciones en la base de datos de
-lemonpos. Por ejemplo: una utilización simple pero eficiente es el
-importar listas de productos desde hojas de cálculo, creadas por ejemplo
-en libreoffice o en Ms Excel, en lugar de meter producto por producto.</p>
-<p>Además ofrece tanto bajar como subir respaldos de bases de datos.
-Si se tienen conocimientos más avanzados de sql, se pueden generar
-algunos reportes, de manera que pueden exportarse y leerse en
-libreoffice. Por ejemplo de productos agotados.</p>
-<p>Espero escribir sobre esto pronto.</p>
-<p>Estos son todos mis posts sobre lemonpos:</p>
-
-<!-- Begin post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 -->
-<div id="post_list_2a38d6f067514e49881c426bc2d4e1d1" class="post-list">
-    <ul class="post-list">
-            <li class="post-list-item">
-	        2014-11-13 23:52
-		 
-		<a href="posts/administrando-lemonpos-con-phpmyadmin.html">Administrando lemonpos con phpmyadmin.</a>
-	    </li>
-            <li class="post-list-item">
-	        2014-11-07 01:30
-		 
-		<a href="posts/revision-e-instalacion-de-lemonpos.html">Revisión e instalación de LemonPos</a>
-	    </li>
-    </ul>
-</div>
-<!-- End post-list post_list_2a38d6f067514e49881c426bc2d4e1d1 -->
-
-</div>
+<p class="more"><a href="posts/administrando-lemonpos-con-phpmyadmin.html">Leer más…</a></p>
 </div>
     </div>
     </article>
@@ -471,7 +279,7 @@ libreoffice. Por ejemplo de productos agotados.</p>
         </p>
 </div>
     </header>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>Tiene tiempo que compré una Pcduino para experimentar. Es una
 microcomputadora similar a la Raspberrypi pero con un poco más de
@@ -489,140 +297,7 @@ computadoras para imprimir algunos archivos de libreoffice de cuentas.
 Además esta PC sólo cuenta con una salida de video HDMI, lo cual implica comprar un
 monitor moderno, o comprar un cable convertidor, y ninguna de las dos
 resultó una opción.</p>
-<div class="section" id="problemas-con-la-pc-duino">
-<h2>Problemas con la PC Duino.</h2>
-<p>La PC en sí fue cara, pues aunque estas PC's se anuncian como muy
-baratas, por los impuestos de importación de Estados Unidos y por
-que son un artículo raro, no se consiguen a un precio accesible en el
-país. El convertidor de HDMI a VGA también era más caro que la compu.
-Esto acabó con la utilidad de la computadora y la relegó al fondo del
-cajón durante un tiempo. Ya que computadoras viejas arquitectura X86 se
-consiguen baratas y por montones.</p>
-<p>Otro punto en contra es que si bien es más potente
-que la Raspberrypi, es menos flexible, viene con Lubuntu instalado, no se puede
-instalar Raspbian (al menos ahora, pero puede ser que la version 8 de
-debian tenga soporte para esta computadora) y no se puede encontrar
-documentación.</p>
-<p>El lubuntu que trae por defecto corre muy lento y tarda bastante hasta
-en instalar un programa, esto se debe al parecer a la lentitud de
-escritura de la memoria NAND que trae integrada.</p>
-</div>
-<div class="section" id="buscando-la-utilidad">
-<h2>Buscando la utilidad.</h2>
-<p>Decidido a no malgastar el dinero, hace poco me puse a investigar como
-darle una utilidad y vi que lo mejor era utilizarlo como un pequeño
-sevidor. He decidido usarlo para servir una micro págia web, su
-capacidad es la suficiente para esta tarea, con la ventaja de que si se
-queda prendida todo el día el consumo de luz es mínimo. Para lo anterior
-decidí cambiar ubuntu por Arch linux, ya que es el otro sistema linux
-que soporta además de Android. uso arch linux a diario y me es familiar
-y me resulta cómodo.</p>
-<p>Se necesita una tarjeta microSD, yo usé una de un celular viejo con 2GB
-de capacidad. Y las instrucciones se pueden encontrar aquí.</p>
-<p><a class="reference external" href="http://archlinuxarm.org/platforms/armv7/allwinner/pcduino">http://archlinuxarm.org/platforms/armv7/allwinner/pcduino</a></p>
-<p>Desgraciadamente las instrucciones no están completas.</p>
-<p>Para instalar Arch linux ARM en PC duino se necesita otra computadora
-con linux, ganas de aprender y paciencia. Me parece que
-también sirve en Mac el tutorial mientras se tenga dd y tar.</p>
-<p>1.Primero se hacen dos particiones en la tarjeta SD. Se pueden hacer
-usando fdisk o cfdisk. La primera de 16MB y la segunda de lo que sobre.
-A la primer partición se le da formato vfat y la segunda ext4. El
-problema  que  no se indica en la página es que la primer partición
-necesita empezar a partir del sector 2048 de la tarjeta. Es decir que
-hay que dejar espacio suficiente al inicio del disco para que se instale el
-cargador de arranque. Así que esto hay que tenerlo en cuenta cuando se
-hagan las particiones.</p>
-<p>2. A partir de aquí se pueden seguir las instrucciones del link
-anterior. Se baja el tarball del cargador de arranque desde aquí:</p>
-<p><a class="reference external" href="http://archlinuxarm.org/os/sunxi/pcduino-bootloader.tar.gz">http://archlinuxarm.org/os/sunxi/pcduino-bootloader.tar.gz</a></p>
-<p>Se descomprime usando tar, y se copia mediante dd al la tarjeta SD:</p>
-<pre class="literal-block">
-wget http://archlinuxarm.org/os/sunxi/pcduino-bootloader.tar.gz
-tar xzf pcduino-bootloader.tar.gz
-dd if=pcduino/sunxi-spl.bin of=/dev/mmcblkX bs=1024 seek=8
-dd if=pcduino/u-boot.bin of=/dev/mmcblkX bs=1024 seek=32
-</pre>
-<p>La tarjeta SD en el anterior código mmcblkX, en mi caso me parecio como
-/dev/sdb. Se puede saber como apareció la tarjeta SD en nuestro sistema
-usando fdisk -l. En este caso se tiene que usar el disco SD entero, no
-las particiones, es decir no usar /dev/sdb1 sino /dev/sdb. Si se usa alguna de las
-particiones en lugar del disco entero habrá que empezar todo de nuevo.</p>
-<p>3. Se baja el tarball del sistema Arch Linux ARM;, se descomprime y
-copia a la tarjeta SD:</p>
-<pre class="literal-block">
-mkdir /tmp/boot mkdir /tmp/arch mount /dev/mmcblkXp1 /tmp/boot
-mount /dev/mmcblkXp2 /tmp/arch wget
-http://archlinuxarm.org/os/ArchLinuxARM-sun4i-latest.tar.gz
-bsdtar -xpf ArchLinuxARM-sun4i-latest.tar.gz -C /tmp/arch
-cp /tmp/arch/boot/uImage /tmp/boot/uImage
-</pre>
-<p>Se montan las particiones en las capetas creadas en /tmp, luego se
-extrae la imagen del sistema a la futura partición raiz y copia
-el kernel a la partición de boot. Aquí si se tiene que usar el número de
-partición.</p>
-<p>4. Luego hay que copiar unos archivos especiales a la partición boot.
-Estos están también dentro del primer tarball que bajamos:</p>
-<pre class="literal-block">
-cp pcduino/pcDuino.bin /tmp/boot/ cp pcduino/uEnv.txt
-/tmp/boot/uEnv.txt
-</pre>
-<ol class="arabic" start="5">
-<li>
-<p class="first">Sacamos la tarjeta SD con seguridad:</p>
-<pre class="literal-block">
-sync
-umount /dev/mmcblkX*
-</pre>
-</li>
-</ol>
-<p>Todo esto se tiene que hacer como root</p>
-<p>Bien ahora sólo se inserta la tarjeta SD en la PcDuino y se le conecta
-el cable de corriente.</p>
-<p>Yo estuve esperando a que booteará un buen rato, frente a mi monitor
-HDMI, esperando a que diera señal pero ... nunca hubo señal.
-¿Qué esta pasando? ¿Acaso me equivoqué? ¿Dónde esta el fallo?. Resulta
-que Arch linux ARM, viene sin nada, totalmente simple, tan simple que no
-manda señal al HDMI, aunque si corre. ¿Pero que estaba pensando quien
-hizo esto?</p>
-<p>Para mi en realidad fue conveniente ya que pensaba usar PCduino como
-servidor Web. Resulta que aunque no tiene salida HDMI, la imagen de Arch
-linux ARM, viene con ssh y dhcp configurados, por lo que para tener
-acceso al dispositivo hay que conectarlo por cable ethernet a un router.
-Cualquier router casero maneja dhcp, por lo que es un paso fácil. Una
-vez hecho esto, se conecta la compu y desde otra compu con linux vamos a
-entrar emdiante ssh.</p>
-<p>Lo primero es saber que dirección ip adquirió la PCduino. Para esto yo
-use nmap. Este programa esta en todas las distribuciones. El comando
-sería:</p>
-<pre class="literal-block">
-nmap 192.168.1.1-254
-</pre>
-<p>Lo que escanea toda la red doméstica o interna en busca de puertos
-abietos, esto se tiene que adaptar hay que sustituir 192.168.1.1 por tu
-subred, pero en la mayoría de los routers caseros este comando
-funcionará copiando y pegando. Debe salir algo como esto:</p>
-<pre class="literal-block">
-Nmap scan report for 192.168.2.1
-Host is up (0.065s latency).
-Not shown: 998 closed ports
-PORT     STATE    SERVICE
-22/tcp   open     ssh
-</pre>
-<p>Lo que indica que hay una computadora con un puerto ssh abierto, por lo
-que desde mi máquina linuz hago:</p>
-<pre class="literal-block">
-ssh root@192.168.1.1
-</pre>
-<p>la contraseña por defecto es "root" no olviden cambiarla después. El
-sistema por defecto trae el hostname de alarm. Dentro de
-Arch Linux en PCduino un buen primer comando para ejecutar sería:</p>
-<pre class="literal-block">
-pacman -Syu
-</pre>
-<p>Fuente:</p>
-<p><a class="reference external" href="http://archlinuxarm.org/forum/viewtopic.php?f=9&amp;t=5334">http://archlinuxarm.org/forum/viewtopic.php?f=9&amp;t=5334</a>
-y experimentos propios.</p>
-</div>
+<p class="more"><a href="posts/arch-linux-en-pc-duino.html">Leer más…</a></p>
 </div>
     </div>
     </article>
@@ -640,7 +315,7 @@ y experimentos propios.</p>
         </p>
 </div>
     </header>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>Estoy usando lemonpos para algunas tiendas. Me parece que es un programa
 muy bien hecho, y que al contrario de varios puntos de venta con
@@ -663,228 +338,7 @@ tenga virus y que no se use para ver facebook. Al menos desde mi punto
 de vista.</p>
 <p>Otra razón es por que no me gusta ni ubuntu ni las distribuciones
 derivadas.</p>
-<div class="section" id="por-que-escogi-lemonpos">
-<h2>¿Por que escogí lemonpos?</h2>
-<p>Antes que nada escogí un programa de punto de venta libre
-por que éste me permite estudiarlo y modificarlo, pero una de las cosas
-más importantes es que corre en linux, por lo que hace al sistema mas
-estable en sí. Además, su base de datos es abierta y facil de
-manipular lo cual es algo que considero esencial en este tipo de
-software ya que muchos puntos de venta propietarios ofuscan su base de datos,
-por lo que es muy dificil sacar la información de estos sistemas si
-quieres migrar, importar productos, o simplemente crear reportes
-personaizados.</p>
-<p>Antes tengo que aclarar que lemonpos es un proyecto que ya no está en
-desarrollo, por lo que antes de pensar si deben o no de instalar
-lemonpos, hay que pensar si vale la pena. Otras opciones son Posper, PHP
-Point of Sale y OpenBravo Pos. Son muy buenas y están mantenidas. Entonces, ¿Porqué escoger
-lemonpos?. La razón es sencilla, en primer lugar probé todos los puntos
-de venta anteriores, y no me convencieron por varias razones: La mayoria estań dirigidos a
-pantallas táctiles, además de que implementan demasiadas funciones. El
-proceso de hacer una simple venta es algo engorroso, cuando en lemonpos
-es simplemente escanear el código de barras del producto y teclear
-enter. La rapidez del sistema también es una ventaja y con rapidez me
-refiero a que tanto se tarda el sistema entre hacer la venta e imprimir
-el ticket, ya que cuando hay mucha gente comprando en la tienda, es
-dificil de manejar si el sistema tarda algunos segundos. Los atajos del
-teclado son otra cosa muy útil.</p>
-<p>Ya lo mencione pero el esquema de base de datos que
-implementa es una de las mejores cosas de lemon. Usa Mysql, un gestor de
-base de datos que sale sobrado para la tarea de correr una tienda, ya
-que éste se utiliza para manejar gran cantidad de información.
-Además su diseño de tablas es claro, lo que indica que el sistema está
-bien hecho.</p>
-<p>A pesar de no estar más en desarrollo  es instalable en Debian
-Wheezy, Debian Jessie e inclusive en Arch linux lo que indica que el
-código está bien escrito, y aun se puede portar a sistemas nuevos, ya
-que originalmente estaba desarrollado para Ubuntu 10.04.</p>
-<p>Si LemonPos es instalable en una distribución de largo soporte como lo
-es Debian Wheezy o Debian Jessie o Centos 7 esto significa que este
-puede funcionar por más de 10 años sin problemas.</p>
-</div>
-<div class="section" id="el-estado-actual-de-lemonpos">
-<h2>El estado actual de lemonpos</h2>
-<p>Escribo todo esto por que parece que es un punto de venta de: haz doble
-click y funciona, quizá fue así hace algunos años pero yo tuve que
-explorar un poco a fondo las opciones que tenía el programa para poder ofrecer
-una instalación estable.</p>
-<p>Actualmente existe la paǵina en sourceforge de lemonpos donde se pueden
-conseguir diferentes versiones, también hay dos paǵinas con el código
-fuente de lemonpos, github y gitorious.</p>
-<ol class="arabic simple">
-<li><a class="reference external" href="https://gitorious.org/lemonpos">https://gitorious.org/lemonpos</a></li>
-<li><a class="reference external" href="http://sourceforge.net/projects/lemonpos">http://sourceforge.net/projects/lemonpos</a></li>
-<li><a class="reference external" href="https://github.com/miguelchavez/lemonpos">https://github.com/miguelchavez/lemonpos</a></li>
-</ol>
-<p>Estos tres repositorios contienen diferentes cosas. Los repositorios
-github y gitorious casi son iguales, pero el código en github me parece
-que es mas actual. En sourceforge podemos encontrar paquetes .deb algo
-antiguos y código fuente.</p>
-<p>Hay dos formas de instalar el código, la primera es compilar, lo cual en
-realidad no es dificil, ya que se puede hacer usando make. La segunda es
-usar los paquetes .deb pero desgraciadamente sólo se pueden usar en una
-distro debian.</p>
-<div class="section" id="que-version-escoger">
-<h3>¿Que versión escoger?</h3>
-<p>Como dije lemonpos, ya no está mantenido y hace poco acaba de perder
-la wiki que estaba en sourceforge, además de la documentación en su
-blog, por lo que haré un resumen de mis experiencias con lemonpos por si
-alguién se anima a instalarlo.</p>
-<p>Me parece que lo mejor es escoger una versión más antigua. He aquí mis
-experiencias con las diferentes versiones de lemonpos que he probado:</p>
-<p>1.Version 0.9.5 de github: con esta versión me refiero al tag en
-github o gitorious que dice 9.5, es necesario compilarla.</p>
-<p><a class="reference external" href="https://github.com/miguelchavez/lemonpos/archive/v0.9.5.0.zip">https://github.com/miguelchavez/lemonpos/archive/v0.9.5.0.zip</a></p>
-<p>No es recomendable ya que tienen un bug que afecta mucho su funcionalidad. No se pueden buscar productos donde dice buscar
-productos ya que el sistema se traba y se tarda demasiado en encontrar
-los productos. Esto sólo lo supe después de tomarme el trabajo de hacer
-un paquete .deb de la misma.</p>
-<p>2.Versión 30-abr-2013. Esta versión se encuentra disponible en
-sourceforge. Esta es una versión que corrige el anterior error
-pero que desgraciadamente sólo se encuentra disponible en binario,
-no está claro cual es el código fuente exacto de la anterior versión de
-lemonpos, pero estudiando un poco el código me parece que es la rama
-principal de github, o quizá algo un poco anterior. Si se tiene otro
-sistema que no sea un debian o ubuntu instalar esta, no es fácil.</p>
-<p>3.Versiones anteriores: No las he probado.Me parece también que aún
-se mantiene una versión "estable" en los repositorios de ubuntu y me
-parece que son versiones algo mas antiguas, quizá sirvan mejor.</p>
-<p>4. Version Rc 9.4.8, la probé de forma muy breve y me parece que
-también existe el error de la busqueda de productos.</p>
-<div class="section" id="es-acaso-una-version-mejor-que-la-otra">
-<h4>¿Es acaso una versión mejor que la otra?</h4>
-<p>Revisando un poco el código de las diferentes versiones me encontré con
-que después del 2010, lemonpos casi no cambia, básicamente se añaden las
-funcionalidades de: pago con transferencia interna, algunas correciones
-en la base de datos y el intento de inclusión  de las facturas CBB. En
-México éste fue un esquema de facturación que ya no es usado y por lo
-tanto es obsoleto, por lo que ya no sirve esta funcionalidad. También en
-versiones mas recientes se añaden subcategorías.
-A mi parecer estas últimas versiones presentes en git solamente, complica demasiado lemon. Así que si te funciona la version
-vieja, no la cambies!!!.
-A partir de la versión 9.3 el código de lemonpos se empieza a ensuciar,
-seguro debido a que los desarrolladores no tenían tiempo de seguir con
-el proyecto y tenían varias ideas que no se llegaron a implementar.</p>
-<p>A continuación detallaré la instalación de lemonpos en Crunchbag linux
-usando la versión 30-abr-2013 que fue la que al final me funcionó, si
-alguno sabe que son mejores las anteriores versiones, por favor hagamelo
-saber.</p>
-</div>
-</div>
-</div>
-<div class="section" id="instalacion-de-lemonpos">
-<h2>Instalación de lemonpos.</h2>
-<p>EL objetivo es lograr tener un punto de venta estable y ligero.
-Lamentablemente por ahora este tutorial sólo aplica para arquitecturas
-32 bit, osea computadoras viejas, las que deberías usar en un punto de
-venta. :). Ya que la version 30-abr sólo existe en formato binario, he
-buscado la fuente de este y no ha quedado muy claro cual es. Existe
-también la posibilidad de compilar un paquete para computadores de 64
-bit, eso ya lo he probado, pero no he logrado encontrar una versión del
-código estable en github, espero adelantar sobre esto más adelante..</p>
-<p>1.Bajas el paquete .deb de aquí.</p>
-<p><a class="reference external" href="http://sourceforge.net/projects/lemonpos/files/testing/">http://sourceforge.net/projects/lemonpos/files/testing/</a></p>
-<p>Este paquete es compatible con Debian Wheezy.</p>
-<p>Antes de instalar el paquete es necesario instalar varias dependencias.
-El paquete original ya trae las dependencias listadas, sin embargo al
-instalarlo me encontré con que faltaban algunas cosas, y sobretodo que
-no se traducía bien el programa al español. Esto me parece que es por
-que  usa ciertos paquetes de KDE para instalar lemonpos, pero correr
-kde acaba con el propósito de lograr un sistema ligero, a base de compilar
-código y hace varias pruebas logré solucionarlo.</p>
-<p>Primero nos logueamos como root:</p>
-<pre class="literal-block">
-su
-</pre>
-<p>Luego instalamos las dependencias:</p>
-<pre class="literal-block">
-apt-get install kde-runtime libc6 libkdecore5 libgcc1
-libqt4-dbus libqt4-network libqt4-sql-mysql libqt4-xml libqt4-svg
-libqt4-core libqt4-gui libstdc++6 mysql-client libkdeui5
-libkio5
-</pre>
-<p>Esto instalará las dependecias de lemonpos básicas, que serán un montón pues es KDE, sin embargo estas no se utilizarán cuando lemon esté corriendo
-por lo que el programa sigue siendo ligero y capaz de cargar en computadoras viejas, sólo ocuparán espacio de disco.</p>
-<p>Ahora es tiempo de instalar la base de datos:</p>
-<pre class="literal-block">
-apt-get install mysql-server
-</pre>
-<p>Durante el proceso de instalación aparecerá un dialogo preguntando por
-la contraseña de root de la base de datos, esta es necesaria anotarla ya
-que la usaremos despúes para el proceso de instalación.</p>
-<p>Esta base de datos no necesariamente tiene que estar en la misma
-máquina, de hecho esto hace a lemonpos bastante flexible y puede tener
-varias terminales de punto de venta conectada a la misma base de datos, cuando
-se tiene una tienda un poco mas grande. Espero escribir sobre esto mas
-adelante.</p>
-<p>Una vez que todo esto esté instalado es hora de ir al directorio donde
-bajamos el paquete de lemonpos e instalarlo. Lo podemos hacer de manera
-gráfica con gdebi o desde la terminal con:</p>
-<pre class="literal-block">
-dpkg -i lemonpos_30-APR-2013-1_i386.deb
-</pre>
-<p>Ahora ya estamos casi listos para la implementación de lemonpos. Solo
-falta poblar nuestra base de datos. Escondidos dentro del paquete de
-lemonpos están los scripts necesarios para crear esta base de datos, los
-puedes encontrar en el directorio:</p>
-<pre class="literal-block">
-/usr/share/kde4/apps/lemon
-</pre>
-<p>aquí se encuentran una serie de scripts, que crearán la base de datos y
-algunos que están ahí para migrar de versiones anteriores de lemonpos.</p>
-<p>Primeramente creamos la base de datos con:</p>
-<pre class="literal-block">
-cat lemon_mysql.sql | mysql -u root -p
-</pre>
-<p>Aquí preguntará el password que pusimos al instalar la base de datos,
-por lo que es importante anotarlo.</p>
-<p>Luego aplicamos el siguiente script:</p>
-<pre class="literal-block">
-cat fix_roles.sql | mysql -u root -p
-</pre>
-<p>Nuevamente pregunta el password y ya, podemos ignorar los demás archivos
-presentes en esta carpeta.</p>
-<p>Ahora podemos iniciar lemonpos, primeramente hay que salir de root con:</p>
-<pre class="literal-block">
-exit
-</pre>
-<p>y escribir:</p>
-<pre class="literal-block">
-lemon
-</pre>
-<p>para iniciar el programa. El programa de administrador es "squeeze", si
-escribes esto en una terminal aparecerá. El usuario por defecto es
-"admin" y la contraseña "linux".</p>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusión</h2>
-<p>No es nada fácil instalar lemon hoy día, el estado en el que se
-encuentra el proyecto es de abandono, sin embargo sigue siendo un
-programa muy bajado en sourceforge y francamente es un programa bueno y
-bien diseñado, por lo que vale la pena su instalación y configuración,
-ademas es software mexicano. La caída de la wiki y otros recursos esta
-haciendo más dificil el acercamiento a este programa. Es una lástima,
-por lo menos yo espero seguirlo usando los siguientes años.</p>
-<p>Espero escribir otro post, sobre como configurar lemonpos, importar
-productos desde una lista de excel y como tener un setup multicaja,
-asi de como conectarse remotamente con lemon, para actualziar el inventario
-desde lejos, es decir desde otra máquina, además de producir algunos reportes.</p>
-</div>
-<div class="section" id="actualizacion-importante">
-<h2>Actualizacion importante:</h2>
-<p>Actualmente está lista una versión estable para lemonpos, en donde los
-errores de la última versión que se consigue en sourceforge están
-corregidos. Además de los que están en este artículo.</p>
-<p>Los cambios importantes con los siguientes:</p>
-<ol class="arabic simple">
-<li>Las traducciones al español funcionan bien, he adicionado traducciones que faltaban.</li>
-<li>Quite la funcionalidad de facturas CBB ya que estas no se usan más en México.</li>
-</ol>
-<p>En realidad nada nuevo, pero corregí algunos detalles.</p>
-<p>Pasen por mi página en github para descargar el nuevo código fuente.
-Usen la rama estable.</p>
-<p>Edición: Corrige errores de dedo en las dependencias.</p>
-</div>
+<p class="more"><a href="posts/revision-e-instalacion-de-lemonpos.html">Leer más…</a></p>
 </div>
     </div>
     </article>
@@ -902,7 +356,7 @@ Usen la rama estable.</p>
         </p>
 </div>
     </header>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>He tenido la idea de empezar un blog para documentar ciertas cosas, pero
 nunca me he decidido a hacer nada. Claro que ahora parecer me he
@@ -918,136 +372,7 @@ latex que utilice para mi tesis, pero al menos así no tengo que recordar
 otra contrseña, y me gustaría aprender a usar git.</p>
 <p>Este blog fue hecho usando nikola.</p>
 <p>¿Qué es Nikola?</p>
-<p>Pues, no tengo mucha idea, pero digamos que es un wordpress mas geek. Es
-decir que aún hay que editar algunas cosas a la manera antigua cuando
-las páginas aún se hacían en html. Sólo algunas ya que en realidad es muy fácil escribir un post.
-La ventaja es que crea páginas web estáticas y no necesita guardar cosas complicadas en una base de datos. Las bases de
-datos son  omnipresentes hoy día y son muy útiles para guardar todos
-los números de tarjeta de crédito de los clientes de un banco y crear un
-sistema que haga busquedas de ellos. Pero si sólo vas a crear un simple
-blog, no creo que sea tan necesaria la base de datos.</p>
-<p>En fin. Nikola es un generador de páginas estáticas escrito en Python, un lenguaje de programación popular.</p>
-<p>Nikola primeramente genera las páginas en cualquier computador donde
-esté instalado, y luego es posible subirlas a un hosting. La parte
-interesante es que puede ser cualquier cosa que corra un servidor web.
-No es necesario que el hosting soporte X o Y paquetes. Y claro el
-trabajo se realiza en tu computador. La clara desventaja es que si no
-se tiene un computador con Nikola es dificil escribir, pero como ahora
-tengo una computadora portatil de uso habitual, creo que esto no es
-tanto problema.</p>
-<p>¿Como instalarlo?</p>
-<p>Se necesita tener python instalado el cual está en las distribuciones
-linux. Sin embargo se puede instalar en cualquier sistema operativo.
-Para instalarlo se necesita el instalador de paquetes python pip.
-Primero se instala pip, y pip instala Nikola.</p>
-<p>Los siguientes comandos se necesitan hacer como root</p>
-<p>Para logearse como root hay que escribir:</p>
-<p>su</p>
-<p>En Debian:</p>
-<p>apt-get install python-pip</p>
-<p>En Arch linux</p>
-<p>pacman -S python-pip</p>
-<p>En arch linux (la cual uso) también se encuentran en AUR, como hay dos
-paquetes en AUR, uno con python 3 y otro con python 2 esto me confundió
-y termine siguiendo la ruta de pip, que me parecio mas simple, aunque no
-me gusta que pip instale cosas en mi sistema, además de que no conozco este programa bien,
-pero de que instala cosas fácil, las instala.</p>
-<p>Nikola se instala así:</p>
-<pre class="literal-block">
-pip install Nikola
-</pre>
-<p>Hay instrucciones que indican que hay que hacer un entorno virtual de
-python, pero al final lo dejé por que lo quería es publicar, ya veré que
-pasa con la suciedad del sistema después.</p>
-<p>Las intrucciones de instalación se pueden encontrar en la página web de
-Nikola: <a class="reference external" href="http://getnikola.com/handbook.html#installing-nikola">http://getnikola.com/handbook.html#installing-nikola</a></p>
-<p>Algo que no detalla en la página, es que una vez hecho esto se debe
-salir del usuario root y trabajar como usuario normal para iniciar la
-página web. Si no los permisos de los archivos se hacen un desastre.</p>
-<p>asi que podemos escribir:</p>
-<pre class="literal-block">
-exit
-</pre>
-<p>luego se puede proseguir con la guia de configuración:</p>
-<pre class="literal-block">
-nikola init mysite
-</pre>
-<p>donde mysite es el nombre de la página, se creará una carpeta con este
-nombre conteniendo la página web, en el directorio desde donde se corra
-el anterior comando. Yo me pase buscando algunos minutos para saber donde estaba
-la página. Por ejemplo puedes cambiar mysite por "mi-primer-blog", o
-algo que sea fácil de recordar. Nikola hace algunas preguntas, y la
-verdad es complicado contestarlas, sobretodo si no se tiene idea de
-donde se va a poner la página. Lo único que recuerdo que seleccioné
-los comentarios google groups. Lo demás lo hice un poco al azar. Creo
-que se puede cambiar después:</p>
-<pre class="literal-block">
-cd mysite
-</pre>
-<p>Posteriormente podemos iniciar el primer post, con:</p>
-<pre class="literal-block">
-nikola new_post
-</pre>
-<p>y luego podemos encontrar el post en el directorio de post dentro del
-directorio de Nikola, este lo podemos editar en cualquier editor de
-texto, para este post yo estoy usando nano. Se puede usar alguna
-sintaxis de markdown, pero por ahora no sé lo que es eso. Asi que esto
-es puro texto.</p>
-<p>Una vex que terminamos de escribir el post, damos la orden:</p>
-<pre class="literal-block">
-nikola build
-</pre>
-<p>y para ver nuestra pagina:</p>
-<blockquote>
-nikola serve</blockquote>
-<p>Ahora puedo apuntar mi navegador a 127.0.0.1:8000, y aparecerá la
-nueva página. No parece tan díficil, al menos logré escribir esto y no
-se ve tan mal. El tema por default de Nikola también me gusta, lo que me
-ahorra tener que saber como cambiarlo.</p>
-<p>Si se quiere que las páginas se actualizen solas en lugar de reconstruir
-el sitio entero, se puede instalar (de nuevo como root):</p>
-<pre class="literal-block">
-pip install livereload
-pip install requests
-</pre>
-<p>y usar:</p>
-<pre class="literal-block">
-nikola auto
-</pre>
-<p>en el directorio de la página.</p>
-<div class="section" id="ojo">
-<h2>OJO</h2>
-<p>Si nikola da errores, se puede instalar desde git para tener lo último,
-para mi fue necesario ya que daba un error al construir la página.
-Obviamente esto no es necesario si todo funciona bien.</p>
-<p>Para instalarlo desde git primero se debe desinstalar nikola desde pip</p>
-<p>Nos logueamos como root:</p>
-<pre class="literal-block">
-su
-</pre>
-<p>Luego desinstalamos nikola:</p>
-<pre class="literal-block">
-pip uninstall nikola
-</pre>
-<p>y salimos de root:</p>
-<pre class="literal-block">
-exit
-</pre>
-<p>Luego clonamos el repo con git. Hay que instalar git antes desde luego:</p>
-<pre class="literal-block">
-git clone git://github.com/getnikola/nikola.git
-</pre>
-<p>y de nuevo como root, instalamos nikola:</p>
-<pre class="literal-block">
-cd nikola
-pip install -r requirements-full.txt
-pip install .
-</pre>
-<p>La línea de requerimientos no es necesaria si ya habíamos instalado con
-pip, ya que estos ya se encuentran instalados.</p>
-<p>Todo este entrar y salir de root es para que los permisos de archivos
-queden bien.</p>
-</div>
+<p class="more"><a href="posts/como-se-hizo-este-blog.html">Leer más…</a></p>
 </div>
     </div>
     </article>
@@ -1066,7 +391,7 @@ queden bien.</p>
         <!--End of body content-->
 
         <footer>
-            Contents © 2014         <a href="mailto:galprasmarco@gmail.com">hydrosIII</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2015         <a href="mailto:galprasmarco@gmail.com">hydrosIII</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
     </div>

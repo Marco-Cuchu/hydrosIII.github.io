@@ -62,10 +62,59 @@ Se va a usar la rama ocb-backports de openerp que introduce parches para los bug
 compatible con la rama principal.
 
 
-Desde Launchpad.
-------------------------------------
-Este método ya no debe ser usado, por que ya no hay codigo en launchpad, pero lo posteo aquí por que fue lo que originalmente hice y seguramente muchos también. Escribí 
-una guía de migración.
 
 Desde Github.
 ------------------------------------
+
+Nota: Antes se instalaba desde launchpad pero recientement el proyecto 
+Openerp cambio su nombre a odoo y ahora se desarrolla en github. Si 
+tienes una instalación desde launchpad lo mejor es borrarla y reinstalar 
+usando github.
+
+Se va al directorio de instalación::
+
+	cd /opt/openerp
+
+
+Se baja la versión 7.0 desde un archivo .zip para ahorrar algo de 
+tiempo::
+
+	https://codeload.github.com/OCA/OCB/zip/7.0
+
+Se cambian los permisos de la carpeta para que sean los correctos::
+
+	chown -R openerp:openerp /opt/openerp
+
+
+Se limpia la instalación de archivos innecesarios:
+
+
+
+
+Se crea el directorio de log, al que el programa openerp va a escribir 
+en el futuro y se le asignan los permisos necesarios::
+
+
+
+
+Se crea el archivo de configuración de openerp::
+
+
+Ahora solo falta iniciar openerp, para esto se crea un init script 
+adecuado, este ya viene en el directorio que se bajo de github. Los 
+valores importantes de init script, es dar con la correcta localización 
+del ejecutable, 
+
+
+
+Se crea el archivo de configuracion de openerp::
+
+
+Se inicia openerp con:: 
+
+
+	service openerp start
+
+Instalación de localización mexicana y factura electrónica.
+
+-------------------------------------------------------------

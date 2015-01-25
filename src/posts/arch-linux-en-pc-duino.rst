@@ -25,6 +25,7 @@ Además esta PC sólo cuenta con una salida de video HDMI, lo cual implica compr
 monitor moderno, o comprar un cable convertidor, y ninguna de las dos 
 resultó una opción.
 
+.. TEASER_END
 
 Problemas con la PC Duino.
 ----------------------------

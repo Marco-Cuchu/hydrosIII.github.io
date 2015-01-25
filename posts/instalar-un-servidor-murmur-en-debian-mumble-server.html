@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="es">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instalar un servidor murmur en Debian (mumble-server) | hydrosIII</title>
+
+    
+            <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+    
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="https://hydrosiii.github.io/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html">
+
+
+
+
+    
+        <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+
+    
+
+
+    
+
+    <meta name="author" content="hydrosIII">
+        <link rel="prev" href="pensamientos-sobre-systemd.html" title="Pensamientos sobre systemd" type="text/html">
+    
+    <meta property="og:site_name" content="hydrosIII">
+    <meta property="og:title" content="Instalar un servidor murmur en Debian (mumble-server)">
+    <meta property="og:url" content="https://hydrosiii.github.io/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html">
+    <meta property="og:description" content="Este es un minitutorial sobre como instalar un servidor murmur en
+Debian.
+Para quien no lo sepa, murmur es el servidor de mumble, un programa que
+puede sustituir a skype, para hablar con gente de lejo">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2015-01-25T01:18:48-06:00">
+           <meta property="article:tag" content="Debian">
+
+    
+
+    
+
+
+
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://hydrosiii.github.io/">
+
+                <span id="blog-title">hydrosIII</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                
+                <li>
+<a href="../archive.html">Archivo</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../rss.xml">feed RSS</a>
+                </li>
+<li>
+<a href="https://github.com/hydrosIII">Mi github</a>
+
+                
+            </li>
+</ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                    
+    <li>
+    <a href="instalar-un-servidor-murmur-en-debian-mumble-server.rst" id="sourcelink">Código</a>
+    </li>
+
+                
+            </ul>
+        </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav>
+
+<!-- End of Menubar -->
+
+<div class="container" id="content">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+    <header>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Instalar un servidor murmur en Debian (mumble-server)</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2015-01-25T01:18:48-06:00" itemprop="datePublished" title="2015-01-25 01:18">2015-01-25 01:18</time></a></p>
+                <p class="commentline">
+        
+    <a href="instalar-un-servidor-murmur-en-debian-mumble-server.html#disqus_thread" data-disqus-identifier="cache/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="instalar-un-servidor-murmur-en-debian-mumble-server.rst" id="sourcelink">Código</a></p>
+
+        </div>
+        
+
+    </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Este es un minitutorial sobre como instalar un servidor murmur en
+Debian.
+Para quien no lo sepa, murmur es el servidor de mumble, un programa que
+puede sustituir a skype, para hablar con gente de lejos. Mumble fue
+pensado originalmente para los videojuegos y esta diseñado par trabajar
+con anchos de banda pobres, por lo que lo hace muy eficiente en cuanto a
+la transmisión de audio, mucho mejor que skype.</p>
+<p>Pero la principal ventaja que yo le veo, es la seguridad que obtenemos
+al correr todo esto en un servidor propio, y saltarnos la vigilancia de
+compañias como google o skype. Se puede instalar en una vieja maquina
+con Debian, cualquier cacharro de los 90 funciona para correr este
+servidor. Igualmente una raspberry pi, o inclusive existe una version
+para los routers con Openwrt. Los routers de marca linksys.</p>
+<p>Para instalarlo en una red casera, hay que configurar un servicio de DNS
+dinámico y estar seguros que nuestro proveedor de internet sale
+directamente a la red, y tenemos control sobre nuestra ip pública. Lo
+cual puede complicar un poco, pero no imposibilitar la configuración de
+mumble-server.</p>
+<p>Sin embargo, compré un pequeño VPS para este tipo de cosas. La
+configuración en internet facilita mucho las cosas, y se puede abirir un
+servidor para platicar con tus amigos sin tener que gastar en teléfono.
+O con los miembros de tu familia. Además cuenta con clientes para
+Android y Iphone, lo cual lo hace ideal para llamadas a traves de 3g,
+que además superan cualquier intento de escucha por parte de la compañia
+teléfonica ya que toda la información va cifrada.</p>
+<p>Bueno, después de toda esta larga charla. Les muestro como correr
+murmur, que en Debian esta empaquetado como mumble-server.</p>
+<p>Nos logueamos como root en nuestro servidor y escribimos:</p>
+<pre class="literal-block">
+apt-get install mumble-server --no-install-recommends
+</pre>
+<p>Es bueno instalarlo sin las recomendaciones, ya que jala muchas
+dependencias innecesarias si tenemos un servidor web, además de que usa
+avahi. Posteriormente a la instalación hay que asegurarse de tener avahi
+desactivado si se está instalando en un servidor abierto al internet, ya que este crea una vulnerabilidad de
+seguridad. También hay que asegurarse de tener el puerto 64738 abierto a
+las conexiones entrantes.</p>
+<p>Después, de instalarlo, es recomendable mover algo las configuraciones
+en</p>
+<pre class="literal-block">
+/etc/default/mumble-server
+</pre>
+<p>en donde modificamos el número de procesos que puede abrir mumble-server
+a un límite razonable, de acuerdo al uso que se le vaya a dar y los
+recursos del sistema:</p>
+<pre class="literal-block">
+MURMUR_LIMIT_NOFILE=20
+</pre>
+<p>Por último movemos otro archivo de configuración localizado en:</p>
+<pre class="literal-block">
+/etc/mumble-server.ini
+</pre>
+<p>Yo recomendaría la siguiente línea:</p>
+<pre class="literal-block">
+certrequired=True
+</pre>
+<p>por seguridad, pero igualmente hay varias configuraciones, explicadas
+con comentarios en el archivo. Ahora si sólo hay que reiniciar el
+mumble-server para que acepte las nuevas configuraciones:</p>
+<pre class="literal-block">
+service mumble-server restart
+</pre>
+<p>Y ya nos podemos loguear desde mumble en nuestra pc a nuestro nuevo
+servidor murmur.</p>
+<p>Es posible además instalar el paquete mumble-django para agregar una
+interfaz web de configuración al servidor. Disfruten su nuevo servidor
+murmur.</p>
+</div>
+    </div>
+    <aside class="postpromonav">
+    <nav>
+    
+        <ul itemprop="keywords" class="tags">
+           <li><a class="tag p-category" href="../categories/debian.html" rel="tag">Debian</a></li>
+        </ul>
+
+    
+        <ul class="pager">
+            <li class="previous">
+                <a href="pensamientos-sobre-systemd.html" rel="prev" title="Pensamientos sobre systemd">Post anterior</a>
+            </li>
+        </ul>
+
+    </nav>
+    </aside>
+        <section class="comments">
+        <h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="hydrosiii",
+            disqus_url="https://hydrosiii.github.io/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html",
+        disqus_title="Instalar un servidor murmur en Debian (mumble-server)",
+        disqus_identifier="cache/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+    
+
+</article>
+
+        
+       <script>var disqus_shortname="hydrosiii";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+
+
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            Contents © 2015         <a href="mailto:galprasmarco@gmail.com">hydrosIII</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+    </div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script>
+        <script src="../assets/js/colorbox-i18n/jquery.colorbox-es.js"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+    <!-- fancy dates -->
+    <script>
+    moment.locale("es");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script>
+    <!-- end fancy dates -->
+    
+
+
+</body>
+</html>

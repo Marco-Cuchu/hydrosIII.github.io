@@ -25,6 +25,8 @@ Este blog fue hecho usando nikola.
 
 ¿Qué es Nikola?
 
+.. TEASER_END
+
 Pues, no tengo mucha idea, pero digamos que es un wordpress mas geek. Es 
 decir que aún hay que editar algunas cosas a la manera antigua cuando 
 las páginas aún se hacían en html. Sólo algunas ya que en realidad es muy fácil escribir un post.

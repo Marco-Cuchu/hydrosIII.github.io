@@ -14,6 +14,7 @@ de los paquetes, los cuales desde luego cambian. Es por eso que no es
 un sistema operativo estable. Esta es una guía para volverlos mas usable, aunque muchas de las cosas que aquí se dicen, aplican para
 cualquier sistema Gnu/linux, y muchas veces por extensión a cualquier SO.
 
+.. TEASER_END
 
 ¿Que es estabilidad?
 ----------------------
