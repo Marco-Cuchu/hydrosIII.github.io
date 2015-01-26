@@ -89,6 +89,36 @@
 <div class="postindex">
     <article class="h-entry post-text">
     <header>
+        <h1 class="p-name entry-title"><a href="posts/servidor-murmur-en-debian-parte-2-mumble-server.html" class="u-url">Servidor murmur en Debian parte 2 (mumble-server)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="posts/servidor-murmur-en-debian-parte-2-mumble-server.html" rel="bookmark"><time class="published dt-published" datetime="2015-01-26T00:29:53-06:00" itemprop="datePublished" title="2015-01-26 00:29">2015-01-26 00:29</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/servidor-murmur-en-debian-parte-2-mumble-server.html#disqus_thread" data-disqus-identifier="cache/posts/servidor-murmur-en-debian-parte-2-mumble-server.html">Comments</a>
+
+
+        </p>
+</div>
+    </header>
+    <div class="p-summary entry-summary">
+    <div>
+<p>Esta es la segunda parte del tutorial para correr el un servidor murmur
+en Debian.  Aunque el tutorial anterior delineaba lo básico. Cuando
+intenté cambiar algunas configuraciones empezé a tener problemas, por lo
+que escribo esto a manera de notas, y por si alguien lo necesita
+consultar. Trata sobre la configuración de los certificados SSL para que
+nuestro servidor sea reconocido como seguro.</p>
+<p>Nota: En este artículo se utilizará mumble-server y murmurd como
+sinónimos ya que son lo mismo pero por la convención de los nombres de
+Debian tienen dos nombres diferentes, espero que esto no cause
+confusión.</p>
+<p class="more"><a href="posts/servidor-murmur-en-debian-parte-2-mumble-server.html">Leer más…</a></p>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="p-name entry-title"><a href="posts/instalar-un-servidor-murmur-en-debian-mumble-server.html" class="u-url">Instalar un servidor murmur en Debian (mumble-server)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
@@ -116,60 +146,7 @@ compañias como google o skype. Se puede instalar en una vieja maquina
 con Debian, cualquier cacharro de los 90 funciona para correr este
 servidor. Igualmente una raspberry pi, o inclusive existe una version
 para los routers con Openwrt. Los routers de marca linksys.</p>
-<p>Para instalarlo en una red casera, hay que configurar un servicio de DNS
-dinámico y estar seguros que nuestro proveedor de internet sale
-directamente a la red, y tenemos control sobre nuestra ip pública. Lo
-cual puede complicar un poco, pero no imposibilitar la configuración de
-mumble-server.</p>
-<p>Sin embargo, compré un pequeño VPS para este tipo de cosas. La
-configuración en internet facilita mucho las cosas, y se puede abirir un
-servidor para platicar con tus amigos sin tener que gastar en teléfono.
-O con los miembros de tu familia. Además cuenta con clientes para
-Android y Iphone, lo cual lo hace ideal para llamadas a traves de 3g,
-que además superan cualquier intento de escucha por parte de la compañia
-teléfonica ya que toda la información va cifrada.</p>
-<p>Bueno, después de toda esta larga charla. Les muestro como correr
-murmur, que en Debian esta empaquetado como mumble-server.</p>
-<p>Nos logueamos como root en nuestro servidor y escribimos:</p>
-<pre class="literal-block">
-apt-get install mumble-server --no-install-recommends
-</pre>
-<p>Es bueno instalarlo sin las recomendaciones, ya que jala muchas
-dependencias innecesarias si tenemos un servidor web, además de que usa
-avahi. Posteriormente a la instalación hay que asegurarse de tener avahi
-desactivado si se está instalando en un servidor abierto al internet, ya que este crea una vulnerabilidad de
-seguridad. También hay que asegurarse de tener el puerto 64738 abierto a
-las conexiones entrantes.</p>
-<p>Después, de instalarlo, es recomendable mover algo las configuraciones
-en</p>
-<pre class="literal-block">
-/etc/default/mumble-server
-</pre>
-<p>en donde modificamos el número de procesos que puede abrir mumble-server
-a un límite razonable, de acuerdo al uso que se le vaya a dar y los
-recursos del sistema:</p>
-<pre class="literal-block">
-MURMUR_LIMIT_NOFILE=20
-</pre>
-<p>Por último movemos otro archivo de configuración localizado en:</p>
-<pre class="literal-block">
-/etc/mumble-server.ini
-</pre>
-<p>Yo recomendaría la siguiente línea:</p>
-<pre class="literal-block">
-certrequired=True
-</pre>
-<p>por seguridad, pero igualmente hay varias configuraciones, explicadas
-con comentarios en el archivo. Ahora si sólo hay que reiniciar el
-mumble-server para que acepte las nuevas configuraciones:</p>
-<pre class="literal-block">
-service mumble-server restart
-</pre>
-<p>Y ya nos podemos loguear desde mumble en nuestra pc a nuestro nuevo
-servidor murmur.</p>
-<p>Es posible además instalar el paquete mumble-django para agregar una
-interfaz web de configuración al servidor. Disfruten su nuevo servidor
-murmur.</p>
+<p class="more"><a href="posts/instalar-un-servidor-murmur-en-debian-mumble-server.html">Leer más…</a></p>
 </div>
     </div>
     </article>

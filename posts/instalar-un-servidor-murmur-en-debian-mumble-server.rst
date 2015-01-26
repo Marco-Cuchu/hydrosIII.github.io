@@ -16,12 +16,15 @@ pensado originalmente para los videojuegos y esta diseñado par trabajar
 con anchos de banda pobres, por lo que lo hace muy eficiente en cuanto a 
 la transmisión de audio, mucho mejor que skype.
 
+
 Pero la principal ventaja que yo le veo, es la seguridad que obtenemos 
 al correr todo esto en un servidor propio, y saltarnos la vigilancia de 
 compañias como google o skype. Se puede instalar en una vieja maquina 
 con Debian, cualquier cacharro de los 90 funciona para correr este 
 servidor. Igualmente una raspberry pi, o inclusive existe una version 
 para los routers con Openwrt. Los routers de marca linksys. 
+
+.. TEASER_END
 
 Para instalarlo en una red casera, hay que configurar un servicio de DNS 
 dinámico y estar seguros que nuestro proveedor de internet sale 
