@@ -50,19 +50,21 @@ Antes tengo que aclarar que lemonpos es un proyecto que ya no está en
 desarrollo, por lo que antes de pensar si deben o no de instalar 
 lemonpos, hay que pensar si vale la pena. Otras opciones son Posper, PHP 
 Point of Sale y OpenBravo Pos. Son muy buenas y están mantenidas. Entonces, ¿Porqué escoger 
-lemonpos?. La razón es sencilla, en primer lugar probé todos los puntos 
-de venta anteriores, y no me convencieron por varias razones: La mayoria estań dirigidos a 
-pantallas táctiles, además de que implementan demasiadas funciones. El 
+lemonpos?. Probé todos los puntos de venta anteriores, y no me 
+convencieron por varias razones: La mayoria estań dirigidos a 
+pantallas táctiles, además de que implementan demasiadas funciones; el
 proceso de hacer una simple venta es algo engorroso, cuando en lemonpos 
 es simplemente escanear el código de barras del producto y teclear 
-enter. La rapidez del sistema también es una ventaja y con rapidez me 
+enter.
+
+La rapidez del sistema también es una ventaja y con rapidez me 
 refiero a que tanto se tarda el sistema entre hacer la venta e imprimir 
 el ticket, ya que cuando hay mucha gente comprando en la tienda, es 
 dificil de manejar si el sistema tarda algunos segundos. Los atajos del 
 teclado son otra cosa muy útil.
  
-Ya lo mencione pero el esquema de base de datos que 
-implementa es una de las mejores cosas de lemon. Usa Mysql, un gestor de 
+Ya lo mencione pero el esquema de base de datos que implementa es
+una de las mejores cosas de lemon. Usa Mysql, un gestor de 
 base de datos que sale sobrado para la tarea de correr una tienda, ya 
 que éste se utiliza para manejar gran cantidad de información.
 Además su diseño de tablas es claro, lo que indica que el sistema está 
@@ -286,11 +288,11 @@ corregidos. Además de los que están en este artículo.
 Los cambios importantes con los siguientes:
 
 1. Las traducciones al español funcionan bien, he adicionado traducciones que faltaban.
-2. Quite la funcionalidad de facturas CBB ya que estas no se usan más en México.
+2. Quité la funcionalidad de facturas CBB ya que estas no se usan más en 
+México.
 
 En realidad nada nuevo, pero corregí algunos detalles.
 
 Pasen por mi página en github para descargar el nuevo código fuente.
 Usen la rama estable.
 
-Edición: Corrige errores de dedo en las dependencias.

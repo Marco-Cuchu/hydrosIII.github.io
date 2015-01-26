@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hydrosIII (python)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link rel="self" href="https://hydrosiii.github.io/categories/python.xml" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Sun, 25 Jan 2015 01:43:43 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>¿Cómo se hizo este blog?</title><link>https://hydrosiii.github.io/posts/como-se-hizo-este-blog.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;He tenido la idea de empezar un blog para documentar ciertas cosas, pero
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>hydrosIII (python)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link rel="self" href="https://hydrosiii.github.io/categories/python.xml" type="application/rss+xml"></atom:link><language>es</language><lastBuildDate>Mon, 26 Jan 2015 01:28:38 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>¿Cómo se hizo este blog?</title><link>https://hydrosiii.github.io/posts/como-se-hizo-este-blog.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;He tenido la idea de empezar un blog para documentar ciertas cosas, pero
 nunca me he decidido a hacer nada. Claro que ahora parecer me he
 decidido por una técnica mediamente dificil de escribir un blog.&lt;/p&gt;
 &lt;p&gt;Se me han ocurrido un montón de ideas, desde hostear mi blog en mi
 propio servidor, sobretodo para propósitos didácticos hasta abrir una
 cuenta en wordpress, lo cual ya hice, pero no creo que la utilize. Al
-final me entere de que puedes tener una página en Github. Bueno así no tengo
-cosas en todos lados. Tampoco es que tenga muchas cuentas, pero odio
+final me enteré de que puedes tener una página en Github. Bueno así no
+tengo cosas en todos lados. Tampoco es que tenga muchas cuentas, pero odio
 estar recordando la contraseña para todas ellas. Y tengo una cuenta en
 gihub, con casi nada de código, lo único que he subido es la plantilla
 latex que utilice para mi tesis, pero al menos así no tengo que recordar

@@ -4,12 +4,12 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1422256599.2297566
+_modified_time = 1422257317.1152105
 _enable_loop = True
 _template_filename = '/usr/lib/python3.4/site-packages/nikola/data/themes/bootstrap3/templates/base_helper.tmpl'
 _template_uri = 'base_helper.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['html_feedlinks', 'html_stylesheets', 'html_translations', 'html_headstart', 'late_load_js', 'html_navigation_links']
+_exports = ['html_feedlinks', 'html_translations', 'html_navigation_links', 'html_headstart', 'html_stylesheets', 'late_load_js']
 
 
 def render_body(context,**pageargs):
@@ -32,11 +32,11 @@ def render_body(context,**pageargs):
 def render_html_feedlinks(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        rss_link = context.get('rss_link', UNDEFINED)
-        translations = context.get('translations', UNDEFINED)
         _link = context.get('_link', UNDEFINED)
-        len = context.get('len', UNDEFINED)
+        translations = context.get('translations', UNDEFINED)
         generate_rss = context.get('generate_rss', UNDEFINED)
+        rss_link = context.get('rss_link', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if rss_link:
@@ -60,50 +60,13 @@ def render_html_feedlinks(context):
         context.caller_stack._pop_frame()
 
 
-def render_html_stylesheets(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        annotations = context.get('annotations', UNDEFINED)
-        notes = context.get('notes', UNDEFINED)
-        has_custom_css = context.get('has_custom_css', UNDEFINED)
-        post = context.get('post', UNDEFINED)
-        use_bundles = context.get('use_bundles', UNDEFINED)
-        use_cdn = context.get('use_cdn', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if use_bundles:
-            if use_cdn:
-                __M_writer('            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">\n            <link href="/assets/css/all.css" rel="stylesheet" type="text/css">\n')
-            else:
-                __M_writer('            <link href="/assets/css/all-nocdn.css" rel="stylesheet" type="text/css">\n')
-        else:
-            if use_cdn:
-                __M_writer('            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">\n')
-            else:
-                __M_writer('            <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">\n')
-            __M_writer('        <link href="/assets/css/rst.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/code.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/colorbox.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/theme.css" rel="stylesheet" type="text/css">\n')
-            if has_custom_css:
-                __M_writer('            <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">\n')
-        if annotations and post and not post.meta('noannotations'):
-            __M_writer('        ')
-            __M_writer(str(notes.css()))
-            __M_writer('\n')
-        elif not annotations and post and post.meta('annotations'):
-            __M_writer('        ')
-            __M_writer(str(notes.css()))
-            __M_writer('\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_html_translations(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         translations = context.get('translations', UNDEFINED)
         lang = context.get('lang', UNDEFINED)
-        _link = context.get('_link', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
+        _link = context.get('_link', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         for langname in translations.keys():
@@ -120,32 +83,80 @@ def render_html_translations(context):
         context.caller_stack._pop_frame()
 
 
+def render_html_navigation_links(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        isinstance = context.get('isinstance', UNDEFINED)
+        rel_link = context.get('rel_link', UNDEFINED)
+        navigation_links = context.get('navigation_links', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
+        tuple = context.get('tuple', UNDEFINED)
+        permalink = context.get('permalink', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        for url, text in navigation_links[lang]:
+            if isinstance(url, tuple):
+                __M_writer('            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">')
+                __M_writer(str(text))
+                __M_writer('<b class="caret"></b></a>\n            <ul class="dropdown-menu">\n')
+                for suburl, text in url:
+                    if rel_link(permalink, suburl) == "#":
+                        __M_writer('                    <li class="active"><a href="')
+                        __M_writer(str(permalink))
+                        __M_writer('">')
+                        __M_writer(str(text))
+                        __M_writer('</a>\n')
+                    else:
+                        __M_writer('                    <li><a href="')
+                        __M_writer(str(suburl))
+                        __M_writer('">')
+                        __M_writer(str(text))
+                        __M_writer('</a>\n')
+                __M_writer('            </ul>\n')
+            else:
+                if rel_link(permalink, url) == "#":
+                    __M_writer('                <li class="active"><a href="')
+                    __M_writer(str(permalink))
+                    __M_writer('">')
+                    __M_writer(str(text))
+                    __M_writer('</a>\n')
+                else:
+                    __M_writer('                <li><a href="')
+                    __M_writer(str(url))
+                    __M_writer('">')
+                    __M_writer(str(text))
+                    __M_writer('</a>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_html_headstart(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        description = context.get('description', UNDEFINED)
-        nextlink = context.get('nextlink', UNDEFINED)
+        comment_system = context.get('comment_system', UNDEFINED)
         blog_title = context.get('blog_title', UNDEFINED)
-        title = context.get('title', UNDEFINED)
-        abs_link = context.get('abs_link', UNDEFINED)
-        prevlink = context.get('prevlink', UNDEFINED)
-        permalink = context.get('permalink', UNDEFINED)
-        twitter_card = context.get('twitter_card', UNDEFINED)
         mathjax_config = context.get('mathjax_config', UNDEFINED)
-        lang = context.get('lang', UNDEFINED)
-        favicons = context.get('favicons', UNDEFINED)
-        use_open_graph = context.get('use_open_graph', UNDEFINED)
-        use_cdn = context.get('use_cdn', UNDEFINED)
-        def html_feedlinks():
-            return render_html_feedlinks(context)
-        url_replacer = context.get('url_replacer', UNDEFINED)
         def html_stylesheets():
             return render_html_stylesheets(context)
-        comment_system = context.get('comment_system', UNDEFINED)
-        comment_system_id = context.get('comment_system_id', UNDEFINED)
+        twitter_card = context.get('twitter_card', UNDEFINED)
+        abs_link = context.get('abs_link', UNDEFINED)
+        use_cdn = context.get('use_cdn', UNDEFINED)
         striphtml = context.get('striphtml', UNDEFINED)
+        nextlink = context.get('nextlink', UNDEFINED)
+        comment_system_id = context.get('comment_system_id', UNDEFINED)
+        def html_feedlinks():
+            return render_html_feedlinks(context)
+        title = context.get('title', UNDEFINED)
+        description = context.get('description', UNDEFINED)
+        favicons = context.get('favicons', UNDEFINED)
+        url_replacer = context.get('url_replacer', UNDEFINED)
+        use_open_graph = context.get('use_open_graph', UNDEFINED)
         extra_head_data = context.get('extra_head_data', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
         is_rtl = context.get('is_rtl', UNDEFINED)
+        permalink = context.get('permalink', UNDEFINED)
+        prevlink = context.get('prevlink', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<!DOCTYPE html>\n<html\n')
         if use_open_graph or (twitter_card and twitter_card['use_twitter_cards']) or (comment_system == 'facebook'):
@@ -220,14 +231,51 @@ def render_html_headstart(context):
         context.caller_stack._pop_frame()
 
 
+def render_html_stylesheets(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        post = context.get('post', UNDEFINED)
+        notes = context.get('notes', UNDEFINED)
+        annotations = context.get('annotations', UNDEFINED)
+        use_bundles = context.get('use_bundles', UNDEFINED)
+        use_cdn = context.get('use_cdn', UNDEFINED)
+        has_custom_css = context.get('has_custom_css', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if use_bundles:
+            if use_cdn:
+                __M_writer('            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">\n            <link href="/assets/css/all.css" rel="stylesheet" type="text/css">\n')
+            else:
+                __M_writer('            <link href="/assets/css/all-nocdn.css" rel="stylesheet" type="text/css">\n')
+        else:
+            if use_cdn:
+                __M_writer('            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">\n')
+            else:
+                __M_writer('            <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">\n')
+            __M_writer('        <link href="/assets/css/rst.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/code.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/colorbox.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/theme.css" rel="stylesheet" type="text/css">\n')
+            if has_custom_css:
+                __M_writer('            <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">\n')
+        if annotations and post and not post.meta('noannotations'):
+            __M_writer('        ')
+            __M_writer(str(notes.css()))
+            __M_writer('\n')
+        elif not annotations and post and post.meta('annotations'):
+            __M_writer('        ')
+            __M_writer(str(notes.css()))
+            __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_late_load_js(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        lang = context.get('lang', UNDEFINED)
         colorbox_locales = context.get('colorbox_locales', UNDEFINED)
-        use_bundles = context.get('use_bundles', UNDEFINED)
-        social_buttons_code = context.get('social_buttons_code', UNDEFINED)
         use_cdn = context.get('use_cdn', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
+        social_buttons_code = context.get('social_buttons_code', UNDEFINED)
+        use_bundles = context.get('use_bundles', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if use_bundles:
@@ -253,56 +301,8 @@ def render_late_load_js(context):
         context.caller_stack._pop_frame()
 
 
-def render_html_navigation_links(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        lang = context.get('lang', UNDEFINED)
-        tuple = context.get('tuple', UNDEFINED)
-        navigation_links = context.get('navigation_links', UNDEFINED)
-        isinstance = context.get('isinstance', UNDEFINED)
-        permalink = context.get('permalink', UNDEFINED)
-        rel_link = context.get('rel_link', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        for url, text in navigation_links[lang]:
-            if isinstance(url, tuple):
-                __M_writer('            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">')
-                __M_writer(str(text))
-                __M_writer('<b class="caret"></b></a>\n            <ul class="dropdown-menu">\n')
-                for suburl, text in url:
-                    if rel_link(permalink, suburl) == "#":
-                        __M_writer('                    <li class="active"><a href="')
-                        __M_writer(str(permalink))
-                        __M_writer('">')
-                        __M_writer(str(text))
-                        __M_writer('</a>\n')
-                    else:
-                        __M_writer('                    <li><a href="')
-                        __M_writer(str(suburl))
-                        __M_writer('">')
-                        __M_writer(str(text))
-                        __M_writer('</a>\n')
-                __M_writer('            </ul>\n')
-            else:
-                if rel_link(permalink, url) == "#":
-                    __M_writer('                <li class="active"><a href="')
-                    __M_writer(str(permalink))
-                    __M_writer('">')
-                    __M_writer(str(text))
-                    __M_writer('</a>\n')
-                else:
-                    __M_writer('                <li><a href="')
-                    __M_writer(str(url))
-                    __M_writer('">')
-                    __M_writer(str(text))
-                    __M_writer('</a>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/bootstrap3/templates/base_helper.tmpl", "line_map": {"15": 0, "20": 2, "21": 65, "22": 92, "23": 122, "24": 145, "25": 159, "26": 167, "32": 147, "41": 147, "42": 148, "43": 149, "44": 149, "45": 149, "46": 150, "47": 151, "48": 152, "49": 153, "50": 153, "51": 153, "52": 153, "53": 153, "54": 155, "55": 156, "56": 156, "57": 156, "63": 95, "73": 95, "74": 96, "75": 97, "76": 98, "77": 100, "78": 101, "79": 103, "80": 104, "81": 105, "82": 106, "83": 107, "84": 109, "85": 113, "86": 114, "87": 117, "88": 118, "89": 118, "90": 118, "91": 119, "92": 120, "93": 120, "94": 120, "100": 161, "108": 161, "109": 162, "110": 163, "111": 164, "112": 164, "113": 164, "114": 164, "115": 164, "116": 164, "117": 164, "123": 3, "150": 3, "151": 7, "152": 8, "153": 9, "154": 10, "155": 12, "156": 13, "157": 15, "158": 16, "159": 18, "160": 21, "161": 22, "162": 25, "163": 25, "164": 25, "165": 28, "166": 29, "167": 29, "168": 29, "169": 31, "170": 32, "171": 32, "172": 32, "173": 32, "174": 34, "175": 34, "176": 35, "177": 35, "178": 36, "179": 37, "180": 37, "181": 37, "182": 39, "183": 40, "184": 41, "185": 42, "186": 42, "187": 42, "188": 42, "189": 42, "190": 42, "191": 42, "192": 45, "193": 46, "194": 47, "195": 47, "196": 47, "197": 49, "198": 50, "199": 51, "200": 51, "201": 51, "202": 53, "203": 54, "204": 54, "205": 54, "206": 56, "207": 57, "208": 57, "209": 58, "210": 59, "211": 60, "212": 61, "213": 61, "214": 61, "215": 63, "216": 64, "217": 64, "223": 67, "232": 67, "233": 68, "234": 69, "235": 70, "236": 73, "237": 74, "238": 76, "239": 77, "240": 78, "241": 80, "242": 81, "243": 86, "244": 88, "245": 89, "246": 89, "247": 89, "248": 91, "249": 91, "250": 91, "256": 124, "266": 124, "267": 125, "268": 126, "269": 127, "270": 127, "271": 127, "272": 129, "273": 130, "274": 131, "275": 131, "276": 131, "277": 131, "278": 131, "279": 132, "280": 133, "281": 133, "282": 133, "283": 133, "284": 133, "285": 136, "286": 137, "287": 138, "288": 139, "289": 139, "290": 139, "291": 139, "292": 139, "293": 140, "294": 141, "295": 141, "296": 141, "297": 141, "298": 141, "304": 298}, "uri": "base_helper.tmpl"}
+{"source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/bootstrap3/templates/base_helper.tmpl", "uri": "base_helper.tmpl", "line_map": {"15": 0, "20": 2, "21": 65, "22": 92, "23": 122, "24": 145, "25": 159, "26": 167, "32": 147, "41": 147, "42": 148, "43": 149, "44": 149, "45": 149, "46": 150, "47": 151, "48": 152, "49": 153, "50": 153, "51": 153, "52": 153, "53": 153, "54": 155, "55": 156, "56": 156, "57": 156, "63": 161, "71": 161, "72": 162, "73": 163, "74": 164, "75": 164, "76": 164, "77": 164, "78": 164, "79": 164, "80": 164, "86": 124, "96": 124, "97": 125, "98": 126, "99": 127, "100": 127, "101": 127, "102": 129, "103": 130, "104": 131, "105": 131, "106": 131, "107": 131, "108": 131, "109": 132, "110": 133, "111": 133, "112": 133, "113": 133, "114": 133, "115": 136, "116": 137, "117": 138, "118": 139, "119": 139, "120": 139, "121": 139, "122": 139, "123": 140, "124": 141, "125": 141, "126": 141, "127": 141, "128": 141, "134": 3, "161": 3, "162": 7, "163": 8, "164": 9, "165": 10, "166": 12, "167": 13, "168": 15, "169": 16, "170": 18, "171": 21, "172": 22, "173": 25, "174": 25, "175": 25, "176": 28, "177": 29, "178": 29, "179": 29, "180": 31, "181": 32, "182": 32, "183": 32, "184": 32, "185": 34, "186": 34, "187": 35, "188": 35, "189": 36, "190": 37, "191": 37, "192": 37, "193": 39, "194": 40, "195": 41, "196": 42, "197": 42, "198": 42, "199": 42, "200": 42, "201": 42, "202": 42, "203": 45, "204": 46, "205": 47, "206": 47, "207": 47, "208": 49, "209": 50, "210": 51, "211": 51, "212": 51, "213": 53, "214": 54, "215": 54, "216": 54, "217": 56, "218": 57, "219": 57, "220": 58, "221": 59, "222": 60, "223": 61, "224": 61, "225": 61, "226": 63, "227": 64, "228": 64, "234": 95, "244": 95, "245": 96, "246": 97, "247": 98, "248": 100, "249": 101, "250": 103, "251": 104, "252": 105, "253": 106, "254": 107, "255": 109, "256": 113, "257": 114, "258": 117, "259": 118, "260": 118, "261": 118, "262": 119, "263": 120, "264": 120, "265": 120, "271": 67, "280": 67, "281": 68, "282": 69, "283": 70, "284": 73, "285": 74, "286": 76, "287": 77, "288": 78, "289": 80, "290": 81, "291": 86, "292": 88, "293": 89, "294": 89, "295": 89, "296": 91, "297": 91, "298": 91, "304": 298}}
 __M_END_METADATA
 """

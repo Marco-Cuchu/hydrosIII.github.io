@@ -4,12 +4,12 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1422256600.0973175
+_modified_time = 1422257317.9459107
 _enable_loop = True
 _template_filename = '/usr/lib/python3.4/site-packages/nikola/data/themes/bootstrap3/templates/gallery.tmpl'
 _template_uri = 'gallery.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['content', 'extra_js', 'extra_head', 'sourcelink']
+_exports = ['content', 'extra_head', 'extra_js', 'sourcelink']
 
 
 def _mako_get_namespace(context, name):
@@ -34,27 +34,27 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
+        thumbnail_size = _import_ns.get('thumbnail_size', context.get('thumbnail_size', UNDEFINED))
         photo_array_json = _import_ns.get('photo_array_json', context.get('photo_array_json', UNDEFINED))
-        def content():
-            return render_content(context._locals(__M_locals))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
-        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
-        def extra_head():
-            return render_extra_head(context._locals(__M_locals))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
-        post = _import_ns.get('post', context.get('post', UNDEFINED))
         def extra_js():
             return render_extra_js(context._locals(__M_locals))
-        thumbnail_size = _import_ns.get('thumbnail_size', context.get('thumbnail_size', UNDEFINED))
-        parent = _import_ns.get('parent', context.get('parent', UNDEFINED))
-        ui = _mako_get_namespace(context, 'ui')
-        comments = _mako_get_namespace(context, 'comments')
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         def sourcelink():
             return render_sourcelink(context._locals(__M_locals))
+        ui = _mako_get_namespace(context, 'ui')
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        parent = _import_ns.get('parent', context.get('parent', UNDEFINED))
+        def content():
+            return render_content(context._locals(__M_locals))
+        photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        comments = _mako_get_namespace(context, 'comments')
+        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
+        post = _import_ns.get('post', context.get('post', UNDEFINED))
         site_has_comments = _import_ns.get('site_has_comments', context.get('site_has_comments', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -89,18 +89,18 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
         def content():
             return render_content(context)
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        ui = _mako_get_namespace(context, 'ui')
         photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
-        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         comments = _mako_get_namespace(context, 'comments')
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
+        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
         post = _import_ns.get('post', context.get('post', UNDEFINED))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
         site_has_comments = _import_ns.get('site_has_comments', context.get('site_has_comments', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        ui = _mako_get_namespace(context, 'ui')
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(ui.bar(crumbs)))
@@ -144,26 +144,6 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_extra_js(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        _import_ns = {}
-        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        def extra_js():
-            return render_extra_js(context)
-        thumbnail_size = _import_ns.get('thumbnail_size', context.get('thumbnail_size', UNDEFINED))
-        photo_array_json = _import_ns.get('photo_array_json', context.get('photo_array_json', UNDEFINED))
-        __M_writer = context.writer()
-        __M_writer('\n<script src="/assets/js/flowr.plugin.js"></script>\n<script>\njsonContent = ')
-        __M_writer(str(photo_array_json))
-        __M_writer(';\n$("#gallery_container").flowr({\n        data : jsonContent,\n        height : ')
-        __M_writer(str(thumbnail_size))
-        __M_writer('*.6,\n        padding: 5,\n        rows: -1,\n        render : function(params) {\n            // Just return a div, string or a dom object, anything works fine\n            img = $("<img />").attr({\n                \'src\': params.itemData.url_thumb,\n                \'width\' : params.width,\n                \'height\' : params.height\n            }).css(\'max-width\', \'100%\');\n            link = $( "<a></a>").attr({\n                \'href\': params.itemData.url,\n                \'class\': \'image-reference\'\n            });\n            div = $("<div />").addClass(\'image-block\').attr({\n                \'title\': params.itemData.title,\n                \'data-toggle\': "tooltip",\n            });\n            link.append(img);\n            div.append(link);\n            div.hover(div.tooltip());\n            return div;\n        },\n        itemWidth : function(data) { return data.size.w; },\n        itemHeight : function(data) { return data.size.h; },\n        complete : function(params) {\n            if( jsonContent.length > params.renderedItems ) {\n                nextRenderList = jsonContent.slice( params.renderedItems );\n            }\n        }\n    });\n$("a.image-reference").colorbox({rel:"gal", maxWidth:"100%",maxHeight:"100%",scalePhotos:true});\n</script>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_extra_head(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -176,6 +156,26 @@ def render_extra_head(context,**pageargs):
         __M_writer('\n')
         __M_writer(str(parent.extra_head()))
         __M_writer('\n<style type="text/css">\n    .image-block {\n        display: inline-block;\n    }\n    .flowr_row {\n        width: 100%;\n    }\n    </style>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_extra_js(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
+        thumbnail_size = _import_ns.get('thumbnail_size', context.get('thumbnail_size', UNDEFINED))
+        def extra_js():
+            return render_extra_js(context)
+        photo_array_json = _import_ns.get('photo_array_json', context.get('photo_array_json', UNDEFINED))
+        __M_writer = context.writer()
+        __M_writer('\n<script src="/assets/js/flowr.plugin.js"></script>\n<script>\njsonContent = ')
+        __M_writer(str(photo_array_json))
+        __M_writer(';\n$("#gallery_container").flowr({\n        data : jsonContent,\n        height : ')
+        __M_writer(str(thumbnail_size))
+        __M_writer('*.6,\n        padding: 5,\n        rows: -1,\n        render : function(params) {\n            // Just return a div, string or a dom object, anything works fine\n            img = $("<img />").attr({\n                \'src\': params.itemData.url_thumb,\n                \'width\' : params.width,\n                \'height\' : params.height\n            }).css(\'max-width\', \'100%\');\n            link = $( "<a></a>").attr({\n                \'href\': params.itemData.url,\n                \'class\': \'image-reference\'\n            });\n            div = $("<div />").addClass(\'image-block\').attr({\n                \'title\': params.itemData.title,\n                \'data-toggle\': "tooltip",\n            });\n            link.append(img);\n            div.append(link);\n            div.hover(div.tooltip());\n            return div;\n        },\n        itemWidth : function(data) { return data.size.w; },\n        itemHeight : function(data) { return data.size.h; },\n        complete : function(params) {\n            if( jsonContent.length > params.renderedItems ) {\n                nextRenderList = jsonContent.slice( params.renderedItems );\n            }\n        }\n    });\n$("a.image-reference").colorbox({rel:"gal", maxWidth:"100%",maxHeight:"100%",scalePhotos:true});\n</script>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -196,6 +196,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/bootstrap3/templates/gallery.tmpl", "line_map": {"128": 30, "129": 31, "130": 31, "131": 31, "132": 31, "133": 31, "134": 32, "135": 32, "136": 32, "137": 32, "138": 34, "139": 37, "140": 38, "141": 38, "147": 55, "22": 4, "25": 3, "157": 55, "158": 58, "31": 0, "160": 61, "161": 61, "167": 42, "159": 58, "176": 42, "177": 43, "178": 43, "184": 5, "59": 2, "60": 3, "61": 4, "66": 5, "197": 184, "71": 40, "76": 52, "81": 94, "87": 7, "105": 7, "106": 8, "107": 8, "108": 9, "109": 10, "110": 10, "111": 10, "112": 12, "113": 13, "114": 14, "115": 14, "116": 17, "117": 18, "118": 19, "119": 20, "120": 20, "121": 20, "122": 21, "123": 21, "124": 23, "125": 25, "126": 27, "127": 28}, "uri": "gallery.tmpl"}
+{"source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/bootstrap3/templates/gallery.tmpl", "uri": "gallery.tmpl", "line_map": {"128": 30, "129": 31, "130": 31, "131": 31, "132": 31, "133": 31, "134": 32, "135": 32, "136": 32, "137": 32, "138": 34, "139": 37, "140": 38, "141": 38, "147": 42, "22": 4, "25": 3, "156": 42, "157": 43, "158": 43, "31": 0, "164": 55, "174": 55, "175": 58, "176": 58, "177": 61, "178": 61, "184": 5, "59": 2, "60": 3, "61": 4, "66": 5, "197": 184, "71": 40, "76": 52, "81": 94, "87": 7, "105": 7, "106": 8, "107": 8, "108": 9, "109": 10, "110": 10, "111": 10, "112": 12, "113": 13, "114": 14, "115": 14, "116": 17, "117": 18, "118": 19, "119": 20, "120": 20, "121": 20, "122": 21, "123": 21, "124": 23, "125": 25, "126": 27, "127": 28}}
 __M_END_METADATA
 """

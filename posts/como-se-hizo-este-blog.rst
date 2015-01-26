@@ -13,8 +13,8 @@ decidido por una técnica mediamente dificil de escribir un blog.
 Se me han ocurrido un montón de ideas, desde hostear mi blog en mi 
 propio servidor, sobretodo para propósitos didácticos hasta abrir una 
 cuenta en wordpress, lo cual ya hice, pero no creo que la utilize. Al 
-final me entere de que puedes tener una página en Github. Bueno así no tengo 
-cosas en todos lados. Tampoco es que tenga muchas cuentas, pero odio 
+final me enteré de que puedes tener una página en Github. Bueno así no 
+tengo cosas en todos lados. Tampoco es que tenga muchas cuentas, pero odio 
 estar recordando la contraseña para todas ellas. Y tengo una cuenta en 
 gihub, con casi nada de código, lo único que he subido es la plantilla 
 latex que utilice para mi tesis, pero al menos así no tengo que recordar 
@@ -30,11 +30,13 @@ Este blog fue hecho usando nikola.
 Pues, no tengo mucha idea, pero digamos que es un wordpress mas geek. Es 
 decir que aún hay que editar algunas cosas a la manera antigua cuando 
 las páginas aún se hacían en html. Sólo algunas ya que en realidad es muy fácil escribir un post.
-La ventaja es que crea páginas web estáticas y no necesita guardar cosas complicadas en una base de datos. Las bases de 
-datos son  omnipresentes hoy día y son muy útiles para guardar todos 
-los números de tarjeta de crédito de los clientes de un banco y crear un 
-sistema que haga busquedas de ellos. Pero si sólo vas a crear un simple 
-blog, no creo que sea tan necesaria la base de datos.
+La ventaja es que crea páginas web estáticas y no necesita guardar cosas complicadas en una base de datos.
+
+Las bases de datos son  omnipresentes hoy día y son muy útiles para 
+guardar todos los números de tarjeta de crédito de los clientes de un 
+banco y crear un sistema que haga busquedas de ellos. Pero si sólo
+vas a crear un simple blog, no creo que sea tan necesaria la base de 
+datos.
 
 En fin. Nikola es un generador de páginas estáticas escrito en Python, un lenguaje de programación popular.
 
@@ -56,7 +58,7 @@ Primero se instala pip, y pip instala Nikola.
 
 Los siguientes comandos se necesitan hacer como root
 
-Para logearse como root hay que escribir:
+Para loguearse como root hay que escribir:
 
 su
 
@@ -68,7 +70,7 @@ En Arch linux
 
 pacman -S python-pip
 
-En arch linux (la cual uso) también se encuentran en AUR, como hay dos 
+En Arch linux (la cual uso) también se encuentran en AUR, como hay dos 
 paquetes en AUR, uno con python 3 y otro con python 2 esto me confundió
 y termine siguiendo la ruta de pip, que me parecio mas simple, aunque no 
 me gusta que pip instale cosas en mi sistema, además de que no conozco este programa bien,
@@ -83,6 +85,7 @@ python, pero al final lo dejé por que lo quería es publicar, ya veré que
 pasa con la suciedad del sistema después.
 
 Las intrucciones de instalación se pueden encontrar en la página web de 
+
 Nikola: http://getnikola.com/handbook.html#installing-nikola
 
 Algo que no detalla en la página, es que una vez hecho esto se debe
@@ -183,3 +186,5 @@ pip, ya que estos ya se encuentran instalados.
 Todo este entrar y salir de root es para que los permisos de archivos 
 queden bien.
 
+Edición: Ya aprendí un podo de rst, por lo que este post no quedó tan 
+mal

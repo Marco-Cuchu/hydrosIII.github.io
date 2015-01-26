@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1422256599.5540738
+_modified_time = 1422257317.432752
 _enable_loop = True
 _template_filename = '/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/post_helper.tmpl'
 _template_uri = 'post_helper.tmpl'
@@ -126,11 +126,11 @@ def render_meta_translations(context,post):
 def render_open_graph_metadata(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
-        lang = context.get('lang', UNDEFINED)
         blog_title = context.get('blog_title', UNDEFINED)
-        abs_link = context.get('abs_link', UNDEFINED)
-        use_open_graph = context.get('use_open_graph', UNDEFINED)
         url_replacer = context.get('url_replacer', UNDEFINED)
+        use_open_graph = context.get('use_open_graph', UNDEFINED)
+        lang = context.get('lang', UNDEFINED)
+        abs_link = context.get('abs_link', UNDEFINED)
         permalink = context.get('permalink', UNDEFINED)
         striphtml = context.get('striphtml', UNDEFINED)
         __M_writer = context.writer()
@@ -192,6 +192,6 @@ def render_html_tags(context,post):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/post_helper.tmpl", "line_map": {"15": 0, "20": 2, "21": 11, "22": 21, "23": 38, "24": 67, "25": 83, "26": 91, "32": 85, "36": 85, "37": 86, "38": 87, "44": 69, "49": 69, "50": 70, "51": 71, "52": 71, "53": 71, "54": 72, "55": 73, "56": 73, "57": 73, "58": 74, "59": 75, "60": 75, "61": 75, "62": 77, "63": 78, "64": 78, "65": 78, "66": 79, "67": 80, "68": 80, "69": 80, "75": 23, "80": 23, "81": 24, "82": 25, "83": 26, "84": 27, "85": 28, "86": 28, "87": 28, "88": 28, "89": 28, "90": 28, "91": 31, "92": 32, "93": 33, "94": 33, "95": 33, "96": 33, "97": 33, "98": 33, "99": 36, "105": 3, "112": 3, "113": 4, "114": 5, "115": 6, "116": 7, "117": 7, "118": 7, "119": 7, "120": 7, "126": 40, "137": 40, "138": 41, "139": 42, "140": 42, "141": 42, "142": 43, "143": 43, "144": 44, "145": 44, "146": 45, "147": 46, "148": 46, "149": 46, "150": 47, "151": 48, "152": 48, "153": 48, "154": 50, "155": 51, "156": 51, "157": 51, "158": 53, "159": 58, "160": 59, "161": 59, "162": 59, "163": 61, "164": 62, "165": 63, "166": 63, "167": 63, "173": 13, "178": 13, "179": 14, "180": 15, "181": 16, "182": 17, "183": 17, "184": 17, "185": 17, "186": 17, "187": 19, "193": 187}, "uri": "post_helper.tmpl"}
+{"source_encoding": "utf-8", "filename": "/usr/lib/python3.4/site-packages/nikola/data/themes/base/templates/post_helper.tmpl", "uri": "post_helper.tmpl", "line_map": {"15": 0, "20": 2, "21": 11, "22": 21, "23": 38, "24": 67, "25": 83, "26": 91, "32": 85, "36": 85, "37": 86, "38": 87, "44": 69, "49": 69, "50": 70, "51": 71, "52": 71, "53": 71, "54": 72, "55": 73, "56": 73, "57": 73, "58": 74, "59": 75, "60": 75, "61": 75, "62": 77, "63": 78, "64": 78, "65": 78, "66": 79, "67": 80, "68": 80, "69": 80, "75": 23, "80": 23, "81": 24, "82": 25, "83": 26, "84": 27, "85": 28, "86": 28, "87": 28, "88": 28, "89": 28, "90": 28, "91": 31, "92": 32, "93": 33, "94": 33, "95": 33, "96": 33, "97": 33, "98": 33, "99": 36, "105": 3, "112": 3, "113": 4, "114": 5, "115": 6, "116": 7, "117": 7, "118": 7, "119": 7, "120": 7, "126": 40, "137": 40, "138": 41, "139": 42, "140": 42, "141": 42, "142": 43, "143": 43, "144": 44, "145": 44, "146": 45, "147": 46, "148": 46, "149": 46, "150": 47, "151": 48, "152": 48, "153": 48, "154": 50, "155": 51, "156": 51, "157": 51, "158": 53, "159": 58, "160": 59, "161": 59, "162": 59, "163": 61, "164": 62, "165": 63, "166": 63, "167": 63, "173": 13, "178": 13, "179": 14, "180": 15, "181": 16, "182": 17, "183": 17, "184": 17, "185": 17, "186": 17, "187": 19, "193": 187}}
 __M_END_METADATA
 """
