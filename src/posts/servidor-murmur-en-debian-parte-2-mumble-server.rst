@@ -1,7 +1,7 @@
 .. title: Servidor murmur en Debian parte 2 (mumble-server)
 .. slug: servidor-murmur-en-debian-parte-2-mumble-server
 .. date: 2015-01-26 00:29:53 UTC-06:00
-.. tags: 
+.. tags: Debian
 .. link: 
 .. description: 
 .. type: text

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hydrosIII (Debian)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://hydrosiii.github.io/categories/debian.xml"></atom:link><language>es</language><lastBuildDate>Mon, 26 Jan 2015 01:08:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Instalar un servidor murmur en Debian (mumble-server)</title><link>https://hydrosiii.github.io/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Este es un minitutorial sobre como instalar un servidor murmur en
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>hydrosIII (Debian)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://hydrosiii.github.io/categories/debian.xml"></atom:link><language>es</language><lastBuildDate>Mon, 26 Jan 2015 01:16:40 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Servidor murmur en Debian parte 2 (mumble-server)</title><link>https://hydrosiii.github.io/posts/servidor-murmur-en-debian-parte-2-mumble-server.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Esta es la segunda parte del tutorial para correr el un servidor murmur
+en Debian.  Aunque el tutorial anterior delineaba lo básico. Cuando
+intenté cambiar algunas configuraciones empezé a tener problemas, por lo
+que escribo esto a manera de notas, y por si alguien lo necesita
+consultar. Trata sobre la configuración de los certificados SSL para que
+nuestro servidor sea reconocido como seguro.&lt;/p&gt;
+&lt;p&gt;Nota: En este artículo se utilizará mumble-server y murmurd como
+sinónimos ya que son lo mismo pero por la convención de los nombres de
+Debian tienen dos nombres diferentes, espero que esto no cause
+confusión.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hydrosiii.github.io/posts/servidor-murmur-en-debian-parte-2-mumble-server.html"&gt;Leer más…&lt;/a&gt; (restan 3 minutos)&lt;/p&gt;&lt;/div&gt;</description><category>Debian</category><guid>https://hydrosiii.github.io/posts/servidor-murmur-en-debian-parte-2-mumble-server.html</guid><pubDate>Mon, 26 Jan 2015 06:29:53 GMT</pubDate></item><item><title>Instalar un servidor murmur en Debian (mumble-server)</title><link>https://hydrosiii.github.io/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Este es un minitutorial sobre como instalar un servidor murmur en
 Debian.
 Para quien no lo sepa, murmur es el servidor de mumble, un programa que
 puede sustituir a skype, para hablar con gente de lejos. Mumble fue
