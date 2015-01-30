@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hydrosIII (seguridad)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://hydrosiii.github.io/categories/seguridad.xml"></atom:link><language>es</language><lastBuildDate>Fri, 30 Jan 2015 01:08:24 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mas vulnerabilidades en Linux: Ghost.</title><link>https://hydrosiii.github.io/posts/mas-vulnerabilidades-en-linux.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Una nueva vulnerabilidad se encontró en la libreria glibc, con la que
+corren la mayoría de las distribuciones Gnu/linux. Esta es sólo una
+pequeña reflexión y no un tutorial de como parchar. Curiosamente aunque
+Debian corre eglibc, también fue afectado.&lt;/p&gt;
+&lt;p&gt;Un buen tutorial sobre como parchar tu servidor o desktop lo puedes
+encontrar aquí:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.cyberciti.biz/faq/cve-2015-0235-patch-ghost-on-debian-ubuntu-fedora-centos-rhel-linux/"&gt;http://www.cyberciti.biz/faq/cve-2015-0235-patch-ghost-on-debian-ubuntu-fedora-centos-rhel-linux/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;En resumen, actualiza tu sistema desde los repos principales y todo
+estará parchado, a menos que corras algo tan antiguo como Centos 4, en
+cuyo caso, será mejor que te cuestiones por que haces algo como esto,
+más si es un servidor con acceso a internet.&lt;/p&gt;
+&lt;p&gt;En realidad esta vulnerabilidad se suma a la serie de bugs que se
+encontraron el año pasado en software relacionado con Gnu/linux como es
+heartbleed ( que en realidad afectó a todos los sistemas corriendo
+Openssl), shellshock (Mac y Linux), poodle (de nuevo openssl). A
+Gnu/linux le está lloviendo duro.&lt;/p&gt;
+&lt;p&gt;Es sorprendente que estas vulnerabilidades son parchadas horas o
+incluso minutos despues de  anunciadas por los expertos en seguridad,
+como es el caso de shellshock, lo que nos habla de una buena gestión de
+la seguridad. Pero también son vulnerabilidades que existían desde hace
+hace años, que es lo que tienen en común.
+Por lo que en realidad pudieron ser descubiertas por los hackers
+Black Hat, desde hace un buen tiempo, lo que les permitiría controlar
+gran parte de la web. Esto en realidad asusta. No quiero ni pensar lo
+que pasa en sistemas de código cerrado como windows o Mac en donde no se
+publican parches rapidamente y este proceso tarda semanas a veces, o
+incluso con que tarde dias, como hizo Mac al parchar shellshock.&lt;/p&gt;
+&lt;p&gt;Heartbleed por ejemplo permite tener acceso a todo la memoria de un
+servidor que corra Openssl, esto en realidad hacía que la vulnerabilidad
+hiciera mas inseguro al servidor si corria por ejemplo https, de que si
+corría simple http. La única diferencia es que nadie sabia que estaba
+ahí. Lo mismo con shellshock. Y ahora los investigadores que
+descubrieron Ghost aseguran que crearon un email mediante el cual podían
+obtener privilegios root y una shell!!!!! Paranoid mode enabled.!!!!&lt;/p&gt;
+&lt;p&gt;Y encima de todo se viene systemd para las distros linux, que he estado
+leyendo tiene algunos fallos de seguridad medio feos, sobretodo
+relacionados con los logs, como este:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://hackingthesystem4fun.blogspot.mx/2014/12/chicos-systemd-lovers-diganme-alguna.html"&gt;http://hackingthesystem4fun.blogspot.mx/2014/12/chicos-systemd-lovers-diganme-alguna.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;¿Que se puede hacer? Yo por lo mientras voy a empezar a aprender algo de
+BSD, ya que aunque no estan flexible como linux, de repente uno tiene la
+sensación de que Gnu/linux es un barco hundiéndose. Por varias cosas.&lt;/p&gt;
+&lt;p&gt;BSD al menos ha esquivado Shellshock y también Ghost. Le empezaré a
+echar un vistazo a OpenBSD el sistema super seguro, ya que en los
+tiempos que corren (NSA vigilante) tener seguridad extra no está demás
+aunque dificulte algo las cosas. Además de que de por si, internet es un
+lugar hostil. Esto lo sé sólo con ver la cuenta de ataques automatizados
+ssh a un servidor.&lt;/p&gt;
+&lt;p&gt;Lo que menos quiero encontrarme es que mis servidores fueron hackeados
+por una vulnerabildad misteriosa aún no descubierta, y que no se tiene
+ni idea de como un malware entró al sistema.&lt;/p&gt;
+&lt;p&gt;También sería bueno recalcar que mientras mas simple sea un sistema
+es mas seguro es, por ejemplo debo recalcar que la distribución Alpine
+Linux, se ha salvado de varias. Se salvo de shellshock, y de Ghost.
+Gracias a que usa busybox y ulibc, pero sobretodo a que es un sistema
+más simple.  Tampoco usa systemd y además usa un kernel Grsecurity y
+Pax. Una buena opción, aunque no tan robusta como Debian.&lt;/p&gt;
+&lt;p&gt;De los bugs de openssl nadie se salvó. Para esta libreria existe como
+alternativa GnuTLS y mas recientemente Libressl.&lt;/p&gt;
+&lt;p&gt;Por lo mientras a corto plazo voy poniendo PAX en mis sistemas y a largo
+plazo a comenzar con BSD.&lt;/p&gt;&lt;/div&gt;</description><category>seguridad</category><guid>https://hydrosiii.github.io/posts/mas-vulnerabilidades-en-linux.html</guid><pubDate>Fri, 30 Jan 2015 06:28:54 GMT</pubDate></item></channel></rss>
