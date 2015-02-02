@@ -1,4 +1,4 @@
-.. title: Internet software libre y libertad de expresión
+.. title: Internet, software libre y libertad de expresión
 .. slug: internet-software-libre-y-libertad-de-expresion
 .. date: 2015-01-31 00:22:43 UTC-06:00
 .. tags: política
@@ -34,7 +34,7 @@ sobre la creación y difusión de los contenidos digitales.
 
 Internet y software libre tienen una relación extraña, entrañable. Por 
 un lado el internet potenció la creación de comunidades como la que 
-creao el kernel linux o el proyecto Debian, y por el otro lado, el mismo 
+creo el kernel linux o el proyecto Debian, y por el otro lado, el mismo 
 internet hoy día tiene en su base programas de software libre.
 
 El internet no es sólo una plataforma donde los usuarios crean 
@@ -50,10 +50,11 @@ movimientos de cambio social como los de la primavera árabe o las comunidades G
 información mediante la centralización, la configuración de contenidos,  
 publicidad a la medida del usuario, y algunas veces la censura. 
 
-Es por esto que para una creación y difusión de contenidos que se 
+Es por esto que para la creación y difusión de contenidos que se 
 configure de manera responsable, descentralizada y resistente a la 
-censura y apropiación  es necesario contar con herramientas que sean accesibles a todos,
-además de abiertas y no susceptibles de una apropiación empresarial o 
+censura y apropiación es necesario contar con herramientas que sean accesibles a todos.
+
+Además de abiertas y no susceptibles de una apropiación empresarial o 
 centralizada. Esto sólo puede ser asegurado por el software libre y la 
 participación de los usuarios de internet en el mantenimiento y el uso 
 responsable de estas tecnologías.
@@ -64,13 +65,11 @@ Unidos, pero que nosotros como ciudadanos, debemos de empezar a discutir
 y repensar en nuestros propios países y espacios, y no dejar que las 
 decisiones las tomen otros.
 
-La creación de un internet realmente abierto toca muuchos temas, pero 
+La creación de un internet realmente abierto toca muchos temas, pero 
 definitivamente uno de ellos es su implementación sobre un software no 
 susceptible de apropiación empresarial o gubernamental. Si queremos 
 seguir produciendo contenidos, lo mejor es ser dueños de nuestra propia 
 "imprenta" y del hecho de saber como funciona.
-
-
 
 
 <iframe width="640" height="390" 
