@@ -10,7 +10,7 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/2015/index.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/archive.html</loc>
@@ -18,27 +18,31 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/arch-linux.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/debian.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/index.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/lemonpos.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/linux.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/nikola.html</loc>
   <lastmod>2014-11-19</lastmod>
+ </url>
+ <url>
+  <loc>https://hydrosiii.github.io/categories/openbsd.html</loc>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/pcduino.html</loc>
@@ -46,23 +50,27 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/politica.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/python.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/seguridad.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/galleries/index.html</loc>
   <lastmod>2015-01-25</lastmod>
  </url>
  <url>
+  <loc>https://hydrosiii.github.io/index-1.html</loc>
+  <lastmod>2015-02-05</lastmod>
+ </url>
+ <url>
   <loc>https://hydrosiii.github.io/index.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/listings/index.html</loc>
@@ -90,7 +98,7 @@
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/internet-software-libre-y-libertad-de-expresion.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/mas-vulnerabilidades-en-linux.html</loc>
@@ -99,6 +107,10 @@
  <url>
   <loc>https://hydrosiii.github.io/posts/pensamientos-sobre-systemd.html</loc>
   <lastmod>2015-02-02</lastmod>
+ </url>
+ <url>
+  <loc>https://hydrosiii.github.io/posts/reflexiones-sobre-el-modelo-de-seguridad-y-distribucion-de-debian-openbsd-y-otros-sistemas-operativos.html</loc>
+  <lastmod>2015-02-05</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/revision-e-instalacion-de-lemonpos.html</loc>
