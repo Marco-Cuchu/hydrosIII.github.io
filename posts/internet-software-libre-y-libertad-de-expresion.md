@@ -1,3 +1,4 @@
+
 .. title: Internet, software libre y libertad de expresión
 .. slug: internet-software-libre-y-libertad-de-expresion
 .. date: 2015-01-31 00:22:43 UTC-06:00
@@ -6,7 +7,7 @@
 .. description: Reflexión sobre el internet, lobertd de expresión y 
 software libre
 .. type: markdown
-
+-->
 En el siglo XV, Gutenberg dió a conocer la imprenta en Europa, con la 
 cual se imprimieron y masificaron los primeros libros, hasta esa época 
 solo disponibles a través de los copistas de los monasterios. El primer 

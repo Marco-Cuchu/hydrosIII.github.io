@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hydrosIII (openbsd)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://hydrosiii.github.io/categories/openbsd.xml"></atom:link><language>es</language><lastBuildDate>Thu, 05 Feb 2015 12:22:55 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reflexiones sobre el modelo de seguridad y distribución de Debian, Openbsd y otros sistemas operativos.</title><link>https://hydrosiii.github.io/posts/reflexiones-sobre-el-modelo-de-seguridad-y-distribucion-de-debian-openbsd-y-otros-sistemas-operativos.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Anteyer, en la lista de seguridad de Debian se anunció el fin del 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>hydrosIII (openbsd)</title><link>https://hydrosiii.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://hydrosiii.github.io/categories/openbsd.xml"></atom:link><language>es</language><lastBuildDate>Fri, 20 Feb 2015 14:51:18 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Reflexiones sobre el modelo de seguridad y distribución de Debian, Openbsd y otros sistemas operativos.</title><link>https://hydrosiii.github.io/posts/reflexiones-sobre-el-modelo-de-seguridad-y-distribucion-de-debian-openbsd-y-otros-sistemas-operativos.html</link><dc:creator>hydrosIII</dc:creator><description>&lt;div&gt;&lt;p&gt;Anteyer, en la lista de seguridad de Debian se anunció el fin del 
 soporte de seguridad para chromium, ya que es imposible construir las 
 nuevas versiones de chromium, con los compiladores disponibles en Debian 
 Wheezy. Esto es indicador de varias cosas, en primer lugar: Wheezy se 
@@ -47,9 +47,8 @@ cambiando tan seguido.&lt;/p&gt;
 &lt;p&gt;Pero la cuestión es esta: si el modelo de desarrollo más seguro es el de 
 OpenBSD, basada más en código fuente. ¿Por que este no es mas 
 implementado en servidores?. No es que no se utilize, pero su uso se 
-limita más a routers y firewalls. En este 
-artículo de blog se argumenta que es más facil gestionar el cambio si 
-este es hecho poco a poco, es decir que es mucho más facil actualizar un 
+limita más a routers y firewalls. El argumento a favor de este modelo es 
+que es más facil gestionar el cambio si este es hecho poco a poco, es decir que es mucho más facil actualizar un 
 sistema cada 6 meses, y corregir los pocos errores que surjan que 
 migrar un sistema de 10 años de antigüedad, como por ejemplo Centos o 
 Red Hat. En estas distros su modelo de distribución está basado 
@@ -86,7 +85,7 @@ linux. En fin, final de la reflexión.&lt;/p&gt;
 &lt;p&gt;Preguntas al aire:&lt;/p&gt;
 &lt;p&gt;¿Alguién usando windows en servidores por aquí?.
 ¿Que tan seguro es Red Hat o Centos?
-¿Hay que cambiar todos a Gentoo, FreeBSD, OpenBSD?
+¿Hay que cambiar todos a Gentoo, FreeBSD, OpenBSD, después de ver esta situación?
 ¿Cuál es el lugar de MacOS en todo esto?&lt;/p&gt;
 &lt;p&gt;Fuentes:&lt;/p&gt;
 &lt;p&gt;http://www.openbsd.org/security.html

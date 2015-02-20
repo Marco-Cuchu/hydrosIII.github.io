@@ -1,0 +1,47 @@
+<!-- 
+.. title: Redes sociales alternativas
+.. slug: redes-sociales-alternativas
+.. date: 2015-02-20 13:25:40 UTC-06:00
+.. tags: 
+.. link: 
+.. description: 
+.. type: text
+-->
+
+Después del año 2000 el Internet pasó de ser un espacio descentralizado utilizado por pocas personas, a ser difundido de manera mundial y usado para múltiples propósitos con   una centralización creciente y pocas empresas concentrando gran parte de las visitas de Internet. Va en aumento el número de horas que pasamos en Internet, cada vez se vuelve una parte importante de nuestra vida.
+
+####Facebook .
+
+En el 2004 Marck Zuckerbeg lanzó Facebook, en sus inicio una red social privada para estudiantes de Harvard pero que se abrió   a todo el mundo en el 2006. Este pronto llegó a nuestro país, y es ahora una de los sitios con mayor número de usuarios. 
+
+En pocos años Facebook se constituye en una empresa multimillonaria y que concentra gran parte de la información confidencial de los usuarios.  No fue la primer Red Social, pero es ahora una de las mas grandes. Facebook se ha vuelto parte de la vida diaria. 
+
+####Twitter.
+
+Fue creado en 2006 por Jack Dorsey como una red social de rápida interacción bajo el concepto de microblogging, limitando la información enviada por el usuario en un tweet a 140 caracteres, y varias fotos  o un video. Es ahora una de las plataformas de comunicación mas usadas mundialmente. 
+
+Estas dos empresas ambas con sede en Estados Unidos hoy concentran gran parte del tráfico de internet y han adquirido tal importancia que muchas de las campañas de marketing de empresas, partidos políticos, individuos e instituciones se hacen a través de estas redes. Es importante destacar que  estas redes también han potenciado varios movimientos sociales como los de la primavera árabe o el movimiento 132 en México, por lo que sus usos no se ven limitados al marketing o interacción social diaria.
+
+
+#### Redes sociales descentralizadas.
+
+El problema está en que  gran parte de los datos personales de los usuarios es controlada por una empresa y depende de la utilización que esta pueda hacer de ellos. Para ser precisos si se tiene un perfil en Facebook los datos van a a dar al centro de datos en Palo Alto California, donde están sujetos a las leyes y jurisdicción estadounidenses. Edward Snowden desaconseja el uso de estas redes sociales debido a los problemas de privacidad seguridad y vigilancia que estas implican. Otro problema se encuentra en la censura y control de la información propiciadas por la  política de uso que las empresas imponen a estas redes sociales.
+
+Como respuesta a esto han surgido varias iniciativas para combatir la centralización de datos, se han creado una serie de redes sociales alternativas, que aspiran a ser descentralizadas y hechas con software libre, de igual manera que el correo electrónico. De esta manera mediante el uso de un protocolo común todos los usuarios podrán tener su información en el servidor que ellos elijan, en el cual confíen o inclusive tener su información en una computadora-servidor en su propia casa. Esta es la idea detrás de iniciativas como Gnu/Social y Diaspora. Redes sociales descentralizadas que buscan combatir los problemas generados por las redes sociales centralizadas.
+
+La ventaja sobre de la descentralización sobre la centralización, es sobretodo que cada una de estas plataformas forman una red de servidores, los cuales no son susceptibles de apropiación empresarial o de explotabilidad de los datos personales de los usuarios con fines de mercado o de investigación, otorgando un mayor control y privacidad al usuario sobre sus datos. También la estructura misma de las redes las hace poco propensas a la censura o caídas del sistema,  ya que aunque los nodos en particular pueden caer, es poco probable que toda la red caiga.
+
+Otro concepto clave de estas redes es que son de código libre, por lo que su código es revisado en busca de agujeros de seguridad  para saber que hace el código con los datos del usuario, además de ser modificable por los usuarios con conocimientos pertinentes. Entre las principales redes sociales alternativas se encuentran:
+
+[Diaspora](https://diasporafoundation.org/) es una iniciativa creada  por varios estudiantes del _New York University's Courant Institute of Mathematical Sciences_ , aunque pronto pasó a ser desarrollada por su comunidad de usuarios. Se despliega a través de pods es decir  servidores autónomos en los que los usuarios pueden registrarse y comunicarse con toda la red Diaspora u otras redes sociales. Actualmente se puede encontrar la lista de pods con espacio disponible [aquí](http://podupti.me/).  Otra alternativa a Diaspora es [Friendica](http://friendica.com/) que se haya en un estado de desarrollo más avanzado, con una lista de pods disponibles [aqui](http://dir.friendica.com/siteinfo).
+ 
+También existe la posibilidad de poner tu propio pod. Hay que destacar que estas dos redes sociales, son de código totalmente libre, lo que permite a los usuarios instalarlas en su propia computadora y modificarlas a gusto.
+
+Otras redes sociales descentralizadas, son [Gnu/Social](gnu.io) y Pump.io.  Gnu/social está auspiciada por la Free Sfotware Foundation en Estados Unidos, y puede adquirir diversas formas. Se puede formar una plataforma parecida a Facebook, o puede adoptar la forma de una plataforma de microblogging parecida a twitter, llamada [Quitter](quitter.se). 
+
+Es de destacar también el objetivo no lucrativo de estas redes sociales, ya que por lo general los pods no están implementados por empresas sino por fundaciones o colectivos de hackers. EL objetivo último de estas redes sociales, no es encerrar a los usuarios en sitios particulares, sino que se está trabajando en un protocolo de comunicación común, para que el usuario pueda comunicarse con otros usuarios en otros pods o en otras redes (Un usuario de Diaspora se comunique con un usuario de Friendica y de Gnu/social), todo esto para evitar el encierro o la dependencia tecnológica en una organización o empresa y aumentado las ventajas de la descentralización. Esto ya es viable en varias de estas redes sociales, permitiendo comunicarse incluso con un perfil de Facebook  o Twitter. En un futuro se está pensando la implementación de herramientas de encriptación como GPG,  ya usada ampliamente en el correo electrónico para garantizar la privacidad de las comunicaciones.
+
+Hasta ahora, el número de usuarios de estas redes es limitado, pero con el Internet volviéndose un lugar cada vez más hostil para la privacidad, es importante pensar en estas redes como alternativa, y tener mucho cuidado con los datos personales dejados en la web. 
+
+
+
