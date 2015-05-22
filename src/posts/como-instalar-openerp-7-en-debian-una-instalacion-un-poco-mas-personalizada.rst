@@ -1,7 +1,7 @@
 .. title: ¿Como instalar openerp 7 en Debian? Una instalación un poco mas personalizada.
 .. slug: como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada
 .. date: 2014-11-05 00:47:48 UTC-06:00
-.. tags: openerp, python, debian, draft
+.. tags: openerp, python, Debian
 .. link: 
 .. description: 
 .. type: text

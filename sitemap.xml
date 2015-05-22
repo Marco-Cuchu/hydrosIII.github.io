@@ -6,134 +6,142 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://hydrosiii.github.io/2014/index.html</loc>
-  <lastmod>2015-01-25</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/2015/index.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/archive.html</loc>
-  <lastmod>2015-01-25</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/arch-linux.html</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/debian.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/index.html</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/lemonpos.html</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/linux.html</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/nikola.html</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/openbsd.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
+ </url>
+ <url>
+  <loc>https://hydrosiii.github.io/categories/openerp.html</loc>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/pcduino.html</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/politica.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/python.html</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/categories/seguridad.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/galleries/index.html</loc>
-  <lastmod>2015-01-25</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/index-1.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/index.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/listings/index.html</loc>
-  <lastmod>2015-01-25</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/administrando-lemonpos-con-phpmyadmin.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/arch-linux-en-pc-duino.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/arreglando-problemas-con-lemonpos.html</loc>
-  <lastmod>2014-11-07</lastmod>
+  <lastmod>2015-03-14</lastmod>
+ </url>
+ <url>
+  <loc>https://hydrosiii.github.io/posts/como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada.html</loc>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/como-se-hizo-este-blog.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/instalar-un-servidor-murmur-en-debian-mumble-server.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/internet-software-libre-y-libertad-de-expresion.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/mas-vulnerabilidades-en-linux.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/pensamientos-sobre-systemd.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/redes-sociales-alternativas.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/reflexiones-sobre-el-modelo-de-seguridad-y-distribucion-de-debian-openbsd-y-otros-sistemas-operativos.html</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/revision-e-instalacion-de-lemonpos.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/servidor-murmur-en-debian-parte-2-mumble-server.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/usando-lemon-pos.html</loc>
-  <lastmod>2014-11-07</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/usando-lemonpos.html</loc>
-  <lastmod>2014-11-07</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
  <url>
   <loc>https://hydrosiii.github.io/posts/volviendo-a-arch-linux-estable.html</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </url>
 </urlset>

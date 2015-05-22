@@ -131,6 +131,121 @@ derivadas.</p>
     </article>
     <article class="h-entry post-text">
     <header>
+        <h1 class="p-name entry-title"><a href="posts/como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada.html" class="u-url">¿Como instalar openerp 7 en Debian? Una instalación un poco mas personalizada.</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>
+            <p class="dateline"><a href="posts/como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada.html" rel="bookmark"><time class="published dt-published" datetime="2014-11-05T00:47:48-06:00" itemprop="datePublished" title="2014-11-05 00:47">2014-11-05 00:47</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada.html#disqus_thread" data-disqus-identifier="cache/posts/como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada.html">Comments</a>
+
+
+        </p>
+</div>
+    </header>
+    <div class="p-summary entry-summary">
+    <div>
+<p>Openerp es un buen ERP y es de código abierto.</p>
+<p>Aquí hay unas instrucciones para instalarlo en Debian wheezy desde launchpad. Aunque es posible instalarlo
+desde launchpad, lo mejor es hacerlo desde github, sin membargo aún hay muchos tutoriales de como hacerlo así
+y posteo esto sobretodo para recordar como lo hice yo.</p>
+<p>Em primer lugar se necesita entrar como el usuario root:</p>
+<pre class="literal-block">
+su
+</pre>
+<p>a partir de aquí hay que tene cuidado con lo que se escribe por que ya me ha pasado haber borrado sistemas enteros por un mal comando.</p>
+<p>hay que instalar las dependecias usando el gestor de paquetes:</p>
+<pre class="literal-block">
+apt-get install python postgresql-client python-dateutil \
+python-docutils python-feedparser python-gdata python-imaging \
+python-jinja2 python-ldap python-libxslt1 python-lxml python-mako \
+python-mock python-openid python-psutil python-psycopg2 python-pybabel \
+python-pychart python-pydot python-pyparsing python-reportlab \
+python-simplejson python-tz python-unittest2 python-vatnumber \
+python-vobject python-webdav python-werkzeug python-xlwt python-yaml \
+python-zsi graphviz ghostscript python-matplotlib poppler-utils
+</pre>
+<p>estas son las dependencias básicas ahora hay que instalar algunas más para funcionalidad extra:</p>
+<pre class="literal-block">
+apt-get install python-dev bzr python-setuptools python-babel \
+python-feedparser python-reportlab-accel python-zsi python-openssl \
+python-egenix-mxdatetime python-jinja2 python-unittest2 python-mock \
+python-docutils lptools make python-psutil python-paramiko poppler-utils \
+python-pdftools antiword
+</pre>
+<p>La dependecia de bzr se necesita para bajar el código fuente.</p>
+<p>Hay que instalar el gestor de bases de datos; este en una instalación simple puede estar en el mismo servidor que openerp, en instalaciones mas complejas y/o grandes se
+utiliza una maquina independiente para instalar el gestor ya que es el que realiza todas las operaciones que mueven a openerp y usa mucho poder de computo:</p>
+<pre class="literal-block">
+apt-get install postgresql
+</pre>
+<p>Luego creamos un usuario dentro de postgres para openerp, este usuario es un usuario dentro del gestor de bases de datos, no hay que confundirlo con el usuario del
+sistema linux. Este es definido por seguridad y para separar. Pero se puede usar el usuario root de postgres si es una instalación simple o para pruebas.
+Así se crea el usuario y una base de datos del mismo nombre sobre la que tiene privilegios:</p>
+<pre class="literal-block">
+postgres -c "createuser --createdb --username openerp --no-createrole --no-superuser --pwprompt"
+</pre>
+<p>Ahora se crea el usuario de linux, que va a usar openerp. Esto se hace por seguridad, ya que los servicios en linux deben correr con el mínimo de privilegios posibles.
+Por lo que se crea un usuario limitado, para que openerp corra:</p>
+<pre class="literal-block">
+adduser openerp --system --home=/opt/openerp --shell=/bin/false --disabled-login
+chown -R openerp /opt/openerp
+</pre>
+<p>Se añade el usuario con directorio home en /opt/openerp y no puede loguerse. Para que todo salga bien se cambian los permisos de usuario del directorio home de este último, me parece que este paso es superfluo, pero lo hago para asegurarme.</p>
+<p>Se va a usar la rama ocb-backports de openerp que introduce parches para los bugs de openerp antes de la rama principal, por lo que es mas estable, además de ser
+compatible con la rama principal.</p>
+<div class="section" id="desde-github">
+<h2>Desde Github.</h2>
+<p>Nota: Antes se instalaba desde launchpad pero recientement el proyecto
+Openerp cambio su nombre a odoo y ahora se desarrolla en github. Si
+tienes una instalación desde launchpad lo mejor es borrarla y reinstalar
+usando github.</p>
+<p>Se va al directorio de instalación:</p>
+<pre class="literal-block">
+cd /opt/openerp
+</pre>
+<p>Se baja la versión 7.0 desde un archivo .zip para ahorrar algo de
+tiempo:</p>
+<pre class="literal-block">
+https://codeload.github.com/OCA/OCB/zip/7.0
+</pre>
+<p>Se cambian los permisos de la carpeta para que sean los correctos:</p>
+<pre class="literal-block">
+chown -R openerp:openerp /opt/openerp
+</pre>
+<p>Se limpia la instalación de archivos innecesarios:</p>
+<p>Se crea el directorio de log, al que el programa openerp va a escribir
+en el futuro y se le asignan los permisos necesarios:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 92)</p>
+Literal block expected; none found.</div>
+<p>Se crea el archivo de configuración de openerp:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 95)</p>
+Literal block expected; none found.</div>
+<p>Ahora solo falta iniciar openerp, para esto se crea un init script
+adecuado, este ya viene en el directorio que se bajo de github. Los
+valores importantes de init script, es dar con la correcta localización
+del ejecutable,</p>
+<p>Se crea el archivo de configuracion de openerp:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 105)</p>
+Literal block expected; none found.</div>
+<p>Se inicia openerp con:</p>
+<pre class="literal-block">
+service openerp start
+</pre>
+<p>Instalación de localización mexicana y factura electrónica.</p>
+<hr class="docutils">
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 112)</p>
+Document may not end with a transition.</div>
+</div>
+</div>
+    </div>
+    </article>
+    <article class="h-entry post-text">
+    <header>
         <h1 class="p-name entry-title"><a href="posts/como-se-hizo-este-blog.html" class="u-url">¿Cómo se hizo este blog?</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">hydrosIII</span></p>

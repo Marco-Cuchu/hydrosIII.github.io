@@ -6,54 +6,58 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/arch-linux.xml</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/debian.xml</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/lemonpos.xml</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/linux.xml</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/nikola.xml</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/openbsd.xml</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hydrosiii.github.io/categories/openerp.xml</loc>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/pcduino.xml</loc>
-  <lastmod>2014-11-19</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/politica.xml</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/python.xml</loc>
-  <lastmod>2015-02-05</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/categories/seguridad.xml</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/galleries/rss.xml</loc>
-  <lastmod>2015-01-25</lastmod>
+  <lastmod>2015-03-14</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/rss.xml</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hydrosiii.github.io/sitemap.xml</loc>
-  <lastmod>2015-02-20</lastmod>
+  <lastmod>2015-05-22</lastmod>
  </sitemap>
 </sitemapindex>
