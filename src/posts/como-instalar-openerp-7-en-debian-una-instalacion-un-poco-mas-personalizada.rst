@@ -1,7 +1,7 @@
 .. title: ¿Como instalar openerp 7 en Debian? Una instalación un poco mas personalizada.
 .. slug: como-instalar-openerp-7-en-debian-una-instalacion-un-poco-mas-personalizada
-.. date: 2014-11-05 00:47:48 UTC-06:00
-.. tags: openerp, python, Debian
+.. date: 2015-05-23 00:47:48 UTC-06:00
+.. tags: openerp, python, Debian, draft
 .. link: 
 .. description: 
 .. type: text
@@ -86,18 +86,18 @@ Se cambian los permisos de la carpeta para que sean los correctos::
 	chown -R openerp:openerp /opt/openerp
 
 
-Se limpia la instalación de archivos innecesarios:
-
-
 
 
 Se crea el directorio de log, al que el programa openerp va a escribir 
 en el futuro y se le asignan los permisos necesarios::
 
 
-
+	mkdir /var/log/openerp
+	chown openerp /var/log/openerp	
 
 Se crea el archivo de configuración de openerp::
+
+	touch /etc/openerp.conf
 
 
 Ahora solo falta iniciar openerp, para esto se crea un init script 

@@ -288,8 +288,8 @@ corregidos. Además de los que están en este artículo.
 Los cambios importantes con los siguientes:
 
 1. Las traducciones al español funcionan bien, he adicionado traducciones que faltaban.
-2. Quité la funcionalidad de facturas CBB ya que estas no se usan más en 
-México.
+
+2. Quité la funcionalidad de facturas CBB ya que estas no se usan más en México.
 
 En realidad nada nuevo, pero corregí algunos detalles.
 
